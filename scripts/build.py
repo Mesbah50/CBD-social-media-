@@ -14,6 +14,7 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import creative  # noqa: E402
+import background  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 W, H = 1080, 1080
@@ -108,56 +109,65 @@ def art(cat, acc):
     return f'<svg width="1080" height="370" viewBox="0 0 1080 470" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">{body}</svg>'
 
 
-def hook_html(text, acc, bg):
-    """[word] marks the highlighted part of the hook."""
+BRAND_BLUE = "#02378F"
+BRAND_RED = "#E70611"
+HL_RED = "#FF3340"     # brighter red for text on black boxes
+
+
+def hook_html(text):
+    """[word] marks the highlighted (red) part of the hook."""
     t = html.escape(text)
-    return re.sub(r"\[(.+?)\]",
-                  lambda m: f'<span style="background:{acc};color:{bg};padding:0 14px;border-radius:12px;'
-                            f'box-decoration-break:clone;-webkit-box-decoration-break:clone">{m.group(1)}</span>', t)
+    return re.sub(r"\[(.+?)\]", lambda m: f'<span style="color:{HL_RED}">{m.group(1)}</span>', t)
 
 
 def page(post):
     c = CATS[post["category"]]
-    acc, bg = c["accent"], c["bg"]
     if post.get("style") not in creative.STYLES:
         raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
-    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), acc)
-    sub = f'<div style="font-size:36px;font-weight:600;color:#D7DEEA;line-height:1.3">{html.escape(post["sub"])}</div>' if post.get("sub") else ""
-    pts = ""
-    if False and post.get("points"):
-        pts = '<div style="display:flex;flex-direction:column;gap:10px">' + "".join(
-            f'<div style="display:flex;gap:14px;align-items:center;font-size:29px;font-weight:600">'
-            f'<span style="flex:0 0 36px;height:36px;border-radius:50%;background:{acc};color:{bg};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">{i + 1}</span>'
-            f'<span>{html.escape(p)}</span></div>' for i, p in enumerate(post["points"][:3])) + "</div>"
-    hb = 200 if post.get("sub") else 250
+    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), BRAND_RED)
+    bg_svg = background.svg(W, H)
+    sub = html.escape(post.get("sub", "")) or "বিস্তারিত ক্যাপশনে ↓"
     fonts = "".join(
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-bengali-{w}-normal.woff2)}}'
         for w in (500, 600, 700, 800)) + "".join(
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-latin-{w}-normal.woff2);unicode-range:U+0000-00FF}}'
         for w in (500, 600, 700, 800))
-    return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}</style></head><body>
-<div style="width:{W}px;height:{H}px;background:{bg};color:#fff;font-family:A;position:relative;overflow:hidden">
-<div style="position:absolute;right:-200px;top:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,{acc}33 0%,{acc}00 65%)"></div>
-<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(255,255,255,0.07) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,0.45) 100%)"></div>
-<div style="position:absolute;left:0;bottom:80px;width:{creative.ART_W}px;height:{creative.ART_H}px">
- <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
- {art_ov}
-</div>
-<div style="position:absolute;left:0;right:0;bottom:90px;height:120px;background:linear-gradient(to bottom,{bg}00,{bg}00)"></div>
-<div style="position:relative;padding:48px 60px 0 60px;display:flex;flex-direction:column;gap:18px">
- <div style="display:flex;justify-content:space-between;align-items:center">
-  <div style="background:{c['badge']};font-size:32px;font-weight:700;padding:8px 26px;border-radius:999px">{c['label']}</div>
-  <div style="background:#FEFEFE;border-radius:18px;padding:4px 8px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:200px;display:block"></div>
+    k = 0.84  # art scale inside the frame
+    creative.GLOW = "#6F9BFF"
+    return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}
+.hook{{display:inline;background:#0E0E0E;color:#FFFFFF;padding:6px 26px;line-height:1.52;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}}</style></head><body>
+<div style="width:{W}px;height:{H}px;position:relative;overflow:hidden;font-family:A;color:#0E0E0E">
+ <div style="position:absolute;inset:0">{bg_svg}</div>
+ <!-- brand blue block (where the reference has its colour panel) -->
+ <div style="position:absolute;left:190px;top:150px;width:850px;height:440px;background:{BRAND_BLUE}"></div>
+ <div style="position:absolute;left:190px;top:150px;width:850px;height:10px;background:{BRAND_RED}"></div>
+ <!-- quote mark -->
+ <div style="position:absolute;left:30px;top:150px;font-size:230px;font-weight:800;line-height:1;color:{BRAND_RED};font-family:Georgia,serif">&ldquo;</div>
+ <!-- logo -->
+ <div style="position:absolute;right:40px;top:34px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:210px;display:block"></div>
+ <!-- creative concept -->
+ <div style="position:absolute;left:160px;top:110px;width:{creative.ART_W * k:.0f}px;height:{creative.ART_H * k:.0f}px">
+  <div style="position:absolute;left:0;top:0;width:{creative.ART_W}px;height:{creative.ART_H}px;transform:scale({k});transform-origin:0 0">
+   <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
+   {art_ov}
+  </div>
  </div>
- <div id="hookbox" style="height:{hb}px;display:flex;flex-direction:column;justify-content:center">
-  <div id="hook" style="font-size:84px;font-weight:800;line-height:1.3">{hook_html(post['hook'], acc, bg)}</div>
+ <!-- hook: stacked black boxes -->
+ <div id="hookbox" style="position:absolute;left:44px;top:560px;width:700px;height:360px;display:flex;align-items:flex-start">
+  <div id="hook" style="font-size:78px;font-weight:800"><span class="hook">{hook_html(post['hook'])}</span></div>
  </div>
- {sub}{pts}
+ <!-- attribution-style footer: red bar, category, sub line -->
+ <div style="position:absolute;left:50px;bottom:40px;display:flex;gap:18px;align-items:stretch">
+  <div style="width:6px;background:{BRAND_RED}"></div>
+  <div style="display:flex;flex-direction:column;gap:2px">
+   <div style="font-size:38px;font-weight:800;color:{BRAND_BLUE};line-height:1.2">{c['label']}</div>
+   <div style="font-size:28px;font-weight:600;color:#333;line-height:1.25">{sub}</div>
+  </div>
+ </div>
 </div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:80px;background:#060F22;display:flex;align-items:center;justify-content:space-between;padding:0 60px;font-size:30px;font-weight:700">
- <span>সেভ করে রাখুন</span><span style="color:{acc}">বিস্তারিত ক্যাপশনে ↓</span>
-</div></div>
-<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=84;while(h.scrollHeight>b.clientHeight&&s>48){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
+<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=78;
+while(h.scrollHeight>b.clientHeight&&s>38){{s-=2;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
 </body></html>"""
 
 

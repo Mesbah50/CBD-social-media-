@@ -388,7 +388,12 @@ def floor(y=470, w=900):
     return f'<ellipse cx="540" cy="{y}" rx="{w / 2}" ry="34" fill="url(#floorg)"/>'
 
 
+GLOW = None  # when set, all glows use this colour
+
+
 def glow(x, y, r, c, o=0.3):
+    c = GLOW or c
+    r = r * 0.7 if GLOW else r
     gid = f"g{abs(hash((x, y, r, c))) % 99999}"
     return (f'<defs><radialGradient id="{gid}"><stop offset="0" stop-color="{c}" stop-opacity="{o}"/>'
             f'<stop offset="1" stop-color="{c}" stop-opacity="0"/></radialGradient></defs>'
@@ -428,7 +433,7 @@ def s_exaggeration(a, acc):
         out += [f'<path d="M{x} 320 L{x} 370" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-opacity="0.7"/>' for x in (470, 540, 610)]
     else:  # stream: small source erupts into a fountain of the effect
         rnd = random.Random(a.get("seed", 7))
-        out.append(f'<path d="M500 380 L300 0 L780 0 L580 380 Z" fill="{acc}" fill-opacity="0.12"/>')
+        out.append(f'<path d="M500 380 L330 60 L750 60 L580 380 Z" fill="{GLOW or acc}" fill-opacity="0.16"/>')
         items = []
         for i in range(26):
             t = rnd.random()
@@ -605,9 +610,9 @@ def arrange(objs, cx, mode):
 def s_contrast(a, acc):
     L, R = a.get("left", {}), a.get("right", {})
     out = ['<defs><filter id="gray"><feColorMatrix type="saturate" values="0.05"/></filter></defs>',
-           '<rect x="0" y="0" width="540" height="560" fill="#000" fill-opacity="0.28"/>',
-           f'<rect x="540" y="0" width="540" height="560" fill="{acc}" fill-opacity="0.10"/>',
-           '<line x1="540" y1="20" x2="540" y2="540" stroke="#FFFFFF" stroke-width="6" stroke-dasharray="14 12"/>',
+           '<rect x="40" y="50" width="500" height="470" fill="#000" fill-opacity="0.22"/>',
+           f'<rect x="540" y="50" width="500" height="470" fill="#FFFFFF" fill-opacity="0.06"/>',
+           '<line x1="540" y1="60" x2="540" y2="520" stroke="#FFFFFF" stroke-width="6" stroke-dasharray="14 12"/>',
            '<g filter="url(#gray)" opacity="0.8">' + arrange(L.get("objects", ["box"]), 270, L.get("arrange", "messy")) + "</g>",
            arrange(R.get("objects", ["box"]), 810, R.get("arrange", "neat")),
            prop("cross", 270, 470, 0.38), prop("check", 810, 470, 0.38)]
@@ -618,7 +623,7 @@ def s_contrast(a, acc):
 def s_shadow(a, acc):
     obj, sh = a.get("object", "box"), a.get("shadow", "ship")
     out = [glow(150, 120, 360, "#FFF3C4", 0.45),
-           '<rect x="0" y="470" width="1080" height="90" fill="#000" fill-opacity="0.25"/>',
+           '<rect x="40" y="470" width="1000" height="50" fill="#000" fill-opacity="0.18"/>',
            f'<polygon points="330,470 420,470 1000,470 900,470" fill="#000" fill-opacity="0.2"/>',
            f'<path d="M340 472 L980 300 L980 472 Z" fill="#000" fill-opacity="0.18"/>',
            '<g opacity="0.42">' + prop(sh, 700, 270, a.get("shadow_scale", 2.1), shadow=True) + "</g>",
@@ -636,5 +641,5 @@ def render(style, spec, accent):
         raise ValueError(f"style must be one of {STYLES}, got {style!r}")
     _DEFS.clear()
     body, ov = FUNCS[style](spec or {}, accent)
-    stage = (f'<ellipse cx="540" cy="520" rx="620" ry="120" fill="{accent}" fill-opacity="0.06"/>')
+    stage = ""
     return f"<defs>{BASE_DEFS}{''.join(_DEFS.values())}</defs>{stage}{body}", ov
