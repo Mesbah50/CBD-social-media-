@@ -12,7 +12,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
   - Mesbah China Imports guide (Facebook page) — `6ad9fda3778b240e2f8b559f`
   - MESBAH UDDIN (LinkedIn profile) — `6ac5e1486a5c39ccb63c77a6`
 - Image hosting: this repo. Public image URL = `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/post-<slot>.png`
-- WhatsApp: 01771987736
+- Contact (only when a post needs one, e.g. slot 6): `Mesbah Uddin — WhatsApp: 01606481782`. No other name or phone number ever appears in images or captions.
 - Services: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service
 - Product categories: Baby Toy · Home & Pain Relief · Home Decor · Home Hacks
 
@@ -25,7 +25,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 | 3 | 13:00 | `trending` | A trending product in one of the 4 categories: what customer problem it solves, why it sells now |
 | 4 | 16:00 | `cost`     | Cost / profit breakdown (factory price, freight, duty, delivery); framed as "why is profit low" |
 | 5 | 19:00 | `alert`    | Scam alert, common beginner mistake, or myth vs fact |
-| 6 | 21:00 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + WhatsApp call to action |
+| 6 | 21:00 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + contact line |
 
 Most posts must solve a problem. Only slot 6 is a direct sales post.
 
@@ -50,7 +50,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    ]}
    ```
    - **The image is the hook.** `hook`: 4–9 Bengali words, a question or a curiosity/fear trigger, one part wrapped in `[ ]` to highlight. `sub` (optional): ≤ 10 words. `points` (optional, best for `problem`): up to 3 items, ≤ 6 words each.
-   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + WhatsApp 01771987736. 120–250 words, short paragraphs, a few emojis are fine.
+   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. Slots 1–5 carry no name or phone number. 120–250 words, short paragraphs, a few emojis are fine.
    - `hashtags`: 8–12, mixing Bengali and English. Always include #ChinaBondBD #CBD #ImportFromChina, then topic tags.
    - `alt`: one-line description of the image.
 5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1350). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
@@ -72,3 +72,4 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 - No copied text from articles: summarise in your own words, credit the source.
 - Facebook-safe wording: no medical promises ("ব্যথা ভালো হয়ে যাবে", "৭ দিনে উধাও"), no hooks that point at the reader's body or condition ("আপনার কি কোমর ব্যথা?" → "যারা দীর্ঘক্ষণ বসে কাজ করেন…"), no before/after claims.
 - Never mention any author, book title or other person's Facebook ID from the source material.
+- Images carry no phone number and no person's name. The only name/number allowed anywhere is `Mesbah Uddin — WhatsApp: 01606481782`, and only in captions that need a contact line.

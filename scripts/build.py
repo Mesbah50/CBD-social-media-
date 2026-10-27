@@ -145,7 +145,7 @@ def page(post):
  {sub}{pts}
 </div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:90px;background:#060F22;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:32px;font-weight:700">
- <span>WhatsApp: 01771987736</span><span style="color:{acc}">বিস্তারিত ক্যাপশনে ↓</span>
+ <span>সেভ করে রাখুন</span><span style="color:{acc}">বিস্তারিত ক্যাপশনে ↓</span>
 </div></div>
 <script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=100;while(h.scrollHeight>b.clientHeight&&s>56){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
 </body></html>"""
