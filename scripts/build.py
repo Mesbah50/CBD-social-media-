@@ -124,6 +124,7 @@ def page(post):
     c = CATS[post["category"]]
     if post.get("style") not in creative.STYLES:
         raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
+    creative.GLOW = "#6F9BFF"
     art_svg, art_ov = creative.render(post["style"], post.get("art", {}), BRAND_RED)
     bg_svg = background.svg(W, H)
     sub = html.escape(post.get("sub", "")) or "বিস্তারিত ক্যাপশনে ↓"
@@ -133,7 +134,6 @@ def page(post):
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-latin-{w}-normal.woff2);unicode-range:U+0000-00FF}}'
         for w in (500, 600, 700, 800))
     k = 0.84  # art scale inside the frame
-    creative.GLOW = "#6F9BFF"
     return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}
 .hook{{display:inline;background:#0E0E0E;color:#FFFFFF;padding:6px 26px;line-height:1.52;
   box-decoration-break:clone;-webkit-box-decoration-break:clone}}</style></head><body>
@@ -147,7 +147,7 @@ def page(post):
  <!-- logo -->
  <div style="position:absolute;right:40px;top:34px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:210px;display:block"></div>
  <!-- creative concept -->
- <div style="position:absolute;left:160px;top:110px;width:{creative.ART_W * k:.0f}px;height:{creative.ART_H * k:.0f}px">
+ <div style="position:absolute;left:160px;top:110px;width:{creative.ART_W * k:.0f}px;height:{creative.ART_H * k:.0f}px;clip-path:inset(40px -60px -120px -60px)">
   <div style="position:absolute;left:0;top:0;width:{creative.ART_W}px;height:{creative.ART_H}px;transform:scale({k});transform-origin:0 0">
    <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
    {art_ov}

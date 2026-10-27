@@ -616,7 +616,7 @@ def s_contrast(a, acc):
            '<g filter="url(#gray)" opacity="0.8">' + arrange(L.get("objects", ["box"]), 270, L.get("arrange", "messy")) + "</g>",
            arrange(R.get("objects", ["box"]), 810, R.get("arrange", "neat")),
            prop("cross", 270, 470, 0.38), prop("check", 810, 470, 0.38)]
-    ov = pill(270, 60, L.get("label", "আগে"), "#5B6B8C") + pill(810, 60, R.get("label", "এখন"), "#1FA463")
+    ov = pill(270, 110, L.get("label", "আগে"), "#5B6B8C") + pill(810, 110, R.get("label", "এখন"), "#1FA463")
     return "".join(out), ov
 
 
