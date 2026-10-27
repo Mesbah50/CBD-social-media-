@@ -110,14 +110,14 @@ def art(cat, acc):
 
 
 BRAND_BLUE = "#02378F"
-BRAND_RED = "#E70611"
-HL_RED = "#FF3340"     # brighter red for text on black boxes
+BRAND_ACCENT = "#0085FE"   # bright blue (from the reference) replaces red
+HL = "#1EA0FF"         # highlight colour on black boxes
 
 
 def hook_html(text):
     """[word] marks the highlighted (red) part of the hook."""
     t = html.escape(text)
-    return re.sub(r"\[(.+?)\]", lambda m: f'<span style="color:{HL_RED}">{m.group(1)}</span>', t)
+    return re.sub(r"\[(.+?)\]", lambda m: f'<span style="color:{HL}">{m.group(1)}</span>', t)
 
 
 def page(post):
@@ -125,7 +125,7 @@ def page(post):
     if post.get("style") not in creative.STYLES:
         raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
     creative.GLOW = "#6F9BFF"
-    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), BRAND_RED)
+    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), BRAND_ACCENT)
     bg_svg = background.svg(W, H)
     sub = html.escape(post.get("sub", "")) or "বিস্তারিত ক্যাপশনে ↓"
     fonts = "".join(
@@ -141,9 +141,8 @@ def page(post):
  <div style="position:absolute;inset:0">{bg_svg}</div>
  <!-- brand blue block (where the reference has its colour panel) -->
  <div style="position:absolute;left:190px;top:150px;width:850px;height:440px;background:{BRAND_BLUE}"></div>
- <div style="position:absolute;left:190px;top:150px;width:850px;height:10px;background:{BRAND_RED}"></div>
  <!-- quote mark -->
- <div style="position:absolute;left:30px;top:150px;font-size:230px;font-weight:800;line-height:1;color:{BRAND_RED};font-family:Georgia,serif">&ldquo;</div>
+ <div style="position:absolute;left:30px;top:150px;font-size:230px;font-weight:800;line-height:1;color:{BRAND_ACCENT};font-family:Georgia,serif">&ldquo;</div>
  <!-- logo -->
  <div style="position:absolute;right:40px;top:34px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:210px;display:block"></div>
  <!-- creative concept -->
@@ -159,7 +158,7 @@ def page(post):
  </div>
  <!-- attribution-style footer: red bar, category, sub line -->
  <div style="position:absolute;left:50px;bottom:40px;display:flex;gap:18px;align-items:stretch">
-  <div style="width:6px;background:{BRAND_RED}"></div>
+  <div style="width:6px;background:{BRAND_ACCENT}"></div>
   <div style="display:flex;flex-direction:column;gap:2px">
    <div style="font-size:38px;font-weight:800;color:{BRAND_BLUE};line-height:1.2">{c['label']}</div>
    <div style="font-size:28px;font-weight:600;color:#333;line-height:1.25">{sub}</div>

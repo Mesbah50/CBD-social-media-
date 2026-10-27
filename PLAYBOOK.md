@@ -78,7 +78,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 
 ## Rules that never change
 
-- Layout (fixed, follows the owner's reference post): brand background; CBD logo top-right; red quote mark top-left; a CBD-blue (#02378F) panel with a thin red top edge holding the creative concept; the hook below it in stacked black boxes with white text and the highlighted part in red; bottom-left a red bar with the category name in blue and the sub line in dark grey. Colours are only CBD blue, CBD red, black, white and the background. No people in the image.
+- Layout (fixed, follows the owner's reference post): brand background; CBD logo top-right; bright-blue (#0085FE) quote mark top-left; a CBD-blue (#02378F) panel holding the creative concept; the hook below it in stacked black boxes with white text and the highlighted part in bright blue (#1EA0FF); bottom-left a bright-blue bar with the category name in blue and the sub line in dark grey. Colours are only CBD blue, bright blue, black, white and the background — no red in the design (the logo stays as it is). No people in the image.
 
 - Background: every image uses ONLY the CBD brand background (`scripts/background.py` / `brand/background.svg`: warm off-white #F7F3F2, faint dot grid, soft white centre glow, scattered light-blue rounded squares). No other background, ever.
 
