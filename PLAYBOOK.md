@@ -21,11 +21,11 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 | slot | time  | category key | what it is |
 |------|-------|--------------|------------|
 | 1 | 08:00 | `problem`  | A real importer problem and its solution (customs hold, supplier fraud, wrong goods, damaged cargo, payment issues) |
-| 2 | 11:00 | `news`     | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
-| 3 | 13:00 | `trending` | A trending product in one of the 4 categories: what customer problem it solves, why it sells now |
-| 4 | 16:00 | `cost`     | Cost / profit breakdown (factory price, freight, duty, delivery); framed as "why is profit low" |
+| 2 | 10:00 | `news`     | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
+| 3 | 15:00 | `trending` | A trending product in one of the 4 categories: what customer problem it solves, why it sells now |
+| 4 | 18:00 | `cost`     | Cost / profit breakdown (factory price, freight, duty, delivery); framed as "why is profit low" |
 | 5 | 19:00 | `alert`    | Scam alert, common beginner mistake, or myth vs fact |
-| 6 | 21:00 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + contact line |
+| 6 | 21:30 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + contact line |
 
 Most posts must solve a problem. Only slot 6 is a direct sales post.
 
