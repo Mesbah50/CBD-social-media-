@@ -78,6 +78,8 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 
 ## Rules that never change
 
+- Background: every image uses ONLY the CBD brand background (`scripts/background.py` / `brand/background.svg`: warm off-white #F7F3F2, faint dot grid, soft white centre glow, scattered light-blue rounded squares). No other background, ever.
+
 - Never delete, rename or move an image in `posts/` after it is pushed — Buffer loads it from that exact link at posting time, and a missing file shows as a broken image.
 
 - Brand name on images = the CBD logo only (`brand/cbd_logo_badge.png`, already in the template). Never redraw or recolour it.
