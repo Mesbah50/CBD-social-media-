@@ -65,6 +65,8 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 
 ## Rules that never change
 
+- Never delete, rename or move an image in `posts/` after it is pushed — Buffer loads it from that exact link at posting time, and a missing file shows as a broken image.
+
 - Brand name on images = the CBD logo only (`brand/cbd_logo_badge.png`, already in the template). Never redraw or recolour it.
 - Import-related images always carry import elements (plane, cargo ship, containers, boxes, warehouse) — the template does this.
 - Never use the owner's photos unless he provides one for that post. Never use photos of real people.
