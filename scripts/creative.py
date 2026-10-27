@@ -11,7 +11,7 @@ import html
 import math
 import random
 
-ART_W, ART_H = 1080, 560
+ART_W, ART_H = 1080, 600
 STYLES = ("exaggeration", "animal", "material", "shape", "benefit", "contrast", "shadow")
 
 FONT = "A"
@@ -58,6 +58,46 @@ MATERIALS = {
 SHADOW = dict(main="#000", dark="#000", light="#000", accent="#000", ink="#000", white="#000", cargo=["#000"] * 5)
 
 
+_DEFS = {}
+
+
+def lg(c1, c2, vertical=True):
+    """Register a linear gradient and return its url()."""
+    gid = "lg" + str(abs(hash((c1, c2, vertical))) % 10**8)
+    if gid not in _DEFS:
+        xy = 'x1="0" y1="0" x2="0" y2="1"' if vertical else 'x1="0" y1="0" x2="1" y2="1"'
+        _DEFS[gid] = (f'<linearGradient id="{gid}" {xy}><stop offset="0" stop-color="{c1}"/>'
+                      f'<stop offset="1" stop-color="{c2}"/></linearGradient>')
+    return f"url(#{gid})"
+
+
+def rg(c1, c2):
+    gid = "rg" + str(abs(hash((c1, c2))) % 10**8)
+    if gid not in _DEFS:
+        _DEFS[gid] = (f'<radialGradient id="{gid}" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="{c1}"/>'
+                      f'<stop offset="1" stop-color="{c2}"/></radialGradient>')
+    return f"url(#{gid})"
+
+
+def shade(c, f):
+    """Lighten (f>0) or darken (f<0) a #rrggbb colour."""
+    if not (isinstance(c, str) and c.startswith("#") and len(c) == 7):
+        return c
+    r, g, b = (int(c[i:i + 2], 16) for i in (1, 3, 5))
+    if f >= 0:
+        r, g, b = (int(v + (255 - v) * f) for v in (r, g, b))
+    else:
+        r, g, b = (int(v * (1 + f)) for v in (r, g, b))
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+BASE_DEFS = ('<filter id="ds" x="-30%" y="-30%" width="160%" height="170%">'
+             '<feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/></filter>'
+             '<filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>'
+             '<radialGradient id="floorg"><stop offset="0" stop-color="#000" stop-opacity="0.55"/>'
+             '<stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>')
+
+
 def pal(name, override=None):
     p = dict(BASE.get(name, BASE["box"]))
     if override:
@@ -81,21 +121,30 @@ def text(x, y, s, size, fill, weight=800, anchor="middle", extra=""):
 # ---------------------------------------------------------------- props
 
 def p_box(p, label="MADE IN CHINA"):
-    return (f'<polygon points="-100,-20 0,-55 100,-20 0,15" fill="{p["light"]}"/>'
-            f'<polygon points="-100,-20 0,15 0,100 -100,65" fill="{p["main"]}"/>'
-            f'<polygon points="0,15 100,-20 100,65 0,100" fill="{p["dark"]}"/>'
-            f'<polygon points="-55,-36 50,0 66,-6 -40,-42" fill="{p["white"]}" fill-opacity="0.35"/>'
+    top, left, right = p["light"], p["main"], p["dark"]
+    return (f'<polygon points="-100,-20 0,-55 100,-20 0,15" fill="{lg(shade(top, .25), top)}"/>'
+            f'<polygon points="-100,-20 0,15 0,100 -100,65" fill="{lg(shade(left, .1), shade(left, -.12))}"/>'
+            f'<polygon points="0,15 100,-20 100,65 0,100" fill="{lg(right, shade(right, -.25))}"/>'
+            f'<polygon points="-62,-33 38,2 54,-4 -46,-39" fill="{shade(top, -.18)}"/>'
+            f'<polygon points="-50,-37 50,-2 54,-4 -46,-39" fill="#FFFFFF" fill-opacity="0.25"/>'
+            f'<polygon points="0,15 0,100 6,98 6,13" fill="#000" fill-opacity="0.12"/>'
+            f'<polyline points="-100,-20 0,15 100,-20" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>'
             f'<polygon points="-86,22 -14,44 -14,82 -86,60" fill="{p["white"]}"/>'
-            + text(-50, 54, label.split(" ")[0] if label else "", 13, p["accent"], extra='transform="rotate(17 -50 50)"')
-            + text(-50, 70, " ".join(label.split(" ")[1:]) if label else "", 13, p["ink"], extra='transform="rotate(17 -50 66)"'))
+            f'<polygon points="-86,22 -14,44 -14,50 -86,28" fill="{p["accent"]}"/>'
+            + text(-50, 62, label.split(" ")[0] if label else "", 12, p["accent"], extra='transform="rotate(17 -50 58)"')
+            + text(-50, 76, " ".join(label.split(" ")[1:]) if label else "", 12, p["ink"], extra='transform="rotate(17 -50 72)"')
+            + "".join(f'<path d="M{30 + i * 18} {8 - i * 6} l0 26 m6 -2 l0 26" stroke="{shade(right, -.35)}" stroke-width="3"/>' for i in range(3)))
 
 
 def p_container(p, label="CBD"):
-    ridges = "".join(f'<rect x="{-95 + i * 19}" y="-55" width="8" height="110" fill="{p["dark"]}"/>' for i in range(10))
-    return (f'<rect x="-110" y="-60" width="220" height="120" rx="6" fill="{p["main"]}"/>{ridges}'
-            f'<rect x="-110" y="-60" width="220" height="12" fill="{p["light"]}"/>'
-            f'<rect x="-110" y="48" width="220" height="12" fill="{p["dark"]}"/>'
-            f'<rect x="-46" y="-22" width="92" height="40" rx="6" fill="{p["white"]}"/>'
+    m = p["main"]
+    ridges = "".join(f'<rect x="{-95 + i * 19}" y="-52" width="9" height="104" fill="{lg(shade(m, -.25), shade(m, -.05))}"/>'
+                     f'<rect x="{-95 + i * 19}" y="-52" width="2" height="104" fill="#FFFFFF" fill-opacity="0.25"/>' for i in range(10))
+    return (f'<polygon points="-110,-60 110,-60 134,-76 -86,-76" fill="{shade(m, .25)}"/>'
+            f'<polygon points="110,-60 134,-76 134,44 110,60" fill="{shade(m, -.4)}"/>'
+            f'<rect x="-110" y="-60" width="220" height="120" fill="{lg(shade(m, .1), shade(m, -.2))}"/>{ridges}'
+            + "".join(f'<rect x="{x}" y="{y}" width="14" height="14" fill="{shade(m, -.5)}"/>' for x in (-110, 96) for y in (-60, 46))
+            + f'<rect x="-46" y="-22" width="92" height="40" rx="6" fill="{p["white"]}"/>'
             + text(0, 10, label, 28, p["ink"]))
 
 
@@ -138,9 +187,12 @@ def p_factory(p):
 
 
 def p_coin(p):
-    return (f'<circle r="90" fill="{p["dark"]}"/><circle r="80" fill="{p["main"]}"/>'
-            f'<circle r="62" fill="none" stroke="{p["light"]}" stroke-width="6"/>'
-            + text(0, 30, "৳", 86, p["ink"]))
+    return (f'<ellipse cx="0" cy="10" rx="90" ry="90" fill="{p["dark"]}"/>'
+            f'<circle r="88" fill="{rg(shade(p["main"], .45), p["dark"])}"/>'
+            f'<circle r="66" fill="none" stroke="{shade(p["main"], .5)}" stroke-width="5"/>'
+            f'<circle r="66" fill="none" stroke="{p["dark"]}" stroke-width="2" stroke-dasharray="4 6"/>'
+            + text(0, 30, "৳", 84, p["ink"])
+            + f'<path d="M-60 -40 Q-40 -70 -6 -76" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="8" stroke-linecap="round"/>')
 
 
 def p_money(p):
@@ -269,17 +321,21 @@ def prop(name, x, y, s=1.0, rot=0, material=None, shadow=False, label=None):
     p = pal(name, over)
     fn = PROPS[name]
     inner = fn(p, label) if (label is not None and name in ("box", "container", "tag")) else fn(p)
-    return T(x, y, s, rot, inner)
+    if shadow:
+        return T(x, y, s, rot, inner)
+    return f'<g filter="url(#ds)">{T(x, y, s, rot, inner)}</g>'
 
 
 # ---------------------------------------------------------------- animals
 
 def a_ant(c="#D9532B"):
-    legs = "".join(f'<path d="M{x} 6 L{x + d} 46" stroke="{c}" stroke-width="6" stroke-linecap="round"/>'
-                   for x, d in ((-40, -18), (-10, 0), (20, 16)))
-    return (legs + f'<ellipse cx="-70" cy="0" rx="40" ry="30" fill="{c}"/><ellipse cx="-10" cy="-4" rx="26" ry="20" fill="{c}"/>'
-            f'<circle cx="34" cy="-12" r="24" fill="{c}"/><circle cx="42" cy="-18" r="6" fill="#FFFFFF"/>'
-            f'<path d="M44 -32 Q60 -64 76 -60 M36 -34 Q44 -70 60 -72" fill="none" stroke="{c}" stroke-width="5" stroke-linecap="round"/>')
+    body = rg(shade(c, .35), shade(c, -.35))
+    legs = "".join(f'<path d="M{x} 6 Q{x + d / 2} 20 {x + d} 46" fill="none" stroke="{shade(c, -.4)}" stroke-width="6" stroke-linecap="round"/>'
+                   for x, d in ((-40, -22), (-10, 0), (20, 18)))
+    return (legs + f'<ellipse cx="-70" cy="0" rx="40" ry="30" fill="{body}"/><ellipse cx="-10" cy="-4" rx="26" ry="20" fill="{body}"/>'
+            f'<circle cx="34" cy="-12" r="24" fill="{body}"/><circle cx="42" cy="-18" r="7" fill="#FFFFFF"/><circle cx="44" cy="-18" r="3" fill="#111"/>'
+            f'<ellipse cx="-80" cy="-12" rx="14" ry="7" fill="#FFFFFF" fill-opacity="0.35"/>'
+            f'<path d="M44 -32 Q60 -64 76 -60 M36 -34 Q44 -70 60 -72" fill="none" stroke="{shade(c, -.4)}" stroke-width="5" stroke-linecap="round"/>')
 
 
 def a_eagle(c="#6B3E1F"):
@@ -329,7 +385,7 @@ ANIMALS = {"ant": a_ant, "eagle": a_eagle, "owl": a_owl, "turtle": a_turtle, "sn
 # ---------------------------------------------------------------- helpers
 
 def floor(y=470, w=900):
-    return f'<ellipse cx="540" cy="{y}" rx="{w / 2}" ry="26" fill="#000" fill-opacity="0.28"/>'
+    return f'<ellipse cx="540" cy="{y}" rx="{w / 2}" ry="34" fill="url(#floorg)"/>'
 
 
 def glow(x, y, r, c, o=0.3):
@@ -578,4 +634,7 @@ FUNCS = {"exaggeration": s_exaggeration, "animal": s_animal, "material": s_mater
 def render(style, spec, accent):
     if style not in FUNCS:
         raise ValueError(f"style must be one of {STYLES}, got {style!r}")
-    return FUNCS[style](spec or {}, accent)
+    _DEFS.clear()
+    body, ov = FUNCS[style](spec or {}, accent)
+    stage = (f'<ellipse cx="540" cy="520" rx="620" ry="120" fill="{accent}" fill-opacity="0.06"/>')
+    return f"<defs>{BASE_DEFS}{''.join(_DEFS.values())}</defs>{stage}{body}", ov

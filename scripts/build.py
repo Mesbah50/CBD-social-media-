@@ -129,7 +129,7 @@ def page(post):
             f'<div style="display:flex;gap:14px;align-items:center;font-size:29px;font-weight:600">'
             f'<span style="flex:0 0 36px;height:36px;border-radius:50%;background:{acc};color:{bg};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">{i + 1}</span>'
             f'<span>{html.escape(p)}</span></div>' for i, p in enumerate(post["points"][:3])) + "</div>"
-    hb = 230 if post.get("sub") else 300
+    hb = 200 if post.get("sub") else 250
     fonts = "".join(
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-bengali-{w}-normal.woff2)}}'
         for w in (500, 600, 700, 800)) + "".join(
@@ -138,6 +138,7 @@ def page(post):
     return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}</style></head><body>
 <div style="width:{W}px;height:{H}px;background:{bg};color:#fff;font-family:A;position:relative;overflow:hidden">
 <div style="position:absolute;right:-200px;top:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,{acc}33 0%,{acc}00 65%)"></div>
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(255,255,255,0.07) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,0.45) 100%)"></div>
 <div style="position:absolute;left:0;bottom:80px;width:{creative.ART_W}px;height:{creative.ART_H}px">
  <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
  {art_ov}
@@ -149,14 +150,14 @@ def page(post):
   <div style="background:#FEFEFE;border-radius:18px;padding:4px 8px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:200px;display:block"></div>
  </div>
  <div id="hookbox" style="height:{hb}px;display:flex;flex-direction:column;justify-content:center">
-  <div id="hook" style="font-size:92px;font-weight:800;line-height:1.34">{hook_html(post['hook'], acc, bg)}</div>
+  <div id="hook" style="font-size:84px;font-weight:800;line-height:1.3">{hook_html(post['hook'], acc, bg)}</div>
  </div>
  {sub}{pts}
 </div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:80px;background:#060F22;display:flex;align-items:center;justify-content:space-between;padding:0 60px;font-size:30px;font-weight:700">
  <span>সেভ করে রাখুন</span><span style="color:{acc}">বিস্তারিত ক্যাপশনে ↓</span>
 </div></div>
-<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=92;while(h.scrollHeight>b.clientHeight&&s>48){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
+<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=84;while(h.scrollHeight>b.clientHeight&&s>48){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
 </body></html>"""
 
 
