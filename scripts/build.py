@@ -2,7 +2,7 @@
 """Render the day's post images from posts/<date>/content.json.
 
 Usage: python3 scripts/build.py posts/2026-10-28/content.json
-Writes posts/<date>/post-<slot>.png (1080x1350) next to the JSON.
+Writes posts/<date>/post-<slot>.png (1080x1080, 1:1) next to the JSON.
 """
 import html
 import json
@@ -13,7 +13,7 @@ import sys
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-W, H = 1080, 1350
+W, H = 1080, 1080
 
 # Six categories: label shown on the image, accent colours, illustration.
 CATS = {
@@ -102,7 +102,7 @@ def art(cat, acc):
                 f'<g transform="translate(240 260)"><circle cy="-30" r="110" fill="{acc}" fill-opacity="0.25"/><circle cy="-30" r="80" fill="{acc}"/>'
                 '<rect x="-36" y="46" width="72" height="22" rx="6" fill="#C9D3E6"/><rect x="-30" y="72" width="60" height="18" rx="6" fill="#9AA7BF"/>'
                 '<path d="M-20 -30 L0 0 L20 -30" fill="none" stroke="#FFF" stroke-width="8" stroke-linecap="round"/></g>')
-    return f'<svg width="1080" height="470" viewBox="0 0 1080 470" xmlns="http://www.w3.org/2000/svg">{body}</svg>'
+    return f'<svg width="1080" height="370" viewBox="0 0 1080 470" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">{body}</svg>'
 
 
 def hook_html(text, acc, bg):
@@ -116,14 +116,16 @@ def hook_html(text, acc, bg):
 def page(post):
     c = CATS[post["category"]]
     acc, bg = c["accent"], c["bg"]
-    sub = f'<div style="font-size:40px;font-weight:600;color:#D7DEEA;line-height:1.35">{html.escape(post["sub"])}</div>' if post.get("sub") else ""
+    sub = f'<div style="font-size:36px;font-weight:600;color:#D7DEEA;line-height:1.3">{html.escape(post["sub"])}</div>' if post.get("sub") else ""
     pts = ""
     if post.get("points"):
         pts = '<div style="display:flex;flex-direction:column;gap:10px">' + "".join(
-            f'<div style="display:flex;gap:14px;align-items:center;font-size:31px;font-weight:600">'
-            f'<span style="flex:0 0 40px;height:40px;border-radius:50%;background:{acc};color:{bg};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">{i + 1}</span>'
+            f'<div style="display:flex;gap:14px;align-items:center;font-size:29px;font-weight:600">'
+            f'<span style="flex:0 0 36px;height:36px;border-radius:50%;background:{acc};color:{bg};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">{i + 1}</span>'
             f'<span>{html.escape(p)}</span></div>' for i, p in enumerate(post["points"][:3])) + "</div>"
-    hb = 290 if post.get("points") else (390 if post.get("sub") else 470)
+    sea_h = {"problem": 110, "news": 87, "alert": 87, "idea": 87}.get(post["category"], 0)
+    sea_strip = (f'<div style="position:absolute;left:0;right:0;bottom:80px;height:{sea_h}px;background:#123A7A"></div>' if sea_h else "")
+    hb = 200 if post.get("points") else (300 if post.get("sub") else 390)
     fonts = "".join(
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-bengali-{w}-normal.woff2)}}'
         for w in (500, 600, 700, 800)) + "".join(
@@ -132,22 +134,22 @@ def page(post):
     return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}</style></head><body>
 <div style="width:{W}px;height:{H}px;background:{bg};color:#fff;font-family:A;position:relative;overflow:hidden">
 <div style="position:absolute;right:-200px;top:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,{acc}33 0%,{acc}00 65%)"></div>
-<div style="position:absolute;left:0;bottom:90px">{art(post["category"], acc)}</div>
+{sea_strip}<div style="position:absolute;left:0;bottom:80px">{art(post["category"], acc)}</div>
 <div style="position:absolute;left:0;right:0;bottom:90px;height:120px;background:linear-gradient(to bottom,{bg}00,{bg}00)"></div>
-<div style="position:relative;padding:60px 64px 0 64px;display:flex;flex-direction:column;gap:24px">
+<div style="position:relative;padding:48px 60px 0 60px;display:flex;flex-direction:column;gap:18px">
  <div style="display:flex;justify-content:space-between;align-items:center">
-  <div style="background:{c['badge']};font-size:36px;font-weight:700;padding:10px 30px;border-radius:999px">{c['label']}</div>
-  <div style="background:#FEFEFE;border-radius:18px;padding:4px 8px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:220px;display:block"></div>
+  <div style="background:{c['badge']};font-size:32px;font-weight:700;padding:8px 26px;border-radius:999px">{c['label']}</div>
+  <div style="background:#FEFEFE;border-radius:18px;padding:4px 8px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:200px;display:block"></div>
  </div>
  <div id="hookbox" style="height:{hb}px;display:flex;flex-direction:column;justify-content:center">
-  <div id="hook" style="font-size:100px;font-weight:800;line-height:1.36">{hook_html(post['hook'], acc, bg)}</div>
+  <div id="hook" style="font-size:92px;font-weight:800;line-height:1.34">{hook_html(post['hook'], acc, bg)}</div>
  </div>
  {sub}{pts}
 </div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:90px;background:#060F22;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:32px;font-weight:700">
+<div style="position:absolute;left:0;right:0;bottom:0;height:80px;background:#060F22;display:flex;align-items:center;justify-content:space-between;padding:0 60px;font-size:30px;font-weight:700">
  <span>সেভ করে রাখুন</span><span style="color:{acc}">বিস্তারিত ক্যাপশনে ↓</span>
 </div></div>
-<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=100;while(h.scrollHeight>b.clientHeight&&s>56){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
+<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=92;while(h.scrollHeight>b.clientHeight&&s>48){{s-=4;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
 </body></html>"""
 
 

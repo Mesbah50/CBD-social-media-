@@ -53,7 +53,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. Slots 1–5 carry no name or phone number. 120–250 words, short paragraphs, a few emojis are fine.
    - `hashtags`: 8–12, mixing Bengali and English. Always include #ChinaBondBD #CBD #ImportFromChina, then topic tags.
    - `alt`: one-line description of the image.
-5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1350). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
+5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1080, 1:1). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
 6. **Commit and push** the date folder and the updated `topics_log.md` (one line per post: `- <date> | <category> | <topic>`).
 7. **Schedule in Buffer** — 18 posts (6 posts × 3 channels) with `create_post`:
    - `mode: "customScheduled"`, `dueAt: "<date>T<time>:00+06:00"`, `schedulingType: "automatic"`
