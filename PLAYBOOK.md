@@ -74,4 +74,5 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 - No copied text from articles: summarise in your own words, credit the source.
 - Facebook-safe wording: no medical promises ("ব্যথা ভালো হয়ে যাবে", "৭ দিনে উধাও"), no hooks that point at the reader's body or condition ("আপনার কি কোমর ব্যথা?" → "যারা দীর্ঘক্ষণ বসে কাজ করেন…"), no before/after claims.
 - Never mention any author, book title or other person's Facebook ID from the source material.
+- Always write the marketplace name as `1688` in English digits — never `১৬৮৮` — in images, captions and hashtags.
 - Images carry no phone number and no person's name. The only name/number allowed anywhere is `Mesbah Uddin — WhatsApp: 01606481782`, and only in captions that need a contact line.
