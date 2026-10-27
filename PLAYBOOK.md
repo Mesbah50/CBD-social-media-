@@ -32,7 +32,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 ## Daily steps
 
 1. **Set up.** Attach and clone this repo (`Mesbah50/CBD-social-media-`, push access). Make sure Playwright's Chromium is installed (`python3 -m playwright install chromium` if rendering fails).
-2. **Check what was already posted.** Read `topics_log.md`. Never repeat a topic or angle from the last 30 days.
+2. **Check what was already posted, and load the know-how.** Read `topics_log.md` — never repeat a topic or angle from the last 30 days. Read `KNOWLEDGE.md` — the owner's own sourcing and winning-product method. Build most posts on it (steps, checklists, mistakes, examples), and hook each one to something trending today.
 3. **Research today's trends** (WebSearch, several searches, recent results first):
    - Bangladesh: NBR customs duty / SRO changes, Bangladesh Bank LC and dollar rate news, Chattogram port situation, budget announcements, e-commerce rules.
    - World: container and air freight rate news, China export policy, trade fairs (Canton Fair etc.), tariffs.
@@ -70,3 +70,5 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 - Never use the owner's photos unless he provides one for that post. Never use photos of real people.
 - Images and captions only. No reels, no video.
 - No copied text from articles: summarise in your own words, credit the source.
+- Facebook-safe wording: no medical promises ("ব্যথা ভালো হয়ে যাবে", "৭ দিনে উধাও"), no hooks that point at the reader's body or condition ("আপনার কি কোমর ব্যথা?" → "যারা দীর্ঘক্ষণ বসে কাজ করেন…"), no before/after claims.
+- Never mention any author, book title or other person's Facebook ID from the source material.
