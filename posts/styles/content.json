@@ -1,0 +1,9 @@
+{"date":"styles","posts":[
+{"slot":1,"category":"cost","style":"exaggeration","hook":"1688-এর দামে [লাভের বন্যা]","sub":"সঠিক সোর্স = বেশি লাভ","art":{"mode":"stream","source":"box","effect":"coin"}},
+{"slot":2,"category":"idea","style":"animal","hook":"ছোট পুঁজি, [বড় ইমপোর্ট]","sub":"১ পিস থেকেও শুরু করা যায়","art":{"animal":"ant","object":"container"}},
+{"slot":3,"category":"problem","style":"material","hook":"[লুকানো চার্জ] নেই, সব স্বচ্ছ","sub":"অর্ডারের আগেই পুরো খরচ জানুন","art":{"object":"container","material":"glass"}},
+{"slot":4,"category":"trending","style":"shape","hook":"যাচাই করা সাপ্লায়ার [মানেই নিশ্চিন্ত]","art":{"unit":"box","shape":"check"}},
+{"slot":5,"category":"idea","style":"benefit","hook":"আপনি শুধু [প্রোডাক্ট বাছুন]","art":{"object":"box","callouts":["1688-এর দাম","স্যাম্পল যাচাই","শিপিং ও কাস্টমস","১ পিস থেকেও"]}},
+{"slot":6,"category":"alert","style":"contrast","hook":"শিপিং মার্ক ছাড়া [মাল হারায়]","art":{"left":{"objects":["box"],"arrange":"messy","label":"মার্ক ছাড়া"},"right":{"objects":["box","box","box"],"arrange":"neat","label":"মার্কসহ"}}},
+{"slot":7,"category":"news","style":"shadow","hook":"আজ ১টা স্যাম্পল, [কাল পুরো জাহাজ]","art":{"object":"box","shadow":"ship"}}
+]}

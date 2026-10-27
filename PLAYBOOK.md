@@ -45,7 +45,8 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
      {"slot": 1, "category": "problem",
       "hook": "সাপ্লায়ার টাকা নিয়ে [উধাও?]",
       "sub": "অর্ডারের আগে এই ৩টা জিনিস যাচাই করুন",
-      "points": ["…", "…", "…"],
+      "style": "contrast",
+      "art": {"left": {"objects": ["money"], "arrange": "single", "label": "বাইরে পেমেন্ট"}, "right": {"objects": ["cart"], "arrange": "single", "label": "1688-এর ভেতরে"}},
       "caption": "…", "hashtags": "#ChinaBondBD …", "alt": "…"}
    ]}
    ```
@@ -53,6 +54,18 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. Slots 1–5 carry no name or phone number. 120–250 words, short paragraphs, a few emojis are fine.
    - `hashtags`: 8–12, mixing Bengali and English. Always include #ChinaBondBD #CBD #ImportFromChina, then topic tags.
    - `alt`: one-line description of the image.
+   - **Every image is a creative concept in exactly one of 7 styles** (`"style"` + `"art"` in each post). Pick the style that fits the topic best and vary styles across the day. Never make an image outside these 7:
+     | style | idea | `art` fields |
+     |---|---|---|
+     | `exaggeration` | benefit/problem blown up beyond reality | `mode`: stream (small `source` erupts into many `effect`) / giant (tiny `source` next to huge `effect`) / lift; `source`, `effect`, optional `label` |
+     | `animal` | an animal's known trait = the message (ant carries far more than its size, eagle = speed/direct, owl = checking/wisdom, turtle/snail = slow, bee = hard work) | `animal`: ant/eagle/owl/turtle/snail/bee; `object`; optional `label` |
+     | `material` | object made of another material (gold = valuable, glass = transparent, steel = protected, cloud/cotton = soft, feather = light, ice = cool) | `object`, `material`: gold/glass/steel/cloud/cotton/feather/ice; optional `label` |
+     | `shape` | many small objects arranged into a meaningful shape | `unit`, `shape`: check/heart/arrow/graph/circle/stairs/taka; optional `label` |
+     | `benefit` | product/service in the centre with up to 4 benefit callouts (≤ 4 words each) | `object`, `callouts` [..] |
+     | `contrast` | split screen: wrong way (grey, ✗) vs right way (colour, ✓) | `left` {objects, arrange: messy/neat/single, label}, `right` {…} |
+     | `shadow` | an object casts the shadow of what it can become / hides | `object`, `shadow`; optional `label` |
+     Objects available: box, container, ship, plane, warehouse, factory, coin, money, cushion, cloud, blocks, magnifier, question, check, cross, tag, phone, cart, shop, lamp, trophy, chair, pan. Reference renders of all 7 are in `posts/styles/`.
+   - With a creative image, keep `hook` short (≤ 7 words) and `sub` optional; don't use `points` (put lists in the caption).
 5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1080, 1:1). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
 6. **Commit and push** the date folder and the updated `topics_log.md` (one line per post: `- <date> | <category> | <topic>`).
 7. **Schedule in Buffer** — 18 posts (6 posts × 3 channels) with `create_post`:

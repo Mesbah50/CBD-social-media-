@@ -12,6 +12,9 @@ import sys
 
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import creative  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 W, H = 1080, 1080
 
@@ -116,16 +119,17 @@ def hook_html(text, acc, bg):
 def page(post):
     c = CATS[post["category"]]
     acc, bg = c["accent"], c["bg"]
+    if post.get("style") not in creative.STYLES:
+        raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
+    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), acc)
     sub = f'<div style="font-size:36px;font-weight:600;color:#D7DEEA;line-height:1.3">{html.escape(post["sub"])}</div>' if post.get("sub") else ""
     pts = ""
-    if post.get("points"):
+    if False and post.get("points"):
         pts = '<div style="display:flex;flex-direction:column;gap:10px">' + "".join(
             f'<div style="display:flex;gap:14px;align-items:center;font-size:29px;font-weight:600">'
             f'<span style="flex:0 0 36px;height:36px;border-radius:50%;background:{acc};color:{bg};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">{i + 1}</span>'
             f'<span>{html.escape(p)}</span></div>' for i, p in enumerate(post["points"][:3])) + "</div>"
-    sea_h = {"problem": 110, "news": 87, "alert": 87, "idea": 87}.get(post["category"], 0)
-    sea_strip = (f'<div style="position:absolute;left:0;right:0;bottom:80px;height:{sea_h}px;background:#123A7A"></div>' if sea_h else "")
-    hb = 200 if post.get("points") else (300 if post.get("sub") else 390)
+    hb = 230 if post.get("sub") else 300
     fonts = "".join(
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-bengali-{w}-normal.woff2)}}'
         for w in (500, 600, 700, 800)) + "".join(
@@ -134,7 +138,10 @@ def page(post):
     return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}</style></head><body>
 <div style="width:{W}px;height:{H}px;background:{bg};color:#fff;font-family:A;position:relative;overflow:hidden">
 <div style="position:absolute;right:-200px;top:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,{acc}33 0%,{acc}00 65%)"></div>
-{sea_strip}<div style="position:absolute;left:0;bottom:80px">{art(post["category"], acc)}</div>
+<div style="position:absolute;left:0;bottom:80px;width:{creative.ART_W}px;height:{creative.ART_H}px">
+ <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
+ {art_ov}
+</div>
 <div style="position:absolute;left:0;right:0;bottom:90px;height:120px;background:linear-gradient(to bottom,{bg}00,{bg}00)"></div>
 <div style="position:relative;padding:48px 60px 0 60px;display:flex;flex-direction:column;gap:18px">
  <div style="display:flex;justify-content:space-between;align-items:center">
