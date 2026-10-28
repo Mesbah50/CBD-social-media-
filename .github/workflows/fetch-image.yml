@@ -1,0 +1,37 @@
+name: fetch-image
+# Downloads a finished post image (e.g. a Canva export link, which expires) and
+# commits it to the repo so Buffer gets a permanent raw.githubusercontent.com link.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Image URL to download"
+        required: true
+      path:
+        description: "Repo path to save to, e.g. posts/2026-10-29/post-1.png"
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env:
+          URL: ${{ inputs.url }}
+          DEST: ${{ inputs.path }}
+        run: |
+          case "$DEST" in posts/*.png|posts/*.jpg) ;; *) echo "bad path"; exit 1;; esac
+          mkdir -p "$(dirname "$DEST")"
+          curl -sSfL --max-time 120 -o "$DEST" "$URL"
+          file "$DEST" | grep -Eq 'PNG|JPEG' || { echo "not an image"; exit 1; }
+      - name: Commit
+        env:
+          DEST: ${{ inputs.path }}
+        run: |
+          git config user.name "cbd-bot"
+          git config user.email "cbd-bot@users.noreply.github.com"
+          git add "$DEST"
+          git commit -m "Add $DEST" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
