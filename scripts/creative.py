@@ -306,12 +306,27 @@ def p_pan(p):
             + "".join(f'<circle cx="{x}" cy="{y}" r="7" fill="{p["accent"]}"/>' for x, y in ((-60, -40), (-20, -60), (20, -44), (-40, -80), (10, -90))))
 
 
+def p_sunset_lamp(p):
+    """LED sunset projection lamp: round base, thin pole, angled head, and the orange 'sunset' circle it throws on the wall."""
+    return (f'<defs><radialGradient id="sunsetg" cx="0.5" cy="0.5" r="0.5">'
+            f'<stop offset="0" stop-color="#FFE08A"/><stop offset="0.45" stop-color="#FF9A3C"/>'
+            f'<stop offset="0.8" stop-color="#F0563A"/><stop offset="1" stop-color="#C2306B" stop-opacity="0"/></radialGradient></defs>'
+            f'<circle cx="-55" cy="-70" r="118" fill="url(#sunsetg)"/>'
+            f'<path d="M30 -2 L-40 -60 L-70 -36 Z" fill="#FFB35C" fill-opacity="0.35"/>'
+            f'<ellipse cx="48" cy="104" rx="46" ry="12" fill="#1E2126"/>'
+            f'<rect x="44" y="20" width="8" height="84" rx="4" fill="#2B2F36"/>'
+            f'<g transform="translate(48 14) rotate(-38)">'
+            f'<rect x="-30" y="-16" width="60" height="32" rx="10" fill="#2B2F36"/>'
+            f'<rect x="-36" y="-19" width="12" height="38" rx="5" fill="#3B4048"/>'
+            f'<ellipse cx="-38" cy="0" rx="6" ry="16" fill="#FFB35C"/></g>')
+
+
 PROPS = {
     "box": p_box, "container": p_container, "ship": p_ship, "plane": p_plane, "warehouse": p_warehouse,
     "factory": p_factory, "coin": p_coin, "money": p_money, "cushion": p_cushion, "cloud": p_cloud,
     "blocks": p_blocks, "magnifier": p_magnifier, "question": p_question, "check": p_check, "cross": p_cross,
     "tag": p_tag, "phone": p_phone, "cart": p_cart, "shop": p_shop, "lamp": p_lamp, "trophy": p_trophy,
-    "chair": p_chair, "pan": p_pan,
+    "chair": p_chair, "pan": p_pan, "sunset_lamp": p_sunset_lamp,
 }
 
 
