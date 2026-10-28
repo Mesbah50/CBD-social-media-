@@ -42,7 +42,7 @@ BASE = {
     "trophy": dict(main="#F4C430", dark="#C99A0E", light="#FFE07A", accent="#8A5A00", ink="#7A5A00", white="#FFFFFF"),
     "chair": dict(main="#3A4D75", dark="#1A2747", light="#5B6B8C", accent="#5B8DEF", ink="#0B1B3A", white="#FFFFFF"),
     "pan": dict(main="#3B3F46", dark="#1E2126", light="#6B7280", accent="#FFB000", ink="#0B1B3A", white="#FFFFFF"),
-    "factory": dict(main="#3A4D75", dark="#2C3D63", light="#5B6B8C", accent="#E63946", ink="#0B1B3A", white="#FFFFFF"),
+    "factory": dict(main="#E8EEF8", dark="#7A8BAA", light="#C9D3E6", accent="#E63946", ink="#0B1B3A", white="#FFFFFF"),
 }
 
 MATERIALS = {
