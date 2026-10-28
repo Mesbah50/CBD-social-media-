@@ -69,6 +69,17 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    - With a creative image, keep `hook` short (≤ 7 words) and `sub` optional; don't use `points` (put lists in the caption).
    - **`ai_prompt` (required from 29 Oct 2026):** an English prompt for a realistic photo of the creative concept (the same style + idea as `style`/`art`). Write it like a photographer's brief, 50–80 words: subject and the metaphor (e.g. "a shipping container made of polished gold" for `material`, "a tiny ant carrying a huge stack of export cartons" for `animal`, split scene for `contrast`, real object casting a shadow of something else for `shadow`), import elements (cargo ship, containers, cartons, warehouse, factory, plane) where they fit, deep royal-blue / navy colour mood to match the CBD blue panel, studio or cinematic lighting, sharp detail, lens spec (35mm / 85mm), wide 2:1 composition with the subject centred. Always end with: "No text, no letters, no logos, no people, no faces." Never ask for a specific product (no product posts).
 5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1080, 1:1). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
+   **The AI photo must always BE the post's style — one of the owner's 7 ideas, never a plain/generic photo.** Build `ai_prompt` from the matching pattern:
+     | style | how the photo must look |
+     |---|---|
+     | `exaggeration` | the benefit or problem blown far beyond reality (a tiny parcel bursting into a flood of cartons, a giant container next to a tiny shop) |
+     | `animal` | a real animal whose known trait is the message (ant carrying a huge carton stack = small importer, carrying more; eagle = fast/direct; owl = checking; turtle/snail = slow shipping; bee = hard work) |
+     | `material` | the object made of another material that carries the meaning (gold container = valuable, glass box = transparent deal, steel carton = protected, cotton/cloud = soft, feather = light, ice = cool) |
+     | `shape` | many small objects (cartons, coins, containers) arranged into a meaningful shape: check mark, arrow, rising graph, heart, taka sign, stairs |
+     | `benefit` | the subject hero-lit in the centre with clear space around it for the benefit message |
+     | `contrast` | split frame: left side wrong way (grey, messy, dim), right side right way (bright, neat, blue) |
+     | `shadow` | a real object whose shadow on the wall is what it can become or what it hides (small carton casting a warehouse shadow, cheap deal casting a trap shadow) |
+     Before generating, check the prompt names the style's device explicitly; after generating, reject and regenerate if the photo does not show it.
    Because every post has `ai_prompt`, build.py also writes `overlay-<slot>.png`: the full brand layout (background, logo, quote mark, hook boxes, footer) with a transparent hole where the blue panel is. `post-<slot>.png` is the fallback image (drawn creative) if the AI steps fail.
 5b. **Make the realistic image in Canva** (Canva connector), one post at a time, after pushing the overlays (step 6 can run first):
    1. `generate-image` with the post's `ai_prompt`, `aspectRatio: "LANDSCAPE_2_1"`. Poll `get-generate-image-job` until SUCCESS and look at the preview: no text/letters, no people, the concept is clear and on-theme. If it fails the check, regenerate once with a tightened prompt. Keep the media id.
