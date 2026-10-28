@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Render the day's post images from posts/<date>/content.json.
+"""Render the day's posts in the CBD Brand Post Guide style (owner's PDF, from 29 Oct 2026).
 
-Usage: python3 scripts/build.py posts/2026-10-28/content.json
-Writes posts/<date>/post-<slot>.png (1080x1080, 1:1) next to the JSON.
+Usage: python3 scripts/build.py posts/<date>/content.json
+For every post writes, next to the JSON:
+  post-<slot>.png     finished 1080x1080 image with the flat kit drawing in the photo slot (fallback)
+  overlay-<slot>.png  same layout with a transparent rounded hole where the photo goes (Canva step)
+  slot-<slot>.json    the photo slot rectangle + Canva aspect ratio for that layout
 """
 import html
 import json
@@ -13,192 +16,253 @@ import sys
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import creative  # noqa: E402
-import background  # noqa: E402
+import kit  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-W, H = 1080, 1080
+W = H = 1080
 
-# Six categories: label shown on the image, accent colours, illustration.
-CATS = {
-    "problem":  {"label": "সমস্যা ও সমাধান", "bg": "#0B1B3A", "accent": "#FFD60A", "badge": "#E63946"},
-    "news":     {"label": "ইমপোর্ট নিউজ",     "bg": "#0F2A4A", "accent": "#5CC8FF", "badge": "#1F6FD1"},
-    "trending": {"label": "ট্রেন্ডিং প্রোডাক্ট", "bg": "#2A0F2E", "accent": "#FFB000", "badge": "#E63946"},
-    "learn":    {"label": "ইমপোর্ট শিখুন",     "bg": "#0B1B3A", "accent": "#0085FE", "badge": "#0085FE"},
-    "cost":     {"label": "খরচ ও লাভের হিসাব", "bg": "#0C2B24", "accent": "#2EE6A6", "badge": "#1FA463"},
-    "alert":    {"label": "সতর্কতা",            "bg": "#2B0E0E", "accent": "#FFD60A", "badge": "#E63946"},
-    "idea":     {"label": "বিজনেস আইডিয়া",     "bg": "#0B1B3A", "accent": "#FF8A00", "badge": "#FF8A00"},
+# Brand Post Guide colours (only these).
+BLUE, RED, GRAY, WEDGE, WHITE = "#05358B", "#E40715", "#F0F0F2", "#5274A4", "#FFFFFF"
+
+CATS = {  # category -> (default layout, English tag, default kit drawing)
+    "problem": ("list", "PROBLEM & SOLUTION", "cartons"),
+    "news":    ("hero", "IMPORT NEWS", "route"),
+    "learn":   ("list", "LEARN IMPORT", "containers"),
+    "cost":    ("vs", "COST & PROFIT", "ship"),
+    "alert":   ("notice", "ALERT", "warehouse"),
+    "idea":    ("hero", "BUSINESS IDEA", "plane"),
 }
 
-PLANE = ('<g transform="translate({x} {y}) rotate({r}) scale({s})" fill="#FFFFFF">'
-         '<path d="M-70 0 L60 0 Q90 0 90 10 Q90 20 60 20 L-70 20 Z"/>'
-         '<path d="M-10 10 L-50 -60 L-28 -60 L30 10 Z"/><path d="M-10 10 L-50 80 L-28 80 L30 10 Z"/>'
-         '<path d="M-70 10 L-90 -24 L-76 -24 L-52 10 Z"/><path d="M-70 10 L-90 44 L-76 44 L-52 10 Z"/></g>')
+# Photo slot per layout: left, top, width, height, radius, Canva aspect ratio, slot on dark tile?
+SLOTS = {
+    "hero":   (60, 540, 960, 380, 28, "LANDSCAPE_2_1", False),
+    "list":   (60, 420, 420, 510, 28, "PORTRAIT_4_5", True),
+    "vs":     (60, 500, 960, 420, 28, "LANDSCAPE_2_1", False),
+    "notice": (60, 580, 960, 340, 28, "LANDSCAPE_2_1", True),
+}
+
+FOOT_LEFT = "WhatsApp: 01606481782"
+FOOT_RIGHT = "China Bond BD"
 
 
-def box(x, y, s=1.0):
-    return (f'<g transform="translate({x} {y}) scale({s})">'
-            '<ellipse cx="0" cy="150" rx="170" ry="18" fill="#000" fill-opacity="0.35"/>'
-            '<polygon points="-150,0 0,-40 150,0 0,40" fill="#E2B06E"/>'
-            '<polygon points="-150,0 0,40 0,150 -150,110" fill="#C98F45"/>'
-            '<polygon points="0,40 150,0 150,110 0,150" fill="#B07A35"/>'
-            '<polygon points="-90,-16 70,26 100,18 -60,-24" fill="#D9C29A"/>'
-            '<polygon points="-130,40 -20,68 -20,120 -130,92" fill="#FFFFFF"/>'
-            '<text x="-75" y="88" text-anchor="middle" font-size="22" font-weight="800" fill="#E63946" '
-            'transform="rotate(14 -75 85)" font-family="A">MADE IN CHINA</text></g>')
+def fonts():
+    out = []
+    for fam, files in (("A", [f"anek-bangla-bengali-{w}" for w in (600, 700, 800)] + [f"anek-bangla-latin-{w}" for w in (600, 700, 800)]),
+                       ("Hd", [f"hind-siliguri-bengali-{w}" for w in (400, 500, 600, 700)] + [f"hind-siliguri-latin-{w}" for w in (400, 500, 600, 700)]),
+                       ("P", [f"poppins-latin-{w}" for w in (400, 500, 600, 700, 800)])):
+        for f in files:
+            w = f.rsplit("-", 1)[1]
+            rng = ";unicode-range:U+0000-00FF,U+2000-206F" if "latin" in f and fam != "P" else ""
+            out.append(f"@font-face{{font-family:{fam};font-weight:{w};src:url({ROOT}/fonts/{f}-normal.woff2){rng}}}")
+    return "".join(out)
 
 
-def ship(x, y, s=1.0):
-    cols = ["#E63946", "#1F6FD1", "#FFD60A", "#1FA463", "#FF8A00", "#E63946", "#1F6FD1"]
-    c = "".join(f'<rect x="{-200 + (i % 4) * 78}" y="{-110 + (i // 4) * 50}" width="74" height="46" fill="{cols[i]}"/>'
-                for i in range(7))
-    return (f'<g transform="translate({x} {y}) scale({s})">{c}'
-            '<rect x="120" y="-150" width="60" height="140" fill="#F3F4F6"/><rect x="130" y="-136" width="40" height="18" fill="#0B1B3A"/>'
-            '<polygon points="-240,-10 220,-10 190,70 -210,70" fill="#C62F3B"/>'
-            '<rect x="-225" y="-10" width="430" height="12" fill="#F3F4F6"/>'
-            '<text x="-10" y="48" text-anchor="middle" font-size="28" font-weight="800" fill="#FFF" letter-spacing="4" font-family="A">CARGO</text></g>')
+def latin(t):
+    """Wrap runs of English words in Poppins (guide: English text is always Poppins)."""
+    return re.sub(r"([A-Za-z0-9][A-Za-z0-9 &/.,:+\-']*[A-Za-z0-9.]|[A-Za-z])",
+                  lambda m: f'<span style="font-family:P;font-weight:inherit">{m.group(1)}</span>'
+                  if re.search(r"[A-Za-z]", m.group(1)) else m.group(1), t)
 
 
-def sea(y):
-    wave = " ".join(f"T {i * 60} {y + 18}" for i in range(2, 20))
-    return (f'<rect x="0" y="{y}" width="1080" height="400" fill="#123A7A"/>'
-            f'<path d="M0 {y + 18} Q 30 {y + 6} 60 {y + 18} {wave}" fill="none" stroke="#4F7FD1" stroke-width="4"/>')
+def hook_html(text, dark):
+    """[word] = the one highlight. Dark bg: white text in a red pill. Light bg: red text."""
+    t = latin(html.escape(text))
+    if dark:
+        rep = r'<span class="hl">\1</span>'
+    else:
+        rep = rf'<span style="color:{RED}">\1</span>'
+    return re.sub(r"\[(.+?)\]", rep, t)
 
 
-def route(acc):
-    return ('<path d="M120 170 Q 540 20 960 150" fill="none" stroke="#FFF" stroke-opacity="0.55" stroke-width="5" stroke-dasharray="18 14"/>'
-            '<circle cx="120" cy="170" r="30" fill="#E63946"/><text x="120" y="181" text-anchor="middle" font-size="28" font-weight="800" fill="#FFF" font-family="A">CN</text>'
-            '<circle cx="960" cy="150" r="30" fill="#1FA463"/><circle cx="960" cy="150" r="11" fill="#E63946"/>'
-            + PLANE.format(x=560, y=75, r=8, s=0.65))
+def dots(x, y, cols, rows, color, op):
+    return "".join(f'<circle cx="{x + c * 34}" cy="{y + r * 34}" r="3.2" fill="{color}" fill-opacity="{op}"/>'
+                   for r in range(rows) for c in range(cols))
 
 
-def art(cat, acc):
-    """Bottom illustration, 1080 x 470, drawn per category. Always carries import elements."""
-    if cat == "problem":
-        body = (sea(330) + ship(700, 330, 0.85) + route(acc) +
-                '<g transform="translate(190 230)"><circle r="78" fill="#E63946"/><path d="M-30 -30 L30 30 M30 -30 L-30 30" stroke="#FFF" stroke-width="16" stroke-linecap="round"/></g>'
-                '<path d="M290 230 L380 230" stroke="#FFF" stroke-width="10" stroke-linecap="round"/><path d="M360 205 L390 230 L360 255" fill="none" stroke="#FFF" stroke-width="10" stroke-linecap="round"/>'
-                '<g transform="translate(470 230)"><circle r="78" fill="#1FA463"/><path d="M-34 0 L-8 26 L36 -24" fill="none" stroke="#FFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>')
-    elif cat == "news":
-        body = (sea(360) + ship(770, 360, 0.8) + route(acc) +
-                '<g transform="translate(170 215)"><rect width="380" height="230" rx="14" fill="#F3F4F6"/>'
-                f'<rect width="380" height="64" rx="14" fill="{acc}"/><text x="190" y="46" text-anchor="middle" font-size="40" font-weight="800" fill="#0B1B3A" font-family="A">NEWS</text>'
-                '<rect x="24" y="90" width="150" height="110" fill="#9AA7BF"/>'
-                + "".join(f'<rect x="196" y="{94 + i * 26}" width="{160 - (i % 2) * 40}" height="12" rx="6" fill="#9AA7BF"/>' for i in range(5))
-                + '<rect x="24" y="206" width="330" height="12" rx="6" fill="#9AA7BF"/></g>')
-    elif cat == "trending":
-        body = (route(acc) + box(330, 270, 1.15) +
-                f'<path d="M560 380 L680 290 L760 330 L930 170" fill="none" stroke="{acc}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>'
-                f'<path d="M880 160 L940 160 L940 220" fill="none" stroke="{acc}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>'
-                f'<g transform="translate(560 200)"><polygon points="0,-46 13,-14 48,-14 20,6 30,40 0,20 -30,40 -20,6 -48,-14 -13,-14" fill="{acc}"/></g>')
-    elif cat == "cost":
-        rows = "".join(f'<rect x="40" y="{40 + i * 46}" width="170" height="16" rx="8" fill="#9AA7BF"/>'
-                       f'<rect x="250" y="{40 + i * 46}" width="90" height="16" rx="8" fill="#5B6B8C"/>' for i in range(4))
-        body = (route(acc) + box(800, 280, 1.0) +
-                f'<g transform="translate(170 215)"><rect width="380" height="250" rx="16" fill="#F3F4F6"/>{rows}'
-                f'<rect x="40" y="226" width="300" height="4" fill="#0B1B3A"/></g>'
-                f'<g transform="translate(560 330)"><circle r="62" fill="{acc}"/><text y="24" text-anchor="middle" font-size="72" font-weight="800" fill="#0B1B3A" font-family="A">৳</text></g>')
-    elif cat == "alert":
-        body = (sea(360) + ship(780, 360, 0.75) + route(acc) +
-                f'<g transform="translate(300 290)"><polygon points="0,-150 165,130 -165,130" fill="{acc}" stroke="#0B1B3A" stroke-width="10" stroke-linejoin="round"/>'
-                '<rect x="-14" y="-60" width="28" height="120" rx="12" fill="#0B1B3A"/><circle cx="0" cy="96" r="17" fill="#0B1B3A"/></g>')
-    else:  # idea
-        body = (sea(360) + ship(800, 360, 0.75) + route(acc) + box(560, 330, 0.7) +
-                f'<g transform="translate(240 260)"><circle cy="-30" r="110" fill="{acc}" fill-opacity="0.25"/><circle cy="-30" r="80" fill="{acc}"/>'
-                '<rect x="-36" y="46" width="72" height="22" rx="6" fill="#C9D3E6"/><rect x="-30" y="72" width="60" height="18" rx="6" fill="#9AA7BF"/>'
-                '<path d="M-20 -30 L0 0 L20 -30" fill="none" stroke="#FFF" stroke-width="8" stroke-linecap="round"/></g>')
-    return f'<svg width="1080" height="370" viewBox="0 0 1080 470" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">{body}</svg>'
+def rounded_rect_path(x, y, w, h, r):
+    return (f"M{x + r} {y} H{x + w - r} A{r} {r} 0 0 1 {x + w} {y + r} V{y + h - r} A{r} {r} 0 0 1 {x + w - r} {y + h} "
+            f"H{x + r} A{r} {r} 0 0 1 {x} {y + h - r} V{y + r} A{r} {r} 0 0 1 {x + r} {y} Z")
 
 
-BRAND_BLUE = "#02378F"
-BRAND_ACCENT = "#0085FE"   # bright blue (from the reference) replaces red
-HL = "#1EA0FF"         # highlight colour on black boxes
+def logo(left=60, top=52, bg=WHITE):
+    return (f'<div style="position:absolute;left:{left}px;top:{top}px;width:236px;height:94px;border-radius:24px;background:{bg};'
+            f'display:flex;align-items:center;justify-content:center"><img src="{ROOT}/brand/cbd_logo_transparent.png" style="width:196px"></div>')
 
 
-def hook_html(text):
-    """[word] marks the highlighted (red) part of the hook."""
-    t = html.escape(text)
-    return re.sub(r"\[(.+?)\]", lambda m: f'<span style="color:{HL}">{m.group(1)}</span>', t)
+def tag(text, color, top=84):
+    return (f'<div style="position:absolute;right:64px;top:{top}px;font-family:P;font-weight:600;font-size:24px;'
+            f'letter-spacing:4px;color:{color}">{html.escape(text)}</div>')
 
 
-# Panel where the creative sits (an AI photo is placed here in Canva when "ai_prompt" is used).
-PANEL = (190, 150, 850, 440)  # left, top, width, height
+def footer(band, text_c, sub_c):
+    return (f'<div style="position:absolute;left:0;top:960px;width:{W}px;height:120px;background:{band};display:flex;'
+            f'align-items:center;justify-content:space-between;padding:0 64px">'
+            f'<div style="font-family:P;font-weight:600;font-size:30px;color:{text_c}">{FOOT_LEFT}</div>'
+            f'<div style="font-family:P;font-weight:500;font-size:28px;color:{sub_c}">{FOOT_RIGHT}</div></div>')
+
+
+def swoosh(d, width=6):
+    return (f'<svg width="{W}" height="{H}" style="position:absolute;left:0;top:0" xmlns="http://www.w3.org/2000/svg">'
+            f'<path d="{d}" fill="none" stroke="{RED}" stroke-width="{width}" stroke-linecap="round"/></svg>')
+
+
+def headline(post, dark, left, top, width, height, size, color):
+    return (f'<div class="fit" data-min="52" style="position:absolute;left:{left}px;top:{top}px;width:{width}px;height:{height}px;'
+            f'display:flex;flex-direction:column;justify-content:flex-start">'
+            f'<div class="t" style="font-family:A;font-weight:800;font-size:{size}px;line-height:1.28;color:{color}">'
+            f'{hook_html(post["hook"], dark)}</div></div>')
+
+
+def sub_line(post, color, left, top, width, size=34):
+    s = post.get("sub", "")
+    if not s:
+        return ""
+    return (f'<div style="position:absolute;left:{left}px;top:{top}px;width:{width}px;font-family:Hd;font-weight:500;'
+            f'font-size:{size}px;line-height:1.3;color:{color}">{latin(html.escape(s))}</div>')
+
+
+def photo_slot(layout, post, overlay):
+    x, y, w, h, r, _, dark_tile = SLOTS[layout]
+    if overlay:
+        return ""
+    name = post.get("fallback") or CATS[post["category"]][2]
+    return (f'<div style="position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:{r}px;overflow:hidden">'
+            f'{kit.svg(name, w, h, dark_tile, WHITE if layout == "vs" else None)}</div>')
+
+
+def layer(bg_html, layout, overlay):
+    """Background layers; in overlay mode a rounded hole is cut where the photo goes."""
+    if not overlay:
+        return f'<div style="position:absolute;inset:0">{bg_html}</div>'
+    x, y, w, h, r, *_ = SLOTS[layout]
+    clip = f"M0 0 H{W} V{H} H0 Z " + rounded_rect_path(x, y, w, h, r)
+    return f'<div style="position:absolute;inset:0;clip-path:path(evenodd, \'{clip}\')">{bg_html}</div>'
+
+
+def L_hero(post, ov):
+    tagtxt = post.get("tag") or CATS[post["category"]][1]
+    bg = (f'<div style="position:absolute;inset:0;background:{BLUE}"></div>'
+          f'<div style="position:absolute;left:640px;top:-120px;width:620px;height:620px;border-radius:50%;background:#FFFFFF;opacity:.06"></div>'
+          f'<svg width="{W}" height="{H}" style="position:absolute;left:0;top:0">{dots(0, 470, 9, 3, WHITE, .14)}</svg>')
+    cta = (f'<div style="position:absolute;left:60px;top:880px;height:72px;padding:0 34px;border-radius:40px;background:{RED};'
+           f'display:flex;align-items:center;gap:14px;font-family:Hd;font-weight:600;font-size:32px;color:{WHITE};'
+           f'box-shadow:0 6px 18px rgba(0,0,0,.25)">বিস্তারিত ক্যাপশনে <span style="font-family:P">&#8595;</span></div>')
+    return (layer(bg, "hero", ov) + logo() + tag(tagtxt, GRAY) +
+            headline(post, True, 60, 178, 960, 270, 96, WHITE) +
+            sub_line(post, GRAY, 60, 462, 960) +
+            photo_slot("hero", post, ov) + cta + footer(WHITE, BLUE, WEDGE))
+
+
+def L_list(post, ov):
+    tagtxt = post.get("tag") or CATS[post["category"]][1]
+    bg = (f'<div style="position:absolute;inset:0;background:{GRAY}"></div>'
+          f'<svg width="{W}" height="{H}" style="position:absolute;left:0;top:0">{dots(760, 34, 9, 5, WEDGE, .35)}</svg>')
+    pts = post.get("points") or []
+    nums = "০১ ০২ ০৩ ০৪".split()
+    n = max(1, min(4, len(pts)))
+    gap = 18
+    ch = (510 - gap * (n - 1)) / n
+    cards = ""
+    for i, p in enumerate(pts[:4]):
+        top = 420 + i * (ch + gap)
+        ic = RED if i == n - 1 else BLUE
+        cards += (f'<div style="position:absolute;left:510px;top:{top:.0f}px;width:510px;height:{ch:.0f}px;border-radius:24px;background:{WHITE};'
+                  f'display:flex;align-items:center;gap:20px;padding:0 26px">'
+                  f'<div style="flex:none;width:62px;height:62px;border-radius:50%;background:{ic};color:{WHITE};display:flex;align-items:center;'
+                  f'justify-content:center;font-family:A;font-weight:800;font-size:30px">{nums[i]}</div>'
+                  f'<div class="fit" data-min="22" style="flex:1;height:{ch - 20:.0f}px;display:flex;align-items:center">'
+                  f'<div class="t" style="font-family:Hd;font-weight:600;font-size:31px;line-height:1.25;color:{BLUE}">{latin(html.escape(p))}</div></div></div>')
+    sw = swoosh("M600 158 C 760 148, 900 142, 1020 138", 5)
+    return (layer(bg, "list", ov) + logo() + tag(tagtxt, WEDGE) + sw +
+            headline(post, False, 60, 182, 960, 150, 84, BLUE) +
+            sub_line(post, WEDGE, 60, 344, 960, 32) +
+            photo_slot("list", post, ov) + cards + footer(BLUE, WHITE, GRAY))
+
+
+def L_vs(post, ov):
+    a = post.get("art") or {}
+    lt, rt = a.get("left", {}), a.get("right", {})
+    bg = (f'<div style="position:absolute;left:0;top:0;width:540px;height:{H}px;background:{BLUE}"></div>'
+          f'<div style="position:absolute;left:540px;top:0;width:540px;height:{H}px;background:{GRAY}"></div>'
+          f'<svg width="{W}" height="{H}" style="position:absolute;left:0;top:0">{dots(0, 380, 6, 3, WHITE, .14)}{dots(820, 380, 8, 3, WEDGE, .35)}</svg>')
+
+    def side(s, x, dark):
+        lab = html.escape(s.get("tag", ""))
+        title = html.escape(s.get("label", ""))
+        subt = html.escape(s.get("sub", ""))
+        c, sc = (WHITE, GRAY) if dark else (BLUE, WEDGE)
+        return (f'<div style="position:absolute;left:{x}px;top:180px;width:440px">'
+                f'<div style="font-family:P;font-weight:600;font-size:22px;letter-spacing:4px;color:{sc}">{lab}</div>'
+                f'<div class="fit" data-min="40" style="height:150px;margin-top:6px"><div class="t" style="font-family:A;font-weight:800;'
+                f'font-size:68px;line-height:1.15;color:{c}">{latin(title)}</div></div>'
+                f'<div style="font-family:Hd;font-weight:500;font-size:30px;color:{sc};margin-top:4px">{latin(subt)}</div></div>')
+    vs = (f'<div style="position:absolute;left:490px;top:450px;width:100px;height:100px;border-radius:50%;background:{RED};'
+          f'border:6px solid {WHITE};display:flex;align-items:center;justify-content:center;font-family:P;font-weight:800;'
+          f'font-size:34px;color:{WHITE};box-shadow:0 6px 18px rgba(0,0,0,.2)">VS</div>')
+    return (layer(bg, "vs", ov) + logo() + side(lt, 60, True) + side(rt, 600, False) +
+            photo_slot("vs", post, ov) + vs + footer(WHITE, BLUE, WEDGE))
+
+
+def L_notice(post, ov):
+    head = post.get("notice_title") or "সতর্কতা"
+    tagtxt = post.get("tag") or CATS[post["category"]][1]
+    bell = (f'<svg width="90" height="90" viewBox="0 0 24 24" style="position:absolute;right:64px;top:56px" fill="none" stroke="{WHITE}" '
+            'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>'
+            '<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>')
+    bg = (f'<div style="position:absolute;inset:0;background:{WHITE}"></div>'
+          f'<div style="position:absolute;left:0;top:0;width:{W}px;height:200px;background:{RED}"></div>'
+          f'<svg width="{W}" height="200" style="position:absolute;left:0;top:0">{dots(620, 20, 13, 5, WHITE, .18)}</svg>')
+    title = (f'<div style="position:absolute;left:64px;top:46px;font-family:A;font-weight:800;font-size:84px;line-height:1.2;color:{WHITE}">'
+             f'{html.escape(head)}</div>')
+    route = (f'<svg width="{W}" height="120" style="position:absolute;left:0;top:236px">'
+             + "".join(f'<circle cx="{470 + i * 16}" cy="{60 - 6 * (i / 22)}" r="3" fill="{BLUE}"/>' for i in range(23))
+             + f'<circle cx="466" cy="60" r="7" fill="{RED}"/></svg>')
+    return (layer(bg, "notice", ov) + title + bell + logo(60, 236, GRAY) + route +
+            tag(tagtxt, WEDGE, 268) +
+            headline(post, False, 60, 360, 960, 200, 76, BLUE) +
+            photo_slot("notice", post, ov) + footer(BLUE, WHITE, GRAY))
+
+
+LAYOUTS = {"hero": L_hero, "list": L_list, "vs": L_vs, "notice": L_notice}
+
+
+def layout_of(post):
+    return post.get("layout") or CATS[post["category"]][0]
 
 
 def page(post, overlay=False):
-    """overlay=True: transparent PNG layer with a hole where the panel is (AI photo goes under it)."""
-    c = CATS[post["category"]]
-    if post.get("style") not in creative.STYLES:
-        raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
-    creative.GLOW = "#6F9BFF"
-    art_svg, art_ov = ("", "") if overlay else creative.render(post["style"], post.get("art", {}), BRAND_ACCENT)
-    px, py, pw, ph = PANEL
-    hole = (f"clip-path:polygon(evenodd,0 0,{W}px 0,{W}px {H}px,0 {H}px,0 0,"
-            f"{px}px {py}px,{px+pw}px {py}px,{px+pw}px {py+ph}px,{px}px {py+ph}px,{px}px {py}px);") if overlay else ""
-    panel_bg = "transparent" if overlay else BRAND_BLUE
-    bg_svg = background.svg(W, H)
-    sub = html.escape(post.get("sub", "")) or "বিস্তারিত ক্যাপশনে ↓"
-    fonts = "".join(
-        f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-bengali-{w}-normal.woff2)}}'
-        for w in (500, 600, 700, 800)) + "".join(
-        f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-latin-{w}-normal.woff2);unicode-range:U+0000-00FF}}'
-        for w in (500, 600, 700, 800))
-    k = 0.84  # art scale inside the frame
-    return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0;background:transparent}}*{{box-sizing:border-box}}
-.hook{{display:inline;background:#0E0E0E;color:#FFFFFF;padding:6px 26px;line-height:1.52;
-  box-decoration-break:clone;-webkit-box-decoration-break:clone}}</style></head><body>
-<div style="width:{W}px;height:{H}px;position:relative;overflow:hidden;font-family:A;color:#0E0E0E">
- <div style="position:absolute;inset:0;{hole}">{bg_svg}</div>
- <!-- brand blue block (where the reference has its colour panel) -->
- <div style="position:absolute;left:190px;top:150px;width:850px;height:440px;background:{panel_bg}"></div>
- <!-- quote mark -->
- <div style="position:absolute;left:30px;top:150px;font-size:230px;font-weight:800;line-height:1;color:{BRAND_ACCENT};font-family:Georgia,serif">&ldquo;</div>
- <!-- logo -->
- <div style="position:absolute;right:40px;top:34px;display:flex"><img src="{ROOT}/brand/cbd_logo_badge.png" style="width:210px;display:block"></div>
- <!-- creative concept -->
- <div style="position:absolute;left:160px;top:110px;width:{creative.ART_W * k:.0f}px;height:{creative.ART_H * k:.0f}px;clip-path:inset(40px -60px -120px -60px)">
-  <div style="position:absolute;left:0;top:0;width:{creative.ART_W}px;height:{creative.ART_H}px;transform:scale({k});transform-origin:0 0">
-   <svg width="{creative.ART_W}" height="{creative.ART_H}" viewBox="0 0 {creative.ART_W} {creative.ART_H}" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;top:0;font-family:A;overflow:visible">{art_svg}</svg>
-   {art_ov}
-  </div>
- </div>
- <!-- hook: stacked black boxes -->
- <div id="hookbox" style="position:absolute;left:44px;top:560px;width:700px;height:360px;display:flex;align-items:flex-start">
-  <div id="hook" style="font-size:78px;font-weight:800"><span class="hook">{hook_html(post['hook'])}</span></div>
- </div>
- <!-- attribution-style footer: red bar, category, sub line -->
- <div style="position:absolute;left:50px;bottom:40px;display:flex;gap:18px;align-items:stretch">
-  <div style="width:6px;background:{BRAND_ACCENT}"></div>
-  <div style="display:flex;flex-direction:column;gap:2px">
-   <div style="font-size:38px;font-weight:800;color:{BRAND_BLUE};line-height:1.2">{c['label']}</div>
-   <div style="font-size:28px;font-weight:600;color:#333;line-height:1.25">{sub}</div>
-  </div>
- </div>
-</div>
-<script>document.fonts.ready.then(()=>{{const h=document.getElementById('hook'),b=document.getElementById('hookbox');let s=78;
-while(h.scrollHeight>b.clientHeight&&s>38){{s-=2;h.style.fontSize=s+'px';}}document.body.dataset.ready=1;}});</script>
-</body></html>"""
+    lay = layout_of(post)
+    body = LAYOUTS[lay](post, overlay)
+    return f"""<html><head><meta charset="utf-8"><style>{fonts()}
+body{{margin:0;background:transparent}}*{{box-sizing:border-box}}
+.hl{{background:{RED};color:{WHITE};border-radius:18px;padding:0 24px;box-decoration-break:clone;-webkit-box-decoration-break:clone}}
+</style></head><body><div style="width:{W}px;height:{H}px;position:relative;overflow:hidden;font-family:Hd">{body}</div>
+<script>document.fonts.ready.then(()=>{{for(const b of document.querySelectorAll('.fit')){{const t=b.querySelector('.t');
+let s=parseFloat(getComputedStyle(t).fontSize);const m=+b.dataset.min;
+while((t.scrollHeight>b.clientHeight||t.scrollWidth>b.clientWidth)&&s>m){{s-=2;t.style.fontSize=s+'px';}}}}
+document.body.dataset.ready=1;}});</script></body></html>"""
 
 
 def main(path):
     path = pathlib.Path(path).resolve()
     data = json.loads(path.read_text(encoding="utf-8"))
-    out_dir = path.parent
+    out = path.parent
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
         for post in data["posts"]:
-            jobs = [(False, f"post-{post['slot']}.png")]
-            if post.get("ai_prompt"):
-                jobs.append((True, f"overlay-{post['slot']}.png"))
-            for ov, name in jobs:
-                f = out_dir / f"_tmp-{post['slot']}.html"
+            n = post["slot"]
+            for ov, name in ((False, f"post-{n}.png"), (True, f"overlay-{n}.png")):
+                f = out / f"_tmp-{n}.html"
                 f.write_text(page(post, ov), encoding="utf-8")
                 pg.goto("file://" + str(f))
-                pg.wait_for_selector("body[data-ready]", timeout=15000)
-                pg.screenshot(path=str(out_dir / name), omit_background=ov)
+                pg.wait_for_selector("body[data-ready]", timeout=20000)
+                pg.screenshot(path=str(out / name), omit_background=ov)
                 f.unlink()
-                print("rendered", out_dir / name)
+            x, y, w, h, r, ar, _ = SLOTS[layout_of(post)]
+            (out / f"slot-{n}.json").write_text(json.dumps(
+                {"layout": layout_of(post), "left": x, "top": y, "width": w, "height": h, "aspectRatio": ar}), encoding="utf-8")
+            print("rendered", out / f"post-{n}.png", "+ overlay")
         b.close()
 
 
