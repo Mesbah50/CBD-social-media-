@@ -22,7 +22,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 |------|-------|--------------|------------|
 | 1 | 08:00 | `problem`  | A real importer problem and its solution (customs hold, supplier fraud, wrong goods, damaged cargo, payment issues) |
 | 2 | 10:00 | `news`     | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
-| 3 | 15:00 | `trending` | A trending product in one of the 4 categories: what customer problem it solves, why it sells now |
+| 3 | 15:00 | `learn`    | "ইমপোর্ট শিখুন" — one step of the import process taught from KNOWLEDGE.md (1688 search, seller checks, factory vs trader, MOQ, negotiation, weight & landed cost, samples, damage agreement, shipping mark, packing list, order remark, agent choice…), hooked to a current news item |
 | 4 | 18:00 | `cost`     | Cost / profit breakdown (factory price, freight, duty, delivery); framed as "why is profit low" |
 | 5 | 19:00 | `alert`    | Scam alert, common beginner mistake, or myth vs fact |
 | 6 | 21:30 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + contact line |
@@ -78,6 +78,8 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 8. **Report** to the owner with SendUserMessage, in Bengali: the 6 topics, the times, and anything that failed.
 
 ## Rules that never change
+
+- NO PRODUCT POSTS (owner's instruction, 28 Oct 2026): never make a post about a specific product (no trending-product or "sell this item" posts). Product categories may be mentioned in passing, but no post is built around a particular product. This overrides any older rule about product posts or product photos.
 
 - Every post in content.json must carry a `"sources": ["<url>", ...]` list with the exact links its facts came from, so the owner can open them. A source you cannot link to cannot be used.
 

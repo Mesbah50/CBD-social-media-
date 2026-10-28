@@ -24,6 +24,7 @@ CATS = {
     "problem":  {"label": "সমস্যা ও সমাধান", "bg": "#0B1B3A", "accent": "#FFD60A", "badge": "#E63946"},
     "news":     {"label": "ইমপোর্ট নিউজ",     "bg": "#0F2A4A", "accent": "#5CC8FF", "badge": "#1F6FD1"},
     "trending": {"label": "ট্রেন্ডিং প্রোডাক্ট", "bg": "#2A0F2E", "accent": "#FFB000", "badge": "#E63946"},
+    "learn":    {"label": "ইমপোর্ট শিখুন",     "bg": "#0B1B3A", "accent": "#0085FE", "badge": "#0085FE"},
     "cost":     {"label": "খরচ ও লাভের হিসাব", "bg": "#0C2B24", "accent": "#2EE6A6", "badge": "#1FA463"},
     "alert":    {"label": "সতর্কতা",            "bg": "#2B0E0E", "accent": "#FFD60A", "badge": "#E63946"},
     "idea":     {"label": "বিজনেস আইডিয়া",     "bg": "#0B1B3A", "accent": "#FF8A00", "badge": "#FF8A00"},
