@@ -121,12 +121,21 @@ def hook_html(text):
     return re.sub(r"\[(.+?)\]", lambda m: f'<span style="color:{HL}">{m.group(1)}</span>', t)
 
 
-def page(post):
+# Panel where the creative sits (an AI photo is placed here in Canva when "ai_prompt" is used).
+PANEL = (190, 150, 850, 440)  # left, top, width, height
+
+
+def page(post, overlay=False):
+    """overlay=True: transparent PNG layer with a hole where the panel is (AI photo goes under it)."""
     c = CATS[post["category"]]
     if post.get("style") not in creative.STYLES:
         raise ValueError(f"slot {post.get('slot')}: style must be one of {creative.STYLES}")
     creative.GLOW = "#6F9BFF"
-    art_svg, art_ov = creative.render(post["style"], post.get("art", {}), BRAND_ACCENT)
+    art_svg, art_ov = ("", "") if overlay else creative.render(post["style"], post.get("art", {}), BRAND_ACCENT)
+    px, py, pw, ph = PANEL
+    hole = (f"clip-path:polygon(evenodd,0 0,{W}px 0,{W}px {H}px,0 {H}px,0 0,"
+            f"{px}px {py}px,{px+pw}px {py}px,{px+pw}px {py+ph}px,{px}px {py+ph}px,{px}px {py}px);") if overlay else ""
+    panel_bg = "transparent" if overlay else BRAND_BLUE
     bg_svg = background.svg(W, H)
     sub = html.escape(post.get("sub", "")) or "বিস্তারিত ক্যাপশনে ↓"
     fonts = "".join(
@@ -135,13 +144,13 @@ def page(post):
         f'@font-face{{font-family:A;font-weight:{w};src:url({ROOT}/fonts/anek-bangla-latin-{w}-normal.woff2);unicode-range:U+0000-00FF}}'
         for w in (500, 600, 700, 800))
     k = 0.84  # art scale inside the frame
-    return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0}}*{{box-sizing:border-box}}
+    return f"""<html><head><meta charset="utf-8"><style>{fonts}body{{margin:0;background:transparent}}*{{box-sizing:border-box}}
 .hook{{display:inline;background:#0E0E0E;color:#FFFFFF;padding:6px 26px;line-height:1.52;
   box-decoration-break:clone;-webkit-box-decoration-break:clone}}</style></head><body>
 <div style="width:{W}px;height:{H}px;position:relative;overflow:hidden;font-family:A;color:#0E0E0E">
- <div style="position:absolute;inset:0">{bg_svg}</div>
+ <div style="position:absolute;inset:0;{hole}">{bg_svg}</div>
  <!-- brand blue block (where the reference has its colour panel) -->
- <div style="position:absolute;left:190px;top:150px;width:850px;height:440px;background:{BRAND_BLUE}"></div>
+ <div style="position:absolute;left:190px;top:150px;width:850px;height:440px;background:{panel_bg}"></div>
  <!-- quote mark -->
  <div style="position:absolute;left:30px;top:150px;font-size:230px;font-weight:800;line-height:1;color:{BRAND_ACCENT};font-family:Georgia,serif">&ldquo;</div>
  <!-- logo -->
@@ -179,13 +188,17 @@ def main(path):
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
         for post in data["posts"]:
-            f = out_dir / f"_tmp-{post['slot']}.html"
-            f.write_text(page(post), encoding="utf-8")
-            pg.goto("file://" + str(f))
-            pg.wait_for_selector("body[data-ready]", timeout=15000)
-            pg.screenshot(path=str(out_dir / f"post-{post['slot']}.png"))
-            f.unlink()
-            print("rendered", out_dir / f"post-{post['slot']}.png")
+            jobs = [(False, f"post-{post['slot']}.png")]
+            if post.get("ai_prompt"):
+                jobs.append((True, f"overlay-{post['slot']}.png"))
+            for ov, name in jobs:
+                f = out_dir / f"_tmp-{post['slot']}.html"
+                f.write_text(page(post, ov), encoding="utf-8")
+                pg.goto("file://" + str(f))
+                pg.wait_for_selector("body[data-ready]", timeout=15000)
+                pg.screenshot(path=str(out_dir / name), omit_background=ov)
+                f.unlink()
+                print("rendered", out_dir / name)
         b.close()
 
 
