@@ -12,7 +12,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
   - Mesbah China Imports guide (Facebook page) — `6ad9fda3778b240e2f8b559f`
   - MESBAH UDDIN (LinkedIn profile) — `6ac5e1486a5c39ccb63c77a6`
 - Image hosting: this repo. Public image URL = `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/post-<slot>.png`
-- Contact (only when a post needs one, e.g. slot 6): `Mesbah Uddin — WhatsApp: 01606481782`. No other name or phone number ever appears in images or captions.
+- Contact: `Mesbah Uddin — WhatsApp: 01606481782` in captions that need it (slot 6); every image footer shows `WhatsApp: 01606481782` + `China Bond BD` (brand guide). No other name or phone number ever appears in images or captions.
 - Services: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service
 - Product categories: Baby Toy · Home & Pain Relief · Home Decor · Home Hacks
 
@@ -42,53 +42,52 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    Use only facts you found in a source today. Never invent figures, rates, or laws. If a number cannot be verified, leave it out. For `news`, name the source in the caption ("সূত্র: …").
 4. **Write `posts/<YYYY-MM-DD>/content.json`** in this shape:
    ```json
-   {"date": "2026-10-28", "posts": [
-     {"slot": 1, "category": "problem",
+   {"date": "2026-10-29", "posts": [
+     {"slot": 1, "category": "problem", "layout": "list",
       "hook": "সাপ্লায়ার টাকা নিয়ে [উধাও?]",
       "sub": "অর্ডারের আগে এই ৩টা জিনিস যাচাই করুন",
+      "points": ["1688-এর ভেতরে পেমেন্ট করুন", "দোকানের বয়স আর রিভিউ দেখুন", "আগে ছোট স্যাম্পল অর্ডার"],
       "style": "contrast",
-      "art": {"left": {"objects": ["money"], "arrange": "single", "label": "বাইরে পেমেন্ট"}, "right": {"objects": ["cart"], "arrange": "single", "label": "1688-এর ভেতরে"}},
-      "caption": "…", "hashtags": "#ChinaBondBD …", "alt": "…"}
+      "ai_prompt": "…English photo brief…",
+      "fallback": "cartons",
+      "caption": "…", "hashtags": "#ChinaBondBD …", "alt": "…", "sources": ["https://…"]}
    ]}
    ```
-   - **The image is the hook.** `hook`: 4–9 Bengali words, a question or a curiosity/fear trigger, one part wrapped in `[ ]` to highlight. `sub` (optional): ≤ 10 words. `points` (optional, best for `problem`): up to 3 items, ≤ 6 words each.
-   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. Slots 1–5 carry no name or phone number. 120–250 words, short paragraphs, a few emojis are fine.
+   - **Design = the owner's CBD Brand Post Guide (PDF, 28 Oct 2026; copy in `brand/CBD_Import_Brand_Post_Guide.pdf`).** `scripts/build.py` draws it; never hand-draw another look. Layouts (pick with `layout`, default per category):
+     | layout | from the guide | used for (default) | fields |
+     |---|---|---|---|
+     | `hero` | "চীন থেকে সরাসরি আমদানি" — Congress Blue background, white headline, the `[highlight]` in a red pill, sub line, wide photo, red CTA pill, white footer | `news`, `idea` | `hook`, `sub`, optional `tag` |
+     | `list` | "আমদানি হয় যেভাবে" — Athens Gray background, blue headline with the `[highlight]` word in red, portrait photo + up to 4 white numbered cards (০১–০৪), blue footer | `problem`, `learn` | `hook`, `sub`, `points` (2–4 items, ≤ 7 words each) |
+     | `vs` | "সী ফ্রেইট vs এয়ার ফ্রেইট" — blue left half / gray right half, red VS circle, wide photo across both | `cost` (or any A-vs-B topic) | `art.left` / `art.right` each {`tag` (English, caps), `label` (2–3 Bengali words), `sub` (≤ 5 words)}; `hook` is still required (used in alt/caption) |
+     | `notice` | "গুরুত্বপূর্ণ ঘোষণা" — red header band with the title + bell, white body, blue headline, wide photo, blue footer | `alert` | `hook`, optional `notice_title` (default "সতর্কতা") |
+     The product templates in the guide (নতুন পণ্য, পাইকারি অফার, নতুন চালান) are NOT used (no product posts). The greeting template is only for festival days when the owner asks.
+   - Colours are only the guide's: Congress Blue #05358B (~50%), Monza red #E40715 (max ~10%: one highlight word, the CTA pill, VS badge, alert header), Athens Gray #F0F0F2, Wedgewood #5274A4, white. Fonts: Anek Bangla ExtraBold for Bengali headlines, Hind Siliguri for Bengali body, Poppins for all English. The renderer already does this.
+   - Footer on every image: `WhatsApp: 01606481782` (left) and `China Bond BD` (right) — owner's choice for the guide's footer. No other name or number on images.
+   - **The image is the hook.** `hook`: 4–9 Bengali words, a question or curiosity/fear trigger, exactly one part wrapped in `[ ]` (the red highlight). `sub`: ≤ 10 words.
+   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. 120–250 words, short paragraphs, a few emojis are fine.
    - `hashtags`: 8–12, mixing Bengali and English. Always include #ChinaBondBD #CBD #ImportFromChina, then topic tags.
-   - `alt`: one-line description of the image.
-   - **Every image is a creative concept in exactly one of 7 styles** (`"style"` + `"art"` in each post). Pick the style that fits the topic best and vary styles across the day. Never make an image outside these 7:
-     | style | idea | `art` fields |
-     |---|---|---|
-     | `exaggeration` | benefit/problem blown up beyond reality | `mode`: stream (small `source` erupts into many `effect`) / giant (tiny `source` next to huge `effect`) / lift; `source`, `effect`, optional `label` |
-     | `animal` | an animal's known trait = the message (ant carries far more than its size, eagle = speed/direct, owl = checking/wisdom, turtle/snail = slow, bee = hard work) | `animal`: ant/eagle/owl/turtle/snail/bee; `object`; optional `label` |
-     | `material` | object made of another material (gold = valuable, glass = transparent, steel = protected, cloud/cotton = soft, feather = light, ice = cool) | `object`, `material`: gold/glass/steel/cloud/cotton/feather/ice; optional `label` |
-     | `shape` | many small objects arranged into a meaningful shape | `unit`, `shape`: check/heart/arrow/graph/circle/stairs/taka; optional `label` |
-     | `benefit` | product/service in the centre with up to 4 benefit callouts (≤ 4 words each) | `object`, `callouts` [..] |
-     | `contrast` | split screen: wrong way (grey, ✗) vs right way (colour, ✓) | `left` {objects, arrange: messy/neat/single, label}, `right` {…} |
-     | `shadow` | an object casts the shadow of what it can become / hides | `object`, `shadow`; optional `label` |
-     Objects available: box, container, ship, plane, warehouse, factory, coin, money, cushion, cloud, blocks, magnifier, question, check, cross, tag, phone, cart, shop, lamp, trophy, chair, pan. Reference renders of all 7 are in `posts/styles/`.
-   - With a creative image, keep `hook` short (≤ 7 words) and `sub` optional; don't use `points` (put lists in the caption).
-   - **`ai_prompt` (required from 29 Oct 2026):** an English prompt for a realistic photo of the creative concept (the same style + idea as `style`/`art`). Write it like a photographer's brief, 50–80 words: subject and the metaphor (e.g. "a shipping container made of polished gold" for `material`, "a tiny ant carrying a huge stack of export cartons" for `animal`, split scene for `contrast`, real object casting a shadow of something else for `shadow`), import elements (cargo ship, containers, cartons, warehouse, factory, plane) where they fit, deep royal-blue / navy colour mood to match the CBD blue panel, studio or cinematic lighting, sharp detail, lens spec (35mm / 85mm), wide 2:1 composition with the subject centred. Always end with: "No text, no letters, no logos, no people, no faces." Never ask for a specific product (no product posts).
-5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → `post-1.png` … `post-6.png` (1080×1080, 1:1). Open the images and check that the hook fits and nothing overlaps; shorten text and re-render if not.
-   **The AI photo must always BE the post's style — one of the owner's 7 ideas, never a plain/generic photo.** Build `ai_prompt` from the matching pattern:
+   - `alt`: one-line description of the image. `sources`: the exact links the facts came from.
+   - **Photo inside the layout = a realistic Canva photo built on one of the owner's 7 creative ideas** (`style`). `ai_prompt` (English, 50–80 words) must describe that idea:
      | style | how the photo must look |
      |---|---|
      | `exaggeration` | the benefit or problem blown far beyond reality (a tiny parcel bursting into a flood of cartons, a giant container next to a tiny shop) |
-     | `animal` | a real animal whose known trait is the message (ant carrying a huge carton stack = small importer, carrying more; eagle = fast/direct; owl = checking; turtle/snail = slow shipping; bee = hard work) |
+     | `animal` | a real animal whose known trait is the message (ant carrying a huge carton stack = small importer carrying more; eagle = fast/direct; owl = checking; turtle/snail = slow shipping; bee = hard work) |
      | `material` | the object made of another material that carries the meaning (gold container = valuable, glass box = transparent deal, steel carton = protected, cotton/cloud = soft, feather = light, ice = cool) |
      | `shape` | many small objects (cartons, coins, containers) arranged into a meaningful shape: check mark, arrow, rising graph, heart, taka sign, stairs |
-     | `benefit` | the subject hero-lit in the centre with clear space around it for the benefit message |
-     | `contrast` | split frame: left side wrong way (grey, messy, dim), right side right way (bright, neat, blue) |
+     | `benefit` | the subject hero-lit in the centre, clean and premium |
+     | `contrast` | split frame: left side wrong way (grey, messy, dim), right side right way (bright, neat, blue) — best with the `vs` layout |
      | `shadow` | a real object whose shadow on the wall is what it can become or what it hides (small carton casting a warehouse shadow, cheap deal casting a trap shadow) |
-     Before generating, check the prompt names the style's device explicitly; after generating, reject and regenerate if the photo does not show it.
-   Because every post has `ai_prompt`, build.py also writes `overlay-<slot>.png`: the full brand layout (background, logo, quote mark, hook boxes, footer) with a transparent hole where the blue panel is. `post-<slot>.png` is the fallback image (drawn creative) if the AI steps fail.
-5b. **Make the realistic image in Canva** (Canva connector), one post at a time, after pushing the overlays (step 6 can run first):
-   1. `generate-image` with the post's `ai_prompt`, `aspectRatio: "LANDSCAPE_2_1"`. Poll `get-generate-image-job` until SUCCESS and look at the preview: no text/letters, no people, the concept is clear and on-theme. If it fails the check, regenerate once with a tightened prompt. Keep the media id.
-   2. `upload-asset-from-url` with the overlay's raw URL `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/overlay-<slot>.png` → asset id.
-   3. `copy-design` the master design `DAHZQrCmCYM` ("CBD post master", 1080×1080) → new design id. Never edit the master itself.
-   4. `read-design` the copy with `open_transaction: true` and `design_content`. It has two image elements: the creative (left 190, top 150, 850×440) and the overlay (full page 1080×1080, on top). `edit-design` with `update_fill` on each (creative ← generated media id, overlay ← overlay asset id), `finalize: "keep_open"`, check the returned thumbnail (photo inside the panel, hook boxes on top, logo visible), then `finalize: "commit"`. The owner has approved these daily edits on copies of the master.
-   5. `export-design` → `{"type":"png","width":1080,"height":1080}` → export URL (it expires within hours, so never give it to Buffer).
-   6. Store it permanently: POST `https://api.github.com/repos/Mesbah50/CBD-social-media-/actions/workflows/fetch-image.yml/dispatches` with headers `Authorization: Bearer $GH_TOKEN`, `Content-Type: application/json`, body `{"ref":"main","inputs":{"url":"<export URL>","path":"posts/<date>/post-<slot>-ai.png"}}` (build the JSON with python so the URL is escaped). Then poll `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/post-<slot>-ai.png` (use a loop with short python sleeps) until it returns 200 and is 1080×1080. Run `git pull` before your next push, since the workflow commits to main.
-   7. Use `post-<slot>-ai.png` as the Buffer image. If any step fails (e.g. Canva AI allowance used up), use `post-<slot>.png` instead and mention it in the report.
+     Write it like a photographer's brief: subject + the style's device named explicitly, import elements where they fit (cargo ship, containers, cartons, warehouse, factory, plane, truck), colour mood matching the guide (navy/Congress-blue tones with a touch of red, clean light-grey or deep-blue backdrop), studio or cinematic light, lens spec, composition fitted to the slot (`list` = vertical 4:5 subject centred; other layouts = wide 2:1 subject centred). Always end with "No text, no letters, no logos, no people, no faces." Never a specific product. Vary styles across the day.
+   - `fallback`: kit drawing used if the photo fails — ship / containers / plane / route / cartons / truck / warehouse (the guide's import graphics kit).
+5. **Render**: `python3 scripts/build.py posts/<date>/content.json` → for each slot `post-N.png` (fallback, kit drawing in the photo slot), `overlay-N.png` (the same design with a transparent rounded hole where the photo goes) and `slot-N.json` (photo rectangle + Canva aspect ratio). Open the post-N.png images and check text fits and nothing overlaps; shorten text and re-render if not. Commit and push (step 6) before the Canva step, so the overlay links work.
+5b. **Make the realistic photo in Canva and compose** (Canva connector), one post at a time:
+   1. `generate-image` with `ai_prompt` and `aspectRatio` from `slot-N.json`. Poll `get-generate-image-job` until SUCCESS and look at the preview: the style's device is clearly visible, no text/letters, no people. If not, regenerate once with a tightened prompt. Keep the media id.
+   2. `upload-asset-from-url` with `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/overlay-N.png` → asset id.
+   3. `copy-design` the master design `DAHZQrCmCYM` (1080×1080) → new design id. Never edit the master itself.
+   4. `read-design` the copy with `open_transaction: true` and `design_content`; note the locator_ids of its existing elements. One `edit-design` call (`keep_open`): `delete_element` every existing element, then `insert_fill` the photo (media id) at the slot's `left/top/width/height` from `slot-N.json`, then `insert_fill` the overlay asset at left 0, top 0, 1080×1080 (in this order, so the overlay is on top). Check the returned thumbnail (photo only inside the rounded slot, all text sharp and in place), then `finalize: "commit"`. Do NOT use update_fill for this (it keeps the old crop and shifts the overlay). The owner has approved these edits on copies of the master.
+   5. `export-design` → `{"type":"png","width":1080,"height":1080}` → export URL (expires within hours; never give it to Buffer).
+   6. `python3 scripts/store_image.py "<export URL>" posts/<date>/post-N-ai.png` — runs the fetch-image GitHub workflow, waits, and prints the permanent raw URL and size (must be 1080×1080). Run `git pull --rebase` before your next push (the workflow commits to main).
+   7. Use `post-N-ai.png` as the Buffer image. If any step fails (e.g. Canva AI allowance used up), use `post-N.png` and say so in the report.
 6. **Commit and push** the date folder and the updated `topics_log.md` (one line per post: `- <date> | <category> | <topic>`).
 7. **Schedule in Buffer** — 18 posts (6 posts × 3 channels) with `create_post`:
    - `mode: "customScheduled"`, `dueAt: "<date>T<time>:00+06:00"`, `schedulingType: "automatic"`
@@ -100,25 +99,19 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 
 ## Rules that never change
 
+- DESIGN (owner's instruction, 28 Oct 2026): every image follows the CBD Brand Post Guide PDF — its colours, fonts, layouts, logo box, footer band and graphics kit — through `scripts/build.py`. The older designs (dot/square background, black hook boxes, bright-blue accents, scripts/build_v1.py) are retired; never use them. Inside the layout, the visual is a realistic Canva photo made on one of the 7 creative ideas; the kit drawing is only the fallback.
+- Logo: the CBD logo in its white (or Athens Gray) rounded box, top-left, as the renderer places it. Never redraw or recolour it.
+- Footer: `WhatsApp: 01606481782` and `China Bond BD` only. No other name or number on images. No people in images.
+
 - NO PRODUCT POSTS (owner's instruction, 28 Oct 2026): never make a post about a specific product (no trending-product or "sell this item" posts). Product categories may be mentioned in passing, but no post is built around a particular product. This overrides any older rule about product posts or product photos.
 
 - Every post in content.json must carry a `"sources": ["<url>", ...]` list with the exact links its facts came from, so the owner can open them. A source you cannot link to cannot be used.
 
-- REAL PRODUCT PHOTO RULE (owner's instruction): whenever a post discusses a specific product, the image must show that product's real photo — never a drawing or a generic object. Real photos come only from the `product-photos/` folder (the owner uploads them). Use one with `"object": "photo:product-photos/<file>"` in any style that takes an object (best: `benefit`, `material`, `shadow`, `contrast`). Before choosing a product topic, list `product-photos/`; only pick products that have a photo there. If today's trending product has no photo, do not make a product-specific post — use a different, non-product angle for that slot, and in the final report tell the owner which product photos to upload. Never download or copy product photos from websites.
-
-- Layout (fixed, follows the owner's reference post): brand background; CBD logo top-right; bright-blue (#0085FE) quote mark top-left; a CBD-blue (#02378F) panel holding the creative concept; the hook below it in stacked black boxes with white text and the highlighted part in bright blue (#1EA0FF); bottom-left a bright-blue bar with the category name in blue and the sub line in dark grey. Colours are only CBD blue, bright blue, black, white and the background — no red in the design (the logo stays as it is). No people in the image.
-
-- Background: every image uses ONLY the CBD brand background (`scripts/background.py` / `brand/background.svg`: warm off-white #F7F3F2, faint dot grid, soft white centre glow, scattered light-blue rounded squares). No other background, ever.
-
 - Never delete, rename or move an image in `posts/` after it is pushed — Buffer loads it from that exact link at posting time, and a missing file shows as a broken image.
 
-- Brand name on images = the CBD logo only (`brand/cbd_logo_badge.png`, already in the template). Never redraw or recolour it.
-- Import-related images always carry import elements (plane, cargo ship, containers, boxes, warehouse) — the template does this.
 - Never use the owner's photos unless he provides one for that post. Never use photos of real people.
 - Images and captions only. No reels, no video.
-- Realistic AI photo (Canva) is the default creative from 29 Oct 2026; the drawn creative is only the fallback. The AI photo sits only inside the blue panel; logo, hook, footer and background always come from the overlay, never from AI.
 - No copied text from articles: summarise in your own words, credit the source.
 - Facebook-safe wording: no medical promises ("ব্যথা ভালো হয়ে যাবে", "৭ দিনে উধাও"), no hooks that point at the reader's body or condition ("আপনার কি কোমর ব্যথা?" → "যারা দীর্ঘক্ষণ বসে কাজ করেন…"), no before/after claims.
 - Never mention any author, book title or other person's Facebook ID from the source material.
 - Always write the marketplace name as `1688` in English digits — never `১৬৮৮` — in images, captions and hashtags.
-- Images carry no phone number and no person's name. The only name/number allowed anywhere is `Mesbah Uddin — WhatsApp: 01606481782`, and only in captions that need a contact line.
