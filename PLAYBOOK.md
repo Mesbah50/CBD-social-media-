@@ -79,6 +79,8 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
 
 ## Rules that never change
 
+- Every post in content.json must carry a `"sources": ["<url>", ...]` list with the exact links its facts came from, so the owner can open them. A source you cannot link to cannot be used.
+
 - REAL PRODUCT PHOTO RULE (owner's instruction): whenever a post discusses a specific product, the image must show that product's real photo — never a drawing or a generic object. Real photos come only from the `product-photos/` folder (the owner uploads them). Use one with `"object": "photo:product-photos/<file>"` in any style that takes an object (best: `benefit`, `material`, `shadow`, `contrast`). Before choosing a product topic, list `product-photos/`; only pick products that have a photo there. If today's trending product has no photo, do not make a product-specific post — use a different, non-product angle for that slot, and in the final report tell the owner which product photos to upload. Never download or copy product photos from websites.
 
 - Layout (fixed, follows the owner's reference post): brand background; CBD logo top-right; bright-blue (#0085FE) quote mark top-left; a CBD-blue (#02378F) panel holding the creative concept; the hook below it in stacked black boxes with white text and the highlighted part in bright blue (#1EA0FF); bottom-left a bright-blue bar with the category name in blue and the sub line in dark grey. Colours are only CBD blue, bright blue, black, white and the background — no red in the design (the logo stays as it is). No people in the image.
