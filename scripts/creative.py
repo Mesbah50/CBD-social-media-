@@ -330,7 +330,26 @@ PROPS = {
 }
 
 
+REPO = __import__("pathlib").Path(__file__).resolve().parent.parent
+
+
+def photo_card(path, w=300, h=300):
+    """A real product photo on a white rounded card (no cut-out needed)."""
+    src = (REPO / path).resolve()
+    if not src.exists():
+        raise FileNotFoundError(f"product photo not found: {path}")
+    href = src.as_uri()
+    cid = "pc" + str(abs(hash(path)) % 10**8)
+    return (f'<defs><clipPath id="{cid}"><rect x="{-w / 2 + 12}" y="{-h / 2 + 12}" width="{w - 24}" height="{h - 24}" rx="18"/></clipPath></defs>'
+            f'<rect x="{-w / 2}" y="{-h / 2}" width="{w}" height="{h}" rx="26" fill="#FFFFFF"/>'
+            f'<image href="{href}" x="{-w / 2 + 12}" y="{-h / 2 + 12}" width="{w - 24}" height="{h - 24}" '
+            f'preserveAspectRatio="xMidYMid meet" clip-path="url(#{cid})"/>')
+
+
 def prop(name, x, y, s=1.0, rot=0, material=None, shadow=False, label=None):
+    if name.startswith("photo:"):
+        inner = photo_card(name[6:])
+        return T(x, y, s, rot, inner) if shadow else f'<g filter="url(#ds)">{T(x, y, s, rot, inner)}</g>'
     name = name if name in PROPS else "box"
     over = SHADOW if shadow else (MATERIALS.get(material) if material else None)
     p = pal(name, over)
