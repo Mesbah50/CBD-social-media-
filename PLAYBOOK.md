@@ -1,6 +1,6 @@
 # CBD daily posts — playbook
 
-Every day: research trending import/export and business topics, make **6 image posts** (one per category), write the caption with all the information, and schedule each post on **all 3 Buffer channels**. Images only — never reels or video.
+Every day: research trending import/export and business topics, make **3 image posts** (owner's instruction from 31 Oct 2026; was 6), write the caption with all the information, and schedule each post on **all 3 Buffer channels**. Images only — never reels or video.
 
 Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 
@@ -12,28 +12,25 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
   - Mesbah China Imports guide (Facebook page) — `6ad9fda3778b240e2f8b559f`
   - MESBAH UDDIN (LinkedIn profile) — `6ac5e1486a5c39ccb63c77a6`
 - Image hosting: this repo. Public image URL = `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/post-<slot>.png`
-- Contact: `Mesbah Uddin — WhatsApp: 01606481782` in captions that need it (slot 6); every image footer shows `WhatsApp: 01606481782` + `China Bond BD` (brand guide). No other name or phone number ever appears in images or captions.
+- Contact: `Mesbah Uddin — WhatsApp: 01606481782` in captions that need it (the `idea` post); every image footer shows `WhatsApp: 01606481782` + `China Bond BD` (brand guide). No other name or phone number ever appears in images or captions.
 - Services: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service
 - Product categories: Baby Toy · Home & Pain Relief · Home Decor · Home Hacks
 
-## The 6 categories and times (Asia/Dhaka)
+## The 3 daily posts and times (Asia/Dhaka) — from 31 Oct 2026
 
-| slot | time  | category key | what it is |
-|------|-------|--------------|------------|
-| 1 | 08:00 | `problem`  | A real importer problem and its solution (customs hold, supplier fraud, wrong goods, damaged cargo, payment issues) |
-| 2 | 10:00 | `news`     | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
-| 3 | 15:00 | `learn`    | "ইমপোর্ট শিখুন" — one step of the import process taught from KNOWLEDGE.md (1688 search, seller checks, factory vs trader, MOQ, negotiation, weight & landed cost, samples, damage agreement, shipping mark, packing list, order remark, agent choice…), hooked to a current news item |
-| 4 | 18:00 | `cost`     | Cost / profit breakdown (factory price, freight, duty, delivery); framed as "why is profit low" |
-| 5 | 19:00 | `alert`    | Scam alert, common beginner mistake, or myth vs fact |
-| 6 | 21:30 | `idea`     | Business idea / seasonal opportunity, ending with the CBD services + contact line |
+| slot | time  | category | what it is |
+|------|-------|----------|------------|
+| 1 | 10:00 | `news` (every day) | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
+| 2 | 15:00 | rotates by day: `problem` → `learn` → `cost` → repeat | `problem`: a real importer problem and its solution (customs hold, supplier fraud, wrong goods, damaged cargo, payment issues). `learn`: "ইমপোর্ট শিখুন" — one step of the import process from KNOWLEDGE.md (1688 search, seller checks, factory vs trader, MOQ, negotiation, weight & landed cost, samples, damage agreement, shipping mark, packing list, order remark, agent choice…). `cost`: cost / profit breakdown, framed as "why is profit low" |
+| 3 | 21:30 | alternates by day: `alert` ↔ `idea` | `alert`: scam alert, common beginner mistake, or myth vs fact. `idea`: business idea / seasonal opportunity, ending with the CBD services + contact line |
 
-Most posts must solve a problem. Only slot 6 is a direct sales post.
+To pick today's rotation, look at the categories of the last days in `topics_log.md` and take the next one in each cycle. Most posts must solve a problem. Only the `idea` post is a direct sales post (contact line in its caption). Slot numbers in file names are 1–3.
 
 ## Daily steps
 
 1. **Set up.** Attach and clone this repo (`Mesbah50/CBD-social-media-`, push access). Make sure Playwright's Chromium is installed (`python3 -m playwright install chromium` if rendering fails).
 2. **Check what was already posted, and load the know-how.** Read `topics_log.md` — never repeat a topic or angle from the last 30 days. Read `KNOWLEDGE.md` — the owner's own sourcing and winning-product method. Build most posts on it (steps, checklists, mistakes, examples), and hook each one to something trending today.
-   **News-first rule (owner's instruction):** every one of the 6 posts — not only the `news` slot — must be built on a current update or news item: Bangladesh first (NBR/customs duty and SRO changes, Bangladesh Bank, LC and dollar rate, Chattogram port, budget, e-commerce rules, local market prices), then the world (China export policy, freight and shipping rates, tariffs and trade wars, trade fairs, marketplace trends on 1688/Alibaba/TikTok/Amazon). Run separate searches for Bangladesh and for the world every day. Use the owner's know-how in KNOWLEDGE.md to explain what the news means for a small importer and what to do about it.
+   **News-first rule (owner's instruction):** every one of the 3 posts — not only the `news` slot — must be built on a current update or news item: Bangladesh first (NBR/customs duty and SRO changes, Bangladesh Bank, LC and dollar rate, Chattogram port, budget, e-commerce rules, local market prices), then the world (China export policy, freight and shipping rates, tariffs and trade wars, trade fairs, marketplace trends on 1688/Alibaba/TikTok/Amazon). Run separate searches for Bangladesh and for the world every day. Use the owner's know-how in KNOWLEDGE.md to explain what the news means for a small importer and what to do about it.
 3. **Research today's trends** (WebSearch, several searches, recent results first):
    - Bangladesh: NBR customs duty / SRO changes, Bangladesh Bank LC and dollar rate news, Chattogram port situation, budget announcements, e-commerce rules.
    - World: container and air freight rate news, China export policy, trade fairs (Canton Fair etc.), tariffs.
@@ -64,7 +61,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    - Colours are only the guide's: Congress Blue #05358B (~50%), Monza red #E40715 (max ~10%: one highlight word, the CTA pill, VS badge, alert header), Athens Gray #F0F0F2, Wedgewood #5274A4, white. Fonts: Anek Bangla ExtraBold for Bengali headlines, Hind Siliguri for Bengali body, Poppins for all English. The renderer already does this.
    - Footer on every image: `WhatsApp: 01606481782` (left) and `China Bond BD` (right) — owner's choice for the guide's footer. No other name or number on images.
    - **The image is the hook.** `hook`: 4–9 Bengali words, a question or curiosity/fear trigger, exactly one part wrapped in `[ ]` (the red highlight). `sub`: ≤ 10 words.
-   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for slot 6 the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. 120–250 words, short paragraphs, a few emojis are fine.
+   - **Caption carries all the information**: open with the hook line, then the problem, then the full explanation / steps / numbers with sources, then a soft CTA ("কমেন্টে প্রশ্ন করুন" / follow), and for the `idea` post the CBD services + the contact line `Mesbah Uddin — WhatsApp: 01606481782`. 120–250 words, short paragraphs, a few emojis are fine.
    - `hashtags`: 8–12, mixing Bengali and English. Always include #ChinaBondBD #CBD #ImportFromChina, then topic tags.
    - `alt`: one-line description of the image. `sources`: the exact links the facts came from.
    - **Photo inside the layout = a realistic Canva photo built on one of the owner's 7 creative ideas** (`style`). `ai_prompt` (English, 50–80 words) must describe that idea:
@@ -89,7 +86,7 @@ Most posts must solve a problem. Only slot 6 is a direct sales post.
    6. `python3 scripts/store_image.py "<export URL>" posts/<date>/post-N-ai.png` — runs the fetch-image GitHub workflow, waits, and prints the permanent raw URL and size (must be 1080×1080). Run `git pull --rebase` before your next push (the workflow commits to main).
    7. Use `post-N-ai.png` as the Buffer image. If any step fails (e.g. Canva AI allowance used up), use `post-N.png` and say so in the report.
 6. **Commit and push** the date folder and the updated `topics_log.md` (one line per post: `- <date> | <category> | <topic>`).
-7. **Schedule in Buffer** — 18 posts (6 posts × 3 channels) with `create_post`:
+7. **Schedule in Buffer** — 9 posts (3 posts × 3 channels) with `create_post`:
    - `mode: "customScheduled"`, `dueAt: "<date>T<time>:00+06:00"`, `schedulingType: "automatic"`
    - `text`: caption + blank line + hashtags
    - `assets: [{"image": {"url": <raw URL>, "metadata": {"altText": <alt>}}}]`
