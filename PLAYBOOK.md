@@ -1,6 +1,6 @@
 # CBD daily posts — playbook
 
-Every day: research trending import/export and business topics, make **3 image posts** (owner's instruction from 31 Oct 2026; was 6), write the caption with all the information, and schedule each post on **all 3 Buffer channels**. Images only — never reels or video.
+Every day: research trending import/export and business topics, make **3 image posts** (owner's instruction from 30 Oct 2026; was 6), write the caption with all the information, and schedule each post on **all 3 Buffer channels**. Images only — never reels or video.
 
 Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 
@@ -16,7 +16,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 - Services: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service
 - Product categories: Baby Toy · Home & Pain Relief · Home Decor · Home Hacks
 
-## The 3 daily posts and times (Asia/Dhaka) — from 31 Oct 2026
+## The 3 daily posts and times (Asia/Dhaka) — from 30 Oct 2026
 
 | slot | time  | category | what it is |
 |------|-------|----------|------------|
