@@ -10,3 +10,9 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-10-28 | cost | Yuan/dollar rate (Oct 26) + landed cost, air freight up ~24% YoY
 - 2026-10-28 | alert | Myth vs fact: LDC graduation Nov 2026 & import duty
 - 2026-10-28 | idea | Canton Fair phase 3 (Oct 31–Nov 4): winter baby/home items
+- 2026-10-29 | problem | NBR 30 Aug directives: no extra documents / repeated customs checks
+- 2026-10-29 | news | Ctg port terminals to foreign operators (NCT to DP World, CCT contract ending)
+- 2026-10-29 | learn | Double 11 (Nov 11): check supplier stock, price in chat, order remark
+- 2026-10-29 | cost | Drewry WCI $4,585 (15-week high): sea vs air freight choice
+- 2026-10-29 | alert | Myth vs fact: duty cut = more profit? NBR checks 18 duty cuts
+- 2026-10-29 | idea | Ramadan/Eid 2027 import timeline: plan orders now
