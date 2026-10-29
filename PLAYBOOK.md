@@ -92,7 +92,7 @@ To pick today's rotation, look at the categories of the last days in `topics_log
    - `assets: [{"image": {"url": <raw URL>, "metadata": {"altText": <alt>}}}]`
    - Facebook channels also need `metadata: {"facebook": {"type": "post"}}`
    - If a slot time has already passed, schedule it 30 minutes from now instead. If Buffer cannot fetch the image right after the push, wait a minute and retry once.
-8. **Report** to the owner with SendUserMessage, in Bengali: the 6 topics, the times, and anything that failed.
+8. **Report** to the owner with SendUserMessage, in Bengali: the 3 topics, the times, and anything that failed.
 
 ## Rules that never change
 
