@@ -22,7 +22,7 @@ Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 |------|-------|----------|------------|
 | 1 | 10:00 | `news` (every day) | Today's Bangladesh or world trade news, explained: "what changes for a small importer" |
 | 2 | 15:00 | rotates by day: `problem` → `learn` → `cost` → repeat | `problem`: a real importer problem and its solution (customs hold, supplier fraud, wrong goods, damaged cargo, payment issues). `learn`: "ইমপোর্ট শিখুন" — one step of the import process from KNOWLEDGE.md (1688 search, seller checks, factory vs trader, MOQ, negotiation, weight & landed cost, samples, damage agreement, shipping mark, packing list, order remark, agent choice…). `cost`: cost / profit breakdown, framed as "why is profit low" |
-| 3 | 21:30 | alternates by day: `alert` ↔ `idea` | `alert`: scam alert, common beginner mistake, or myth vs fact. `idea`: business idea / seasonal opportunity, ending with the CBD services + contact line |
+| 3 | 19:00 | alternates by day: `alert` ↔ `idea` | `alert`: scam alert, common beginner mistake, or myth vs fact. `idea`: business idea / seasonal opportunity, ending with the CBD services + contact line |
 
 To pick today's rotation, look at the categories of the last days in `topics_log.md` and take the next one in each cycle. Most posts must solve a problem. Only the `idea` post is a direct sales post (contact line in its caption). Slot numbers in file names are 1–3.
 
