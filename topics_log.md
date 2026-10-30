@@ -16,3 +16,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-10-29 | cost | Drewry WCI $4,585 (15-week high): sea vs air freight choice
 - 2026-10-29 | alert | Myth vs fact: duty cut = more profit? NBR checks 18 duty cuts
 - 2026-10-29 | idea | Ramadan/Eid 2027 import timeline: plan orders now
+- 2026-10-30 | news | Bangladesh–Malaysia FTA talks begin (sign by Dec 2027), PTA talks with UAE/Indonesia/Oman/NZ/EU
+- 2026-10-30 | problem | Good sample, bad bulk: video, written damage deal, pre-packing photos (consumer LC +25.5%)
+- 2026-10-30 | alert | Scam alert: payment to personal account / "bank changed" after Canton Fair phase 3
