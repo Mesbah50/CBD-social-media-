@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-31",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "রাজস্বে [ঘাটতি] ৪৩ হাজার কোটি টাকা",
+   "sub": "ছোট ইমপোর্টার এখন কী সাবধানতা নেবেন",
+   "style": "shape",
+   "ai_prompt": "Realistic studio photograph of hundreds of small silver and gold coins arranged on a clean light-grey surface to form a large downward-pointing zigzag arrow, like a falling revenue graph, with a few small navy-blue cardboard cartons sitting beside the arrow's tip; one single red coin at the very end of the arrow as the accent; deep Congress-blue backdrop, soft overhead studio light, 50mm lens, shot from a high angle, wide 2:1 composition with the arrow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "route",
+   "caption": "রাজস্বে ঘাটতি ৪৩ হাজার কোটি টাকা 📉\n\n📰 খবরটা কী?\nচলতি ২০২৬-২৭ অর্থবছরের প্রথম তিন মাসে (জুলাই-সেপ্টেম্বর) জাতীয় রাজস্ব বোর্ড (NBR) লক্ষ্যের চেয়ে প্রায় ৪৩,০০০ কোটি টাকা কম রাজস্ব পেয়েছে। লক্ষ্য ছিল ১.৩৫ লাখ কোটি টাকা, আদায় হয়েছে ৯২,০০০ কোটির সামান্য বেশি। ভ্যাট আদায় কমেছে ১৬%, তবে আমদানি শুল্ক আদায় বেড়েছে ৭%-এর বেশি। পুরো বছরের লক্ষ্য ৬.০৪ লাখ কোটি টাকা। NBR চেয়ারম্যান মাঠ পর্যায়ের কর্মকর্তাদের সাথে বৈঠক করেছেন।\n\n🔍 ছোট ইমপোর্টারের জন্য এর মানে কী?\nরাজস্বের চাপ থাকলে কাস্টমসে কাগজপত্র আর ঘোষণার দিকে নজর বাড়াটা স্বাভাবিক। ভুল তথ্যে মাল আটকালে সময় আর টাকা — দুটোই যায়।\n\n✅ আপনি কী করবেন?\n১. পণ্যের সঠিক HS কোড এজেন্টের সাথে আগেই মিলিয়ে নিন।\n২. ইনভয়েসে আসল দাম আর সঠিক পরিমাণ লিখুন — কম দেখানোর চেষ্টা করবেন না।\n৩. প্যাকিং লিস্ট, ইনভয়েস আর কার্টনের ছবি গুছিয়ে রাখুন।\n৪. এজেন্টের \"ডিউটিসহ\" রেট লিখিত নিন, যেন পরে বাড়তি বিল না আসে।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (২৯ অক্টোবর ২০২৬)\n\nকাস্টমস নিয়ে আপনার প্রশ্ন কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #NBR #রাজস্ব #কাস্টমস #ইমপোর্ট_নিউজ #ImportBangladesh #চায়না_ইমপোর্ট #CustomsBangladesh",
+   "alt": "অনেক কয়েন সাজিয়ে নিচের দিকে নামা তীরের আকার — NBR-এর প্রথম প্রান্তিকে রাজস্ব ঘাটতির খবর",
+   "sources": [
+    "https://www.tbsnews.net/economy/revenue-shortfall-hits-tk43000cr-economic-slowdown-vat-slump-bite-1586361"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "learn",
+   "layout": "list",
+   "hook": "প্যাকিং লিস্টে [ভুল] থাকলে কী হয়?",
+   "sub": "শিপমেন্টের আগে এই ৪টা হিসাব মিলিয়ে নিন",
+   "points": [
+    "বক্স × পিস = মোট পিস",
+    "CBM = দৈর্ঘ্য×প্রস্থ×উচ্চতা (মিটার)",
+    "গ্রস ওজন দিয়েই কার্গো বিল",
+    "প্রতি কার্টনে শিপিং মার্ক"
+   ],
+   "style": "animal",
+   "ai_prompt": "Realistic photograph of a wise brown owl perched on top of a neat stack of brown shipping cartons, looking down attentively as if inspecting them, a yellow measuring tape draped over the top carton, symbolising careful checking before shipment; clean light-grey warehouse backdrop fading into deep navy-blue shadows, a thin red strap on one carton as the only accent, soft cinematic side light, 85mm lens, shallow depth of field, vertical 4:5 composition with the owl centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "প্যাকিং লিস্টে ভুল থাকলে কী হয়? 📋\n\nইমপোর্ট শিখুন — আজকের ধাপ: প্যাকিং লিস্ট চেক।\n\n🚢 কেন এখন জরুরি?\nDrewry-র World Container Index (২৯ অক্টোবর) ৩% কমে প্রতি ৪০ ফুট কন্টেইনারে ৪,৪২৯ ডলার হয়েছে। কিন্তু সাংহাই-রটারডাম রুটে রেট ১% বেড়েছে, আর ক্যারিয়াররা নভেম্বরের জন্য রেট বাড়ানোর ঘোষণা দিচ্ছে। ভাড়া প্রতি সপ্তাহে ওঠানামা করে — তাই আপনার CBM আর ওজনের হিসাব একদম ঠিক থাকা দরকার, নইলে বিল বেশি আসবে।\n\n✅ প্যাকিং লিস্টে যা যা মিলাবেন:\n১. পণ্যের নাম, প্রতি পিসের নেট ওজন।\n২. প্রতি বক্সে কত পিস, মোট কত বক্স — বক্স × পিস = মোট পিস কিনা।\n৩. বক্সের সাইজ আর CBM: দৈর্ঘ্য × প্রস্থ × উচ্চতা (মিটারে) × বক্স সংখ্যা।\n৪. গ্রস ওজন (কার্টনসহ) — কার্গো এটা দিয়েই চার্জ করে।\n৫. এয়ারে ভলিউম ওজন: L×W×H (সেমি) ÷ ৬০০০ — আসল আর ভলিউম ওজনের যেটা বেশি, সেটাই বিল।\n৬. প্রতিটি কার্টনে আপনার শিপিং মার্ক আছে কিনা — ছবি চেয়ে নিন।\n\nহিসাব না মিললে মাল পাঠানোর আগেই সাপ্লায়ারকে জিজ্ঞেস করুন।\n\nসূত্র: Drewry WCI — Shipping Telegraph ও Daily Cargo News (৩০ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_শিখুন #PackingList #CBM #1688 #ShippingCost #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "কার্টনের স্তূপের ওপর বসে একটি পেঁচা মনোযোগ দিয়ে দেখছে — শিপমেন্টের আগে প্যাকিং লিস্ট চেকের ৪টি হিসাব",
+   "sources": [
+    "https://shippingtelegraph.com/freight-news/drewry-the-world-container-index-decreased-3-this-week-44-2026/",
+    "https://www.thedcn.com.au/news/world-container-index-29-october-2026"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "idea",
+   "layout": "hero",
+   "hook": "দামের যুদ্ধ ছাড়ুন, [ব্র্যান্ড] গড়ুন",
+   "sub": "বিক্রি কমার সময়ে আলাদা হওয়ার উপায়",
+   "style": "shadow",
+   "ai_prompt": "Realistic cinematic photograph of a small plain brown shipping carton standing alone on a clean light-grey table against a smooth wall; a hard warm side light makes the carton cast a long shadow on the wall shaped like a royal crown, symbolising an ordinary product that can become a premium own brand; deep navy-blue wall tones, a thin red ribbon around the carton as the only accent, 50mm lens, wide 2:1 composition with carton and crown shadow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "plane",
+   "caption": "দামের যুদ্ধ ছাড়ুন, ব্র্যান্ড গড়ুন 👑\n\n📰 বাজারের অবস্থা\nদ্য বিজনেস স্ট্যান্ডার্ডের (২৯ অক্টোবর) প্রতিবেদনে ব্যবসায়ী নেতারা বিক্রি আর আমদানি কমে যাওয়ার কথা বলেছেন। IMF চলতি অর্থবছরে বাংলাদেশের প্রবৃদ্ধির পূর্বাভাস দিয়েছে ৩.২% আর মূল্যস্ফীতি ১০.৯%। মানে ক্রেতা এখন প্রতিটি টাকা হিসাব করে খরচ করছে।\n\n💡 আইডিয়া: সবাই যা বেচে, সেটা কম দামে বেচলে লাভ থাকে না — বিজ্ঞাপন খরচ আর রিটার্নের পর প্রায় শূন্য। বরং নিজের নামে প্যাকেট করা পণ্য (প্রাইভেট লেবেল) ক্রেতার মনে বিশ্বাস তৈরি করে, দামের তুলনা কমায়।\n\n✅ কীভাবে শুরু করবেন:\n১. আগে ছোট অর্ডারে পণ্য যাচাই করুন — বিক্রি হলে তারপর ব্র্যান্ড।\n২. প্রাইভেট লেবেলের জন্য ফ্যাক্টরির সাথে কাজ করুন; MOQ সাধারণত ৩০০/৫০০/১০০০ পিস।\n৩. ভালো মানের লোগো ফাইল দিন, মকআপ বা স্যাম্পল অনুমোদন করে তবেই বাল্ক।\n৪. সময় রাখুন ১০–৩০ দিন। অন্যের ব্র্যান্ড কখনো নয়।\n৫. বাংলাদেশে ইংরেজি বা প্লেইন প্যাকেট চায়নিজ প্যাকেটের চেয়ে ভালো বিক্রি হয়।\n\n🤝 China Bond BD যা করে: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service।\n\nযোগাযোগ: Mesbah Uddin — WhatsApp: 01606481782\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (২৯ অক্টোবর ২০২৬)",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #PrivateLabel #নিজের_ব্র্যান্ড #BrandDesign #বিজনেস_আইডিয়া #ImportBangladesh #চায়না_ইমপোর্ট #1688",
+   "alt": "সাধারণ একটি কার্টনের ছায়া দেয়ালে মুকুটের আকার নিয়েছে — নিজের ব্র্যান্ড তৈরির বিজনেস আইডিয়া",
+   "sources": [
+    "https://www.tbsnews.net/economy/revenue-shortfall-hits-tk43000cr-economic-slowdown-vat-slump-bite-1586361"
+   ]
+  }
+ ]
+}
