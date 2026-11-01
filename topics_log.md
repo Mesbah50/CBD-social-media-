@@ -22,3 +22,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-10-31 | news | NBR Q1 FY27 revenue shortfall Tk43,000cr (VAT -16%, import tax +7%): keep HS code/invoice correct
 - 2026-10-31 | learn | Packing list check: pieces, CBM, gross & volumetric weight, shipping mark (Drewry WCI $4,429, -3%)
 - 2026-10-31 | idea | Private label / own brand instead of price war (slow sales, IMF 3.2% growth)
+- 2026-11-01 | news | Dollar near Tk124: BB sold $20m at Tk123.65, Sept LCs >$8bn (53-month high) — landed cost buffer
+- 2026-11-01 | cost | Landed cost vs real cost: ads, COD returns, delivery, damage (FBX +5%, CCFI -2.41%)
+- 2026-11-01 | alert | Scam alert: fake cargo pages asking advance payment (Ctg Khulshi raid, 63 held)

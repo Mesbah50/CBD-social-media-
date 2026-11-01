@@ -1,0 +1,57 @@
+{
+ "date": "2026-11-01",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "[ডলার ১২৪] ছুঁইছুঁই, খরচ বাড়ছে?",
+   "sub": "ছোট ইমপোর্টার এখন কী করবেন",
+   "style": "exaggeration",
+   "ai_prompt": "Realistic cinematic photograph of a single small brown shipping carton on a clean light-grey table, dwarfed by a gigantic towering stack of shiny silver coins rising behind it like a skyscraper, exaggerating how a rising exchange rate inflates import cost; a few coins tumbling down, one red coin as the only accent; deep Congress-blue backdrop, dramatic soft top light, 35mm lens, low angle, wide 2:1 composition with carton and coin tower centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "route",
+   "caption": "ডলার ১২৪ ছুঁইছুঁই, আমদানি খরচ বাড়ছে? 💵\n\n📰 খবরটা কী?\nদ্য বিজনেস স্ট্যান্ডার্ডের (২০ অক্টোবর) খবর অনুযায়ী, ডলারের দাম ১২৪ টাকা ছাড়িয়ে যাওয়ার শঙ্কায় বাংলাদেশ ব্যাংক রিজার্ভ থেকে ব্যাংকগুলোর কাছে ২ কোটি ডলার বিক্রি করেছে, প্রতি ডলার ১২৩.৬৫ টাকায়। আগের বিক্রির চেয়ে রেট ৮৫ পয়সা বেশি। গত এক সপ্তাহে দাম দিনে প্রায় ১০ পয়সা করে বেড়েছে; LC নিষ্পত্তির রেট ছিল ১২৩.৭০–১২৩.৮০ টাকা। কেন্দ্রীয় ব্যাংকের এক কর্মকর্তা বলেছেন, তারা চান না রেট ১২৪ পার হোক, কারণ আমদানি খরচ বাড়লে মূল্যস্ফীতি বাড়ে। সেপ্টেম্বরে ৮০০ কোটি ডলারের বেশি LC খোলা হয়েছে — ৫৩ মাসে সর্বোচ্চ।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nআপনি ইউয়ানে দাম দেন, কিন্তু এজেন্টকে টাকায় শোধ করেন। ডলার বাড়লে ইউয়ানের টাকার রেটও সাধারণত বাড়ে — একই পণ্যের ল্যান্ডেড কস্ট বেড়ে যায়।\n\n✅ এখন কী করবেন?\n১. অর্ডারের দিনই এজেন্টের ইউয়ান রেট লিখিত নিন।\n২. ল্যান্ডেড কস্টে ২–৩% বাফার রাখুন।\n৩. বিক্রির দাম ল্যান্ডেড কস্টের অন্তত ৩ গুণ রাখুন — নইলে রেট বাড়লেই লাভ শেষ।\n৪. ভয়ে বড় স্টক নয়; যাচাই করা পণ্যেই অর্ডার বাড়ান।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (২০ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ডলার_রেট #BangladeshBank #LC #ল্যান্ডেড_কস্ট #ইমপোর্ট_নিউজ #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "ছোট একটি কার্টনের পেছনে আকাশছোঁয়া কয়েনের স্তূপ — ডলারের দাম বাড়ায় আমদানি খরচ বাড়ার খবর",
+   "sources": [
+    "https://www.tbsnews.net/economy/banking/cenbank-sells-20m-curb-dollar-rate-hike-1578086"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "cost",
+   "layout": "vs",
+   "hook": "৩ গুণে বেচেও [লাভ নেই] কেন?",
+   "art": {
+    "left": {"tag": "LANDED COST", "label": "কেনার খরচ", "sub": "পণ্য + কার্গো + ডিউটি"},
+    "right": {"tag": "REAL COST", "label": "আসল খরচ", "sub": "+ বিজ্ঞাপন, রিটার্ন, ডেলিভারি"}
+   },
+   "style": "contrast",
+   "ai_prompt": "Realistic split-frame photograph: on the left half a single neat brown carton under dim grey light on a dull grey surface looking simple and small; on the right half the same carton brightly lit on a clean blue surface surrounded by many extra small items symbolising hidden costs — stacked coins, a delivery box, a returned parcel, a megaphone-shaped object — contrast between visible cost and real cost; Congress-blue and light-grey tones, one red accent, studio light, 50mm lens, wide 2:1 composition centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "ship",
+   "caption": "৩ গুণে বেচেও লাভ নেই কেন? 🤔\n\nঅনেকে হিসাব করেন শুধু পণ্যের দাম + কার্গো + ডিউটি = ল্যান্ডেড কস্ট। কিন্তু অনলাইনে বিক্রি করলে আসল খরচ এখানেই শেষ নয়।\n\n📌 যে খরচগুলো চোখে পড়ে না:\n১. বিজ্ঞাপন খরচ প্রতি বিক্রিতে — ফেসবুক ডলারে বিল করে, ডলার বাড়লে এটাও বাড়ে।\n২. COD রিটার্ন — অনেক পণ্যে ১৫–২৫% অর্ডার ফেরত আসে; ফেরত পার্সেলের ডেলিভারি চার্জও আপনার।\n৩. লোকাল প্যাকেজিং আর কুরিয়ার চার্জ।\n৪. ভাঙা/নষ্ট পিস — সাপ্লায়ারের সাথে লিখিত ড্যামেজ চুক্তি না থাকলে পুরো লস আপনার।\n৫. ভাড়ার ওঠানামা — Container News (২৭ অক্টোবর) জানাচ্ছে, এক সপ্তাহে FBX গ্লোবাল সূচক ৫% বেড়ে ৩,৫৬০ ডলার হয়েছে, আবার চীনের CCFI সূচক ২.৪১% কমেছে। রেট প্রতি সপ্তাহে বদলায়।\n\n✅ কী করবেন:\n• ল্যান্ডেড কস্টের সাথে প্রতি অর্ডারে বিজ্ঞাপন, রিটার্ন আর ডেলিভারি যোগ করে \"আসল খরচ\" বের করুন।\n• প্রতিটি অর্ডারে কনফার্মেশন কল দিন — রিটার্ন অনেক কমে।\n• আসল খরচের পরেও লাভ না থাকলে অর্ডারের আগেই থামুন।\n\nসূত্র: Container News (২৭ অক্টোবর ২০২৬)\n\nআপনার পণ্যের হিসাব নিয়ে প্রশ্ন? কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ল্যান্ডেড_কস্ট #লাভের_হিসাব #COD #ProfitMargin #ImportBangladesh #চায়না_ইমপোর্ট #FreightRates",
+   "alt": "এক পাশে ম্লান আলোয় একটি কার্টন, অন্য পাশে উজ্জ্বল আলোয় কয়েন ও পার্সেলে ঘেরা একই কার্টন — কেনার খরচ বনাম আসল খরচ",
+   "sources": [
+    "https://container-news.com/container-freight-rates-diverge-as-global-benchmarks-rise-and-asian-indexes-weaken/"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "alert",
+   "layout": "notice",
+   "hook": "অগ্রিম টাকা চাইছে [কার্গো পেজ?]",
+   "sub": "টাকা পাঠানোর আগে এই ৪টা যাচাই করুন",
+   "notice_title": "স্ক্যাম সতর্কতা",
+   "style": "shadow",
+   "ai_prompt": "Realistic cinematic photograph of a neat small cardboard parcel with a red ribbon standing on a clean light-grey table against a smooth wall; a hard side light makes it cast a long shadow on the wall shaped like an open steel trap with jaws, symbolising an attractive advance-payment offer that hides a scam; deep navy-blue wall tones, the red ribbon as the only accent, 50mm lens, wide 2:1 composition with parcel and trap shadow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "warehouse",
+   "caption": "অগ্রিম টাকা চাইছে কার্গো পেজ? ⚠️\n\n📰 কেন এখন সতর্ক হবেন?\nদ্য ডেইলি স্টারের (২৬ সেপ্টেম্বর) প্রতিবেদনে বলা হয়েছে, ১০ সেপ্টেম্বর চট্টগ্রামের খুলশীতে একটি ভবন থেকে পুলিশ ৬৩ জন বিদেশিকে আটক করে — অভিযোগ অনলাইন মার্কেটিং প্রতারণা আর অগ্রিম টাকা নেওয়ার স্ক্যাম। পুলিশের এক কর্মকর্তার মতে, দক্ষিণ-পূর্ব এশিয়া থেকে বিতাড়িত চক্রগুলো বাংলাদেশকে বেছে নিতে পারে। আমদানিকারকদেরও এখন বেশি সাবধান থাকা দরকার।\n\n🚩 যেসব লক্ষণে থামবেন:\n• বাজারের চেয়ে অনেক কম কেজি রেট, \"আজই অফার শেষ\"\n• পেজ নতুন, রিভিউ নেই, অফিস বা গুয়াংজু ওয়্যারহাউসের ঠিকানা দেয় না\n• পুরো টাকা অগ্রিম ব্যক্তিগত নম্বরে চায়\n• রেট লিখিত দিতে চায় না\n\n✅ টাকা পাঠানোর আগে যাচাই করুন:\n১. গুয়াংজু ওয়্যারহাউসের চীনা ঠিকানা, ফোন আর আপনার শিপিং মার্ক চেয়ে নিন।\n২. কেজি/CBM রেট, ডিউটি ইনক্লুডেড কিনা, ক্ষতির দায় — সব লিখিত নিন।\n৩. পরিচিত ইমপোর্টারদের কাছে রিভিউ জানুন।\n৪. প্রথমবার ছোট শিপমেন্ট দিয়ে পরীক্ষা করুন।\n\nসূত্র: দ্য ডেইলি স্টার (২৬ সেপ্টেম্বর ২০২৬)\n\nএমন অভিজ্ঞতা হলে কমেন্টে জানান, অন্যরা সাবধান হবে 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #স্ক্যাম_সতর্কতা #ScamAlert #CargoAgent #অনলাইন_প্রতারণা #ImportBangladesh #চায়না_ইমপোর্ট #1688",
+   "alt": "সুন্দর একটি পার্সেলের ছায়া দেয়ালে ফাঁদের আকার নিয়েছে — অগ্রিম টাকা চাওয়া ভুয়া কার্গো পেজ নিয়ে সতর্কতা",
+   "sources": [
+    "https://www.thedailystar.net/news/bangladesh/news/fears-grow-over-cyber-scam-gangs-gaining-foothold-4283031"
+   ]
+  }
+ ]
+}
