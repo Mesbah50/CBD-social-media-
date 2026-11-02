@@ -25,3 +25,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-01 | news | Dollar near Tk124: BB sold $20m at Tk123.65, Sept LCs >$8bn (53-month high) — landed cost buffer
 - 2026-11-01 | cost | Landed cost vs real cost: ads, COD returns, delivery, damage (FBX +5%, CCFI -2.41%)
 - 2026-11-01 | alert | Scam alert: fake cargo pages asking advance payment (Ctg Khulshi raid, 63 held)
+- 2026-11-02 | news | BB raises banks' NOP (dollar holding) limits, first since 2022 — what it means for small importers
+- 2026-11-02 | problem | November Bay of Bengal cyclone risk (BMD: 3 low-pressure systems): sea shipment delay & water damage
+- 2026-11-02 | idea | Winter setting in from first week of Nov: order timeline (air now, test small)

@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-02",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "ব্যাংকের [ডলার সীমা] বাড়ল",
+   "sub": "ছোট ইমপোর্টারের জন্য এর মানে কী",
+   "style": "material",
+   "ai_prompt": "Realistic cinematic product-style photograph of a large glass bank vault box on a clean light-grey surface, made entirely of transparent glass so we can see neat stacks of silver coins and a few small brown shipping cartons resting inside, the transparent glass material symbolising more room and openness for import payments; one small red coin as the only accent; deep Congress-blue backdrop, soft studio top light with subtle reflections, 50mm lens, eye level, wide 2:1 composition with the glass vault centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "route",
+   "caption": "ব্যাংকে ডলার রাখার সীমা বাড়ল — ছোট ইমপোর্টারের জন্য এর মানে কী? 🏦\n\n📰 খবরটা কী?\nদ্য বিজনেস স্ট্যান্ডার্ডের (২৬ অক্টোবর ২০২৬) খবর অনুযায়ী, ২০২২ সালের ডলার সংকটের পর এই প্রথম বাংলাদেশ ব্যাংক কয়েকটি ব্যাংকের নেট ওপেন পজিশন (NOP) সীমা বাড়াতে শুরু করেছে — অর্থাৎ ব্যাংক এখন আগের চেয়ে বেশি ডলার হাতে রাখতে পারবে। ব্র্যাক, উত্তরা ও এনসিসি ব্যাংকের সীমা বেড়েছে; একটি ব্যাংকের সীমা ৩৯ মিলিয়ন থেকে ৮০ মিলিয়ন ডলার হয়েছে। ব্যাংকাররা বলছেন, বড় LC পেমেন্টের আগে শেষ মুহূর্তে বাজার থেকে ডলার কেনার চাপ কমলে ডলারের রেটে চাপও কিছুটা কমতে পারে। তবে খবরেই বলা হয়েছে — সীমা বাড়লে নতুন ডলার তৈরি হয় না।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nএটা মূলত বড় LC-র খবর। আপনি এজেন্টের মাধ্যমে টাকায় পেমেন্ট করলে সরাসরি কিছু বদলাচ্ছে না — তবে ডলারের বাজার শান্ত থাকলে ইউয়ানের রেটও স্থির থাকার সম্ভাবনা বাড়ে।\n\n✅ এখন কী করবেন?\n১. \"রেট কমবে\" ভেবে অর্ডার আটকে রাখবেন না — এটা নিশ্চিত নয়।\n২. ২–৩ জন এজেন্টের ইউয়ান রেট তুলনা করুন, লিখিত নিন।\n৩. ল্যান্ডেড কস্টে ছোট বাফার রেখেই দাম ঠিক করুন।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (২৬ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #BangladeshBank #ডলার_রেট #LC #ইমপোর্ট_নিউজ #ইউয়ান_রেট #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "কাচের তৈরি একটি ভল্টের ভেতরে কয়েন ও কার্টন — ব্যাংকের ডলার রাখার সীমা বাড়ার খবর",
+   "sources": [
+    "https://www.tbsnews.net/economy/banking/banks-get-more-room-handle-large-lc-payments-1582981"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "problem",
+   "layout": "list",
+   "hook": "নভেম্বরে [ঘূর্ণিঝড়], মাল আটকাবে?",
+   "sub": "সমুদ্রপথে মাল আনলে এই ৪টা কাজ করুন",
+   "points": [
+    "হাতে ১–২ সপ্তাহ বাড়তি সময় রাখুন",
+    "কার্টনে পলি-র‍্যাপ, ওয়াটারপ্রুফ প্যাকিং",
+    "এজেন্টের সাথে লিখিত ড্যামেজ চুক্তি",
+    "জরুরি অল্প মাল এয়ারে আনুন"
+   ],
+   "style": "animal",
+   "ai_prompt": "Realistic macro photograph of a small turtle slowly carrying a neat stack of tiny brown shipping cartons on its shell across a wet light-grey surface, rain drops falling, a miniature cargo ship model blurred in the stormy background, the turtle symbolising slow, storm-delayed sea shipping; cool navy and Congress-blue tones with one small red tag on the top carton; moody soft cinematic light, 100mm macro lens, vertical 4:5 composition with the turtle centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "ship",
+   "caption": "নভেম্বরে ঘূর্ণিঝড়ের শঙ্কা — সমুদ্রপথের মাল আটকাবে? 🌀\n\n⚠️ সমস্যাটা কী?\nবাংলাদেশ আবহাওয়া অধিদপ্তরের নভেম্বরের পূর্বাভাস (bdnews24, ২ নভেম্বর ২০২৬) বলছে, এ মাসে বঙ্গোপসাগরে তিনটি লঘুচাপ তৈরি হতে পারে, যার এক-দুটি ঘূর্ণিঝড়ে রূপ নিতে পারে। খারাপ আবহাওয়ায় সাধারণত বন্দরে জাহাজ ভেড়া ও মাল খালাস ধীর হয়ে যায়। যারা সমুদ্রপথে মাল আনছেন, তাদের দুটো ঝুঁকি — দেরি আর পানিতে কার্টন নষ্ট।\n\n✅ সমাধান — এই ৪টা কাজ করুন:\n১. সময়ের বাফার: সী শিপমেন্টে গুয়াংজু থেকে এমনিতেই প্রায় ৪০–৫০ দিন লাগে। বিক্রির প্ল্যানে আরও ১–২ সপ্তাহ বাড়তি সময় রাখুন, প্রি-অর্ডারে তারিখ বেশি দিন না দিয়ে বলুন।\n২. প্যাকিং: সেলারকে অর্ডার রিমার্কে লিখুন — কার্টনের ভেতরে পলি ব্যাগ, বাইরে পলি-র‍্যাপ/টেপ। শিপিং মার্ক যেন পানিতে মুছে না যায়।\n৩. লিখিত চুক্তি: এজেন্টের সাথে আগেই লিখে নিন — পানি বা ড্যামেজ হলে দায় কার, ক্ষতিপূরণ কীভাবে।\n৪. জরুরি মাল এয়ারে: যে অল্প মাল এখনই বিক্রি হবে, সেটা এয়ারে (প্রায় ৭–১২ দিন) আনুন; বাকিটা সমুদ্রপথে।\n\nআর মাল হাতে পেলে আনবক্সিং ভিডিও করুন — দাবি করতে সেটাই প্রমাণ।\n\nসূত্র: bdnews24.com (২ নভেম্বর ২০২৬), বাংলাদেশ আবহাওয়া অধিদপ্তরের মাসিক পূর্বাভাস\n\nআপনার শিপমেন্ট কোথায় আটকে আছে? কমেন্টে লিখুন 👇",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #সী_ফ্রেইট #ঘূর্ণিঝড় #চট্টগ্রাম_বন্দর #ShippingDelay #CargoDamage #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "বৃষ্টির মধ্যে একটি কচ্ছপ পিঠে কার্টন নিয়ে ধীরে চলছে — ঘূর্ণিঝড়ে সমুদ্রপথের শিপমেন্ট দেরি হওয়ার সমস্যা ও সমাধান",
+   "sources": [
+    "https://bdnews24.com/bangladesh/hagrizbsu0"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "idea",
+   "layout": "hero",
+   "hook": "শীত আসছে, অর্ডার [এখনই]",
+   "sub": "শীতের মৌসুম ধরতে ইমপোর্টের টাইমলাইন",
+   "style": "shape",
+   "ai_prompt": "Realistic top-down studio photograph of many small brown shipping cartons and miniature blue containers neatly arranged on a clean light-grey floor to form a large rising arrow shape pointing upward to the right, a few soft white snowflake-like cotton puffs scattered around hinting at winter season demand, one red carton at the arrow tip as the only accent; Congress-blue shadows, crisp soft studio light, 35mm lens, wide 2:1 composition with the arrow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "cartons",
+   "caption": "শীত আসছে — অর্ডারের সময় এখনই ❄️\n\n📰 খবর:\nআবহাওয়া অধিদপ্তর জানিয়েছে, নভেম্বরের প্রথম সপ্তাহ থেকে তাপমাত্রা আরও কমতে পারে, ঢাকাসহ সারাদেশে শীতের অনুভূতি বাড়বে (bdnews24, ২৩ অক্টোবর ২০২৬)। মাসিক পূর্বাভাসেও বলা হয়েছে, নভেম্বরজুড়ে তাপমাত্রা ধীরে ধীরে কমবে।\n\n💡 সুযোগটা কোথায়?\nশীতে হোম ডেকর, হোম হ্যাকস আর বেবি ক্যাটাগরিতে ক্রেতারা নতুন জিনিস খোঁজেন। কিন্তু যিনি দেরিতে অর্ডার করেন, তার মাল আসে যখন সিজন অর্ধেক শেষ।\n\n🗓️ টাইমলাইনটা হিসাব করুন:\n• এয়ারে গুয়াংজু থেকে প্রায় ৭–১২ দিন, সমুদ্রপথে প্রায় ৪০–৫০ দিন।\n• তাই শীতের মাল এখন এয়ারে আনাই নিরাপদ।\n• আগে ছোট টেস্ট অর্ডার, বিক্রি হলে তারপর বড় অর্ডার।\n• ওজন আর ল্যান্ডেড কস্ট আগে হিসাব করে তবেই দাম ঠিক করুন।\n\n🤝 China Bond BD যেভাবে সাহায্য করে:\nFactory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service\n\nযোগাযোগ: Mesbah Uddin — WhatsApp: 01606481782\n\nসূত্র: bdnews24.com (২৩ অক্টোবর ও ২ নভেম্বর ২০২৬)",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #শীতের_ব্যবসা #বিজনেস_আইডিয়া #সিজনাল_ব্যবসা #HomeDecor #ImportBangladesh #চায়না_ইমপোর্ট #1688",
+   "alt": "কার্টন ও ছোট কনটেইনার দিয়ে সাজানো ঊর্ধ্বমুখী তীর, চারপাশে তুলার মতো তুষার — শীতের মৌসুমে ইমপোর্ট ব্যবসার সুযোগ",
+   "sources": [
+    "https://bdnews24.com/bangladesh/euwnbkn6xu",
+    "https://bdnews24.com/bangladesh/hagrizbsu0"
+   ]
+  }
+ ]
+}
