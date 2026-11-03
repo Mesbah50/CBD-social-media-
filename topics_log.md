@@ -28,3 +28,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-02 | news | BB raises banks' NOP (dollar holding) limits, first since 2022 — what it means for small importers
 - 2026-11-02 | problem | November Bay of Bengal cyclone risk (BMD: 3 low-pressure systems): sea shipment delay & water damage
 - 2026-11-02 | idea | Winter setting in from first week of Nov: order timeline (air now, test small)
+- 2026-11-03 | news | Chattogram Custom House moves to WTC Agrabad (phased from 1 Nov, full ops early Dec)
+- 2026-11-03 | learn | 4 questions to ask a cargo agent (Drewry WCI $4,429 -3%, Nov rate hikes uncertain)
+- 2026-11-03 | alert | Myth vs fact: big order with a new supplier during 11.11 peak (parcel backlog, longer lead times)

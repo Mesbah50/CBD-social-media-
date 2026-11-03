@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-03",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "চট্টগ্রাম কাস্টমস [নতুন ঠিকানায়]",
+   "sub": "আগ্রাবাদে স্থানান্তর — ইমপোর্টারের কী করণীয়",
+   "style": "shape",
+   "ai_prompt": "Realistic cinematic studio photograph of many small brown shipping cartons and miniature navy-blue containers neatly arranged on a clean light-grey floor to form a large curved arrow shape, sweeping from a small stack on the left to a fresh neat stack on the right, the arrow shape clearly showing a move to a new location; one red carton at the arrow tip as the only accent; deep Congress-blue backdrop, soft top light, 35mm lens, slightly elevated angle, wide 2:1 composition with the arrow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "route",
+   "caption": "চট্টগ্রাম কাস্টম হাউস নতুন ঠিকানায় — ইমপোর্টারের কী করণীয়? 📦\n\n📰 খবরটা কী?\nচট্টগ্রাম বন্দর দিয়ে আসা সব আমদানি-রপ্তানি পণ্যের শুল্কায়ন হয় চট্টগ্রাম কাস্টম হাউসে। পুরোনো জরাজীর্ণ ভবন ছেড়ে কাস্টম হাউস এখন আগ্রাবাদের ওয়ার্ল্ড ট্রেড সেন্টারে ভাড়া করা অফিসে যাচ্ছে।\n\n• ১ নভেম্বর থেকে ধাপে ধাপে স্থানান্তর শুরু হয়েছে — প্রথম ধাপে কয়েকটি অ্যাসেসমেন্ট গ্রুপ (যেমন ৮-সি, ৮-ডি) নতুন জায়গা থেকে কাজ করছে।\n• পুরোপুরি কার্যক্রম শুরুর লক্ষ্য ডিসেম্বরের প্রথম সপ্তাহ।\n• বিশ্বব্যাংকের অর্থায়নে নতুন ভবন না হওয়া পর্যন্ত এখান থেকেই কাজ চলবে।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nএপ্রিল ২০২৬-এর NBR টাইম রিলিজ স্টাডিতে কনটেইনারের মাল খালাসে গড়ে ১৩.২ দিন লেগেছে। অফিস বদলের এই এক মাসে কোন ডেস্ক কোথায় — এই বিভ্রান্তিতে দেরি হতে পারে।\n\n✅ এখন কী করবেন?\n১. আপনার C&F এজেন্ট বা কার্গো এজেন্টের কাছে জেনে নিন — আপনার মালের অ্যাসেসমেন্ট গ্রুপ কবে কোথায় বসছে।\n২. ইনভয়েস, প্যাকিং লিস্ট, HS কোড আগে থেকেই ঠিক রাখুন।\n৩. নভেম্বর–ডিসেম্বরে সমুদ্রপথের মালের জন্য কয়েক দিন বাড়তি সময় হাতে রাখুন।\n\nসূত্র: দ্য ফাইন্যান্সিয়াল এক্সপ্রেস/বাসস (১ নভেম্বর ২০২৬), Maritime Gateway (৩১ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #চট্টগ্রাম_কাস্টমস #ChattogramCustoms #ইমপোর্ট_নিউজ #CustomsClearance #ImportBangladesh #চায়না_ইমপোর্ট #CnFAgent",
+   "alt": "কার্টন ও ছোট কনটেইনার দিয়ে বানানো বাঁকা তীর, এক জায়গা থেকে নতুন জায়গায় — চট্টগ্রাম কাস্টম হাউস স্থানান্তরের খবর",
+   "sources": [
+    "https://thefinancialexpress.com.bd/trade/chattogram-custom-house-moves-to-rented-office",
+    "https://www.maritimegateway.com/chattogram-customs-relocation-to-agrabad-begins-in-phases-on-1-november/"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "learn",
+   "layout": "list",
+   "hook": "কার্গো এজেন্টকে [এই ৪ প্রশ্ন] করেছেন?",
+   "sub": "রেট ওঠানামার সময়ে লিখিত রেটই ভরসা",
+   "points": [
+    "এয়ার/সী কেজি প্রতি রেট কত?",
+    "কাস্টমস ডিউটি রেটে ধরা আছে?",
+    "মাল হারালে বা ভাঙলে দায় কার?",
+    "সর্বনিম্ন ওজন আর ট্রানজিট সময়?"
+   ],
+   "style": "material",
+   "ai_prompt": "Realistic studio product-style photograph of a single shipping carton made entirely of clear transparent glass standing on a clean light-grey surface, inside it neatly visible smaller brown boxes and a few coins, the glass material symbolising a transparent, honest deal with nothing hidden; subtle navy-blue reflections, one small red tape strip as the only accent; Congress-blue gradient backdrop, soft rim lighting, 85mm lens, eye level, vertical 4:5 composition with the glass carton centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "কার্গো এজেন্টকে এই ৪টা প্রশ্ন করেছেন? 🧾\n\n📰 আগে খবরটা:\nড্রুরির ওয়ার্ল্ড কনটেইনার ইনডেক্স (২৯ অক্টোবর ২০২৬) ৩% কমে প্রতি ৪০ ফুট কনটেইনারে ৪,৪২৯ ডলার হয়েছে। আবার ড্রুরি বলছে, ক্যারিয়াররা নভেম্বরে রেট বাড়ানোর ঘোষণা দিচ্ছে — তবে চাহিদা দুর্বল থাকায় সেই বাড়তি রেট টিকবে কিনা নিশ্চিত নয়। মানে রেট ওঠানামা করছে।\n\n🎓 ইমপোর্ট শিখুন: এজেন্ট বাছাইয়ের প্রশ্ন\nরেট যখন ওঠানামা করে, তখন মুখের কথায় দাম ঠিক করলে পরে \"রেট বেড়ে গেছে\" শুনতে হয়। তাই অর্ডারের আগেই এজেন্টকে জিজ্ঞেস করুন:\n\n১. এয়ারে কেজি প্রতি আর সমুদ্রপথে কেজি/CBM প্রতি রেট কত — আপনার পণ্যের ধরন অনুযায়ী? (ব্যাটারি, লিকুইড, কাপড়ের রেট আলাদা হয়)\n২. কাস্টমস ডিউটি কি রেটের মধ্যে ধরা, নাকি আলাদা?\n৩. মাল হারালে বা ভেঙে গেলে দায় কার, কত টাকা পর্যন্ত?\n৪. সর্বনিম্ন ওজন কত, আর গুয়াংজু থেকে কত দিনে আসে?\n\nসাথে গুয়াংজু ওয়্যারহাউসের চাইনিজ ঠিকানা, ফোন নম্বর আর আপনার শিপিং মার্ক লিখিত নিন। ২–৩ জন এজেন্টের রেট তুলনা করুন, প্রথমে ছোট চালান দিয়ে পরীক্ষা করুন, মাল এলে নিজে ওজন মিলিয়ে দেখুন।\n\nসূত্র: Drewry World Container Index (২৯ অক্টোবর ২০২৬)\n\nআর কী জানতে চান? কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_শিখুন #কার্গো_এজেন্ট #CargoAgent #ShippingRate #ImportBangladesh #চায়না_ইমপোর্ট #1688",
+   "alt": "স্বচ্ছ কাচের তৈরি একটি কার্টন, ভেতরে ছোট বাক্স ও কয়েন দেখা যাচ্ছে — কার্গো এজেন্টের সাথে স্বচ্ছ লিখিত রেট",
+   "sources": [
+    "https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "alert",
+   "layout": "notice",
+   "notice_title": "ভুল বনাম সত্য",
+   "hook": "১১.১১-এর ভিড়ে [নতুন সাপ্লায়ার]? সাবধান",
+   "sub": "পিক সিজনে নতুন সাপ্লায়ারে বড় অর্ডারের ঝুঁকি",
+   "style": "animal",
+   "ai_prompt": "Realistic macro photograph of a garden snail slowly carrying a small brown shipping carton on its shell, crawling along a clean light-grey surface toward a blurred row of navy-blue shipping containers in the background, the slow snail clearly symbolising delayed delivery in a busy peak season; one tiny red sticker on the carton as the only accent; deep Congress-blue background bokeh, soft cinematic side light, 100mm macro lens, low angle, wide 2:1 composition with the snail centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "warehouse",
+   "caption": "১১.১১-এর ভিড়ে নতুন সাপ্লায়ার? সাবধান ⚠️\n\n❌ ভুল ধারণা: \"১১.১১-এর সেলে চীনে সব সস্তা, এখনই নতুন সাপ্লায়ারকে বড় অর্ডার দিই।\"\n✅ সত্য: এই সময় চীনের কারখানা আর কুরিয়ার সবচেয়ে ব্যস্ত থাকে — দামের চেয়ে দেরি আর মানের ঝুঁকিই বেশি।\n\n📰 তথ্যগুলো:\n• এ বছর ১১.১১ পড়েছে বুধবার, ১১ নভেম্বর।\n• চীনের স্টেট পোস্ট ব্যুরোর হিসাবে গত বছর ২১ অক্টোবর–১১ নভেম্বর চীনে ১৩৯৪ কোটি পার্সেল হ্যান্ডেল হয়েছে; শুধু ১১ নভেম্বর দিনেই ৭৭.৭ কোটি।\n• সোর্সিং বিশেষজ্ঞদের মতে, এই সময় দেশীয় বড় অর্ডার আগে যায়, ছোট বিদেশি অর্ডারের লিড টাইম কয়েক সপ্তাহ বাড়তে পারে; গুদাম আর লোকাল কুরিয়ারেও দেরি হয়।\n\n🛡️ কী করবেন?\n১. এই সপ্তাহে একদম নতুন সাপ্লায়ারকে বড় অর্ডার নয় — আগে স্যাম্পল বা ছোট অর্ডার।\n২. সাপ্লায়ার যে সময় বলছে, তার সাথে ২–৩ সপ্তাহ বাড়তি ধরে প্ল্যান করুন।\n৩. পুরোনো বিশ্বস্ত সাপ্লায়ারের কাছে স্টক আছে কিনা চ্যাটে লিখিত নিন।\n৪. সব কথা ও পেমেন্ট 1688-এর ভেতরেই রাখুন।\n\nসূত্র: OlaChina (সেপ্টেম্বর ২০২৬), ExamineChina (সেপ্টেম্বর ২০২৬)\n\nআপনার অভিজ্ঞতা কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ScamAlert #ইমপোর্ট_সতর্কতা #DoubleEleven #১১_১১ #1688 #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "একটি শামুক পিঠে ছোট কার্টন নিয়ে ধীরে চলছে, পেছনে কনটেইনার — ১১.১১ পিক সিজনে ডেলিভারি দেরির সতর্কতা",
+   "sources": [
+    "https://olachina.org/singles-day-2026/",
+    "https://www.examinechina.com/singles-day-11-11-importers/"
+   ]
+  }
+ ]
+}
