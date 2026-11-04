@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-04",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "কনটেইনার বিল এখন [অনলাইনে]",
+   "sub": "নভেম্বর থেকে বন্দরের নতুন নিয়ম — করণীয় কী",
+   "style": "animal",
+   "ai_prompt": "Realistic cinematic photograph of a majestic eagle flying fast and straight over a neat modern container port, wings fully spread, the eagle symbolising a fast and direct process; below it tidy rows of navy-blue shipping containers with one red container as the only accent, gantry cranes softly blurred in the background; deep Congress-blue evening sky with clean light, 200mm telephoto lens, slight low angle, wide 2:1 composition with the eagle centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "বন্দরের কনটেইনার বিল এখন শুধু অনলাইনে — ইমপোর্টারের কী করণীয়? 📦\n\n📰 খবরটা কী?\nচট্টগ্রাম বন্দর কর্তৃপক্ষের নোটিশ অনুযায়ী, ১ নভেম্বর ২০২৬ থেকে কনটেইনারের সব কনসাইনি বিল (Consignee Bill for Container) ব্যাংকিং চ্যানেলে অনলাইনে পরিশোধ করতে হবে। পে-অর্ডার বা ব্যাংকের রিভলভিং অ্যাকাউন্টে বিল দেওয়ার সুযোগ ৩১ অক্টোবর শেষ হয়েছে। সোনালী ব্যাংকের অনলাইন গেটওয়ে বন্দরের সিস্টেমের সাথে যুক্ত করা হয়েছে।\n\nএকই সাথে, চট্টগ্রাম কনটেইনার টার্মিনাল (CCT)-এর অপারেটর সাইফ পাওয়ারটেকের মেয়াদ ২ নভেম্বর শেষ হলেও নতুন অপারেটর নিয়োগ প্রক্রিয়া চলায় তাদের আরও ৩ সপ্তাহ বাড়ানো হয়েছে।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nনতুন নিয়মের শুরুতে পেমেন্টে কারিগরি সমস্যা বা দেরি হতে পারে — আর বন্দরে মাল যত দিন পড়ে থাকে, খরচ তত বাড়ে।\n\n✅ এখন কী করবেন?\n১. আপনার C&F বা কার্গো এজেন্টকে জিজ্ঞেস করুন — অনলাইন পেমেন্টের ব্যবস্থা তাদের প্রস্তুত কি না।\n২. ইনভয়েস, প্যাকিং লিস্ট, HS কোড আগেই ঠিক রাখুন, যেন বিল হাতে পেলেই পরিশোধ করা যায়।\n৩. নভেম্বরে সমুদ্রপথের মালের জন্য কয়েক দিন বাড়তি সময় হাতে রাখুন।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (১ অক্টোবর ও ২ নভেম্বর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #চট্টগ্রাম_বন্দর #ChattogramPort #ইমপোর্ট_নিউজ #OnlinePayment #ImportBangladesh #চায়না_ইমপোর্ট #CnFAgent",
+   "alt": "সারি সারি কনটেইনারের বন্দরের ওপর দিয়ে সোজা উড়ে যাওয়া ঈগল — চট্টগ্রাম বন্দরের কনটেইনার বিল অনলাইনে পরিশোধের খবর",
+   "sources": [
+    "https://www.tbsnews.net/bangladesh/chattogram-port-extends-transition-period-fully-online-container-bill-payments-1559216",
+    "https://www.tbsnews.net/bangladesh/chattogram-port-extends-cct-operation-deal-saif-powertec-three-weeks-after-contract"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "cost",
+   "layout": "vs",
+   "hook": "ছাড় দিয়েও [লাভ নেই] কেন?",
+   "art": {
+    "left": {
+     "tag": "DISCOUNT",
+     "label": "৩০% ছাড়",
+     "sub": "লাভ প্রায় শেষ"
+    },
+    "right": {
+     "tag": "BUNDLE",
+     "label": "২ পিস অফার",
+     "sub": "এক ডেলিভারিতে বেশি লাভ"
+    }
+   },
+   "style": "contrast",
+   "ai_prompt": "Realistic studio photograph in a split frame: on the left side a messy dim grey pile of crumpled brown cartons and a few scattered coins on a dull grey floor, looking like a losing sale; on the right side two neat bright cartons tied together as one tidy bundle with a red ribbon, standing on a clean light-grey surface lit in fresh blue light, a small neat stack of coins beside them; clear contrast between wrong way and right way, Congress-blue backdrop on the right, soft studio light, 50mm lens, eye level, wide 2:1 composition centred on the dividing line. No text, no letters, no logos, no people, no faces.",
+   "fallback": "cartons",
+   "caption": "ছাড় দিয়েও লাভ নেই কেন? 🤔\n\n📰 বাজারের অবস্থা\nদ্য বিজনেস স্ট্যান্ডার্ডের (২২ অক্টোবর) খবরে ঢাকার কাপড়ের দোকানে ২০% থেকে ৭০% পর্যন্ত ছাড় দিয়েও বিক্রি প্রত্যাশার চেয়ে কম। এক বিক্রেতা বলছেন, স্বাভাবিকের মাত্র এক-তৃতীয়াংশ বিক্রি হচ্ছে। এদিকে IMF পূর্বাভাস দিয়েছে চলতি অর্থবছরে মূল্যস্ফীতি ১০.৯% হতে পারে — ক্রেতা টাকা খরচে সাবধান।\n\n💸 বড় ছাড় কেন লাভ খেয়ে ফেলে? (উদাহরণ, আসল রেট নয়)\n• বিক্রয়মূল্য ৳১,২০০, ল্যান্ডেড কস্ট ৳৪০০, বিজ্ঞাপন + ডেলিভারি + রিটার্ন মিলিয়ে অর্ডারপ্রতি ৳৩৫০ → লাভ ৳৪৫০।\n• ৩০% ছাড়ে দাম ৳৮৪০ → খরচ একই থাকে → লাভ মাত্র ৳৯০।\n\n✅ ছাড়ের বদলে বান্ডেল\n• ২ পিস একসাথে, যেমন ৳২,১০০ — বিজ্ঞাপন একবার, ডেলিভারি একবার।\n• খরচ: পণ্য ৳৮০০ + ৳৩৫০ = ৳১,১৫০ → লাভ ৳৯৫০।\n• অর্ডার কনফার্মেশন কলে ছোট একটা সম্পর্কিত পণ্য (ক্রস-সেল) অফার করুন — একই ডেলিভারি চার্জে।\n\n📌 মনে রাখুন: অর্ডারের আগেই হিসাব করুন — অন্তত ৩ গুণ দামে বিক্রি করা যাবে কি না। না গেলে ছাড় নয়, পণ্য বদলান।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (২২ ও ১৩ অক্টোবর ২০২৬)\n\nআপনার হিসাব নিয়ে প্রশ্ন? কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #লাভের_হিসাব #ProfitMargin #বান্ডেল_অফার #BundleOffer #ইমপোর্ট_ব্যবসা #SmallBusinessBD #ল্যান্ডেড_কস্ট",
+   "alt": "বাঁ দিকে এলোমেলো ধূসর কার্টন আর ছড়ানো কয়েন, ডান দিকে লাল ফিতায় বাঁধা দুটি গোছানো কার্টন — ছাড় বনাম বান্ডেল অফারের লাভের তুলনা",
+   "sources": [
+    "https://www.tbsnews.net/bangladesh/dhaka-clothing-retailers-report-weak-sales-despite-discounts-70-1579936",
+    "https://www.tbsnews.net/economy/imf-warns-bangladeshs-inflation-may-hit-109-fy27-highest-16-years-1571386"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "idea",
+   "layout": "hero",
+   "hook": "[গিফট সেট] ব্যবসা, বিয়ের মৌসুমে",
+   "sub": "টোস্টারের বাইরে নতুন ব্যবসার আইডিয়া",
+   "style": "shadow",
+   "ai_prompt": "Realistic cinematic studio photograph of a single small elegant gift box wrapped in navy-blue paper with a thin red ribbon, standing on a clean light-grey floor near a plain wall; a strong side light makes the gift box cast a long dramatic shadow on the wall shaped like a large warehouse stacked with many cartons, the shadow showing what a small gift idea can grow into; Congress-blue tones, soft rim light, 50mm lens, eye level, wide 2:1 composition with the box and its shadow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "warehouse",
+   "caption": "বিয়ের মৌসুমে গিফট সেট ব্যবসা — নতুন সুযোগ 🎁\n\n📰 কেন এখনই?\nশীত মানেই বাংলাদেশে বিয়ের মৌসুম। দ্য ডেইলি স্টারের এক লেখায় বলা হয়েছে, আমাদের বিয়েতে গিফট রেজিস্ট্রির চল নেই, তাই বেশিরভাগ দম্পতি একগাদা টোস্টার আর স্যান্ডউইচ মেকার উপহার পান। আবার দ্য বিজনেস স্ট্যান্ডার্ড (২২ অক্টোবর) জানাচ্ছে, দোকানে শীতের পণ্য এসেছে কিন্তু ঠান্ডা না পড়ায় বিক্রি এখনো কম — মানে আসল চাহিদা সামনে।\n\n💡 আইডিয়া: \"একই উপহার\" নয়, গোছানো গিফট সেট\n• হোম ডেকর বা কিচেনের ছোট ছোট জিনিস মিলিয়ে সুন্দর বক্সে একটা সেট।\n• নিজের ব্র্যান্ডের বক্স/স্টিকার — দাম তুলনা কম হয়, লাভ ভালো থাকে।\n• হালকা, ভাঙে না এমন জিনিস বেছে নিন; কাচ-সিরামিক শুরুতে এড়িয়ে চলুন।\n• আগে ছোট পরিমাণ এয়ারে এনে টেস্ট করুন, চললে বড় অর্ডার।\n\n📦 China Bond BD যা করে:\nFactory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service\nএক পিস থেকে ৫০০ পিস — 1688 লিংক বা ছবি পাঠালেই খরচের হিসাব।\n\nMesbah Uddin — WhatsApp: 01606481782\n\nসূত্র: দ্য ডেইলি স্টার, দ্য বিজনেস স্ট্যান্ডার্ড (২২ অক্টোবর ২০২৬)",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #বিয়ের_মৌসুম #WeddingSeason #গিফট_সেট #GiftBox #HomeDecor #ব্যবসার_আইডিয়া #PrivateLabel",
+   "alt": "ছোট একটি নীল উপহারের বক্সের ছায়া দেয়ালে বিশাল কার্টন-ভরা গুদামের মতো — বিয়ের মৌসুমে গিফট সেট ব্যবসার আইডিয়া",
+   "sources": [
+    "https://images.thedailystar.net/node/3509781",
+    "https://www.tbsnews.net/bangladesh/dhaka-clothing-retailers-report-weak-sales-despite-discounts-70-1579936"
+   ]
+  }
+ ]
+}

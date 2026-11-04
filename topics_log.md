@@ -31,3 +31,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-03 | news | Chattogram Custom House moves to WTC Agrabad (phased from 1 Nov, full ops early Dec)
 - 2026-11-03 | learn | 4 questions to ask a cargo agent (Drewry WCI $4,429 -3%, Nov rate hikes uncertain)
 - 2026-11-03 | alert | Myth vs fact: big order with a new supplier during 11.11 peak (parcel backlog, longer lead times)
+- 2026-11-04 | news | Ctg port container (consignee) bills online-only from 1 Nov (Sonali Bank gateway); CCT operator extended 3 weeks
+- 2026-11-04 | cost | Discount vs bundle: why 30% off kills profit (retail 20–70% discounts, weak sales; IMF inflation 10.9%)
+- 2026-11-04 | idea | Winter wedding season gift sets (home decor/kitchen, own-brand box) instead of toasters
