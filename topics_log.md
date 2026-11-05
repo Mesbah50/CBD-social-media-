@@ -34,3 +34,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-04 | news | Ctg port container (consignee) bills online-only from 1 Nov (Sonali Bank gateway); CCT operator extended 3 weeks
 - 2026-11-04 | cost | Discount vs bundle: why 30% off kills profit (retail 20–70% discounts, weak sales; IMF inflation 10.9%)
 - 2026-11-04 | idea | Winter wedding season gift sets (home decor/kitchen, own-brand box) instead of toasters
+- 2026-11-05 | news | US midterms: Democrats win Congress, no immediate tariff relief (BD 25.6%), war-risk $2–4k/container — written all-in freight quote + buffer
+- 2026-11-05 | problem | Ctg port gate-out: e-challan R number (duty) + CP number (port charges) verification — keep payment proofs matching
+- 2026-11-05 | alert | Myth vs fact: misdeclaration saves duty? (toothpick case 22.5t vs 1,620kg; fake seal on customs-locked container)

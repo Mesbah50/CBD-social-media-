@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-05",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "আমেরিকার ভোটের পর [বাণিজ্যে] কী বদলাবে?",
+   "sub": "শুল্ক কমছে না এখনই — ছোট ইমপোর্টারের করণীয়",
+   "style": "exaggeration",
+   "ai_prompt": "Realistic cinematic photograph using exaggeration: a single small brown carton sits on a calm quay while an enormous towering navy-blue container ship looms right behind it, absurdly oversized, rising like a wall of stacked containers into a stormy Congress-blue sky, one red container as the only accent, dramatic contrast of scale showing a small importer facing huge global trade forces, soft rim light, 24mm wide lens, low angle, wide 2:1 composition with the carton centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "ship",
+   "caption": "আমেরিকার ভোটের পর বাণিজ্যে কী বদলাবে? 🌍\n\n📰 খবরটা কী?\nডেইলি টাইমস অব বাংলাদেশের (৫ নভেম্বর ২০২৬) খবর অনুযায়ী, যুক্তরাষ্ট্রের মধ্যবর্তী নির্বাচনে কংগ্রেসের দুই কক্ষেই ডেমোক্র্যাটরা জিতেছে। বিশেষজ্ঞদের মতে, এতে নতুন বাণিজ্য বিধিনিষেধ আরোপ কঠিন হতে পারে, কিন্তু শুল্কে তাৎক্ষণিক কোনো ছাড় আসছে না।\n\nএখন বাংলাদেশি পণ্যে যুক্তরাষ্ট্রে মোট শুল্ক ২৫.৬% (অতিরিক্ত ১০% সহ)। একই খবরে একজন রপ্তানিকারক নেতা জানিয়েছেন, যুদ্ধ-ঝুঁকির কারণে কনটেইনারপ্রতি ওয়ার-রিস্ক চার্জ ২,০০০ থেকে ৪,০০০ ডলার পর্যন্ত উঠেছে।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nবিশ্ব বাণিজ্যে অনিশ্চয়তা চলছেই। শিপিং লাইনের সারচার্জ হঠাৎ বাড়তে পারে, আর সেটা শেষ পর্যন্ত কার্গো রেটে এসে পড়ে।\n\n✅ এখন কী করবেন?\n১. কার্গো এজেন্টের কাছ থেকে লিখিত রেট নিন — সব চার্জ (সারচার্জসহ) ধরা আছে কি না জিজ্ঞেস করুন।\n২. ল্যান্ডেড কস্টের হিসাবে কিছুটা বাড়তি খরচ (বাফার) রাখুন।\n৩. সব টাকা এক পণ্যে না ঢেলে ছোট পরিমাণে টেস্ট করুন।\n\nসূত্র: ডেইলি টাইমস অব বাংলাদেশ (৫ নভেম্বর ২০২৬), দ্য ডেইলি স্টার (১ সেপ্টেম্বর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_নিউজ #USMidterms #Tariff #শুল্ক #FreightRates #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "শান্ত জেটিতে একটি ছোট কার্টন, পেছনে বিশাল কনটেইনার জাহাজ — যুক্তরাষ্ট্রের নির্বাচনের পর বিশ্ব বাণিজ্যের অনিশ্চয়তা",
+   "sources": [
+    "https://tob.news/us-midterms-shift-offers-export-hope-not-tariff-relief/",
+    "https://www.thedailystar.net/business/economy/news/bangladesh-get-slight-tariff-edge-over-china-vietnam-us-4261556"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "problem",
+   "layout": "list",
+   "hook": "বন্দরের গেটে মাল [আটকে গেল?]",
+   "sub": "ই-চালানে এখন R ও CP নম্বর যাচাই হয়",
+   "points": [
+    "ডিউটির পেমেন্ট রসিদ মিলিয়ে নিন",
+    "বন্দর চার্জ পরিশোধের প্রমাণ রাখুন",
+    "কাগজে নাম-নম্বর হুবহু এক রাখুন",
+    "এজেন্টের কাছে ই-চালানের কপি নিন"
+   ],
+   "style": "animal",
+   "ai_prompt": "Realistic photograph using an animal device: a wise owl with sharp eyes perched on top of a neat stack of navy-blue sealed cartons at a port gate, carefully inspecting, symbolising checking every payment before release; behind it a blurred container yard with a red gate barrier, clean light-grey morning haze with Congress-blue tones, soft natural light, 85mm lens, eye level, vertical 4:5 composition with the owl centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "বন্দরের গেটে মাল আটকে গেল? 🚛\n\n😟 সমস্যা\nসব ক্লিয়ার, ট্রাকও এসেছে — কিন্তু গেট থেকে মাল বের হচ্ছে না। কারণ অনেক সময় পেমেন্টের তথ্য কাগজের সাথে মেলে না।\n\n📰 কী বদলেছে?\nমেরিটাইম গেটওয়ের (১৪ অক্টোবর ২০২৬) খবর অনুযায়ী, চট্টগ্রাম বন্দর কর্তৃপক্ষ ১৩ অক্টোবর জানিয়েছে — মাল ডেলিভারির শেষ কাগজ ই-চালানে এখন দুটি নম্বর থাকে:\n• R নম্বর — বিল অব এন্ট্রির রেফারেন্স, কাস্টমস ডিউটি-ট্যাক্স পরিশোধ নিশ্চিত করে।\n• CP নম্বর — বন্দরের ফি ও চার্জ পরিশোধ নিশ্চিত করে।\nগেটে কর্মকর্তারা এই দুটো মিলিয়ে তবেই মালবাহী গাড়ি ছাড়েন। বন্দরের লক্ষ্য ডিসেম্বর ২০২৬-এর মধ্যে পুরোপুরি কাগজবিহীন হওয়া।\n\n✅ সমাধান\n১. ডিউটি পরিশোধের রসিদ বিল অব এন্ট্রির সাথে মিলিয়ে রাখুন।\n২. বন্দরের চার্জ পরিশোধের প্রমাণ আলাদা করে সংরক্ষণ করুন।\n৩. ইনভয়েস, প্যাকিং লিস্ট আর সব কাগজে নাম ও নম্বর হুবহু এক রাখুন।\n৪. আপনার C&F এজেন্টের কাছ থেকে ই-চালানের কপি চেয়ে নিন।\n\nসূত্র: মেরিটাইম গেটওয়ে (১৪ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #চট্টগ্রাম_বন্দর #ChattogramPort #EChallan #কাস্টমস_ক্লিয়ারেন্স #CnFAgent #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "বন্দরের গেটে কার্টনের স্তূপের ওপর বসে মনোযোগ দিয়ে দেখছে একটি পেঁচা — ই-চালানে পেমেন্ট যাচাইয়ের সমস্যা ও সমাধান",
+   "sources": [
+    "https://www.maritimegateway.com/chattogram-port-e-challan-upgrade/"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "alert",
+   "layout": "notice",
+   "notice_title": "ভুল বনাম সত্য",
+   "hook": "ভুল ঘোষণায় কি [ডিউটি বাঁচে?]",
+   "sub": "কাস্টমস এখন কনটেইনার লক করে যাচাই করে",
+   "style": "material",
+   "ai_prompt": "Realistic studio photograph using a material device: a shipping carton made entirely of clear transparent glass standing on a clean light-grey surface, every small box inside clearly visible, symbolising an honest, transparent customs declaration; a heavy red padlock-style seal hangs on its side, deep Congress-blue backdrop, crisp studio light with soft reflections, 50mm lens, eye level, wide 2:1 composition with the glass carton centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "cartons",
+   "caption": "ভুল ঘোষণায় ডিউটি বাঁচে? — একদম ভুল ধারণা ⚠️\n\n❌ ভুল ধারণা: \"কম দামি পণ্যের নাম লিখে দিলে ডিউটি কম লাগবে, কেউ খুলে দেখবে না।\"\n\n✅ সত্য: কাস্টমস খুলে দেখে — আর ধরা পড়লে বিপদ অনেক বড়।\n\n📰 সাম্প্রতিক ঘটনা\nদ্য বিজনেস স্ট্যান্ডার্ডের (১৭ অক্টোবর ২০২৬) খবরে NBR জানিয়েছে:\n• চীন থেকে আসা একটি চালানে ২২.৫ টন সাধারণ টুথপিক ঘোষণা করা হয়েছিল, কিন্তু টুথপিক পাওয়া গেছে মাত্র ১,৬২০ কেজি। বাকি মালে ছিল BSTI-নিষিদ্ধ ক্রিমসহ নানা পণ্য — আনুমানিক ফাঁকি প্রায় ২.৮ কোটি টাকা।\n• আরেক ঘটনায় পরীক্ষার জন্য ASYCUDA World-এ লক করা একটি কনটেইনার নকল সিল আর জাল সই দিয়ে বের করার চেষ্টা ধরা পড়েছে। প্রতিটি কনটেইনারের আলাদা লক নম্বর বিল অব লেডিংয়ের সাথে মিলিয়ে দেখা হয়।\n\n🛡️ আপনি কী করবেন?\n১. যে পণ্য আনছেন, ঠিক সেটাই ঘোষণা করুন — সঠিক HS কোড ও আসল দাম।\n২. এজেন্টের \"শর্টকাটে কম খরচে ছাড়িয়ে দেব\" প্রস্তাবে রাজি হবেন না।\n৩. আপনার নামের চালানে অন্যের মাল যেন না ঢোকে — প্যাকিং লিস্ট মিলিয়ে নিন।\n\nসূত্র: দ্য বিজনেস স্ট্যান্ডার্ড (১৭ অক্টোবর ২০২৬)\n\nপ্রশ্ন থাকলে কমেন্টে লিখুন 👇 ফলো করুন China Bond BD।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_সতর্কতা #MythVsFact #কাস্টমস #Misdeclaration #HSCode #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "স্বচ্ছ কাচের তৈরি একটি কার্টন, ভেতরের সব বাক্স দেখা যাচ্ছে, পাশে লাল সিল — সঠিক ঘোষণার গুরুত্ব নিয়ে ভুল বনাম সত্য",
+   "sources": [
+    "https://www.tbsnews.net/bangladesh/corruption/fake-seal-forged-signatures-attempt-remove-container-under-customs-lock-foiled"
+   ]
+  }
+ ]
+}
