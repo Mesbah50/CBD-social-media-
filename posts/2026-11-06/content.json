@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-06",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "দেশের বাণিজ্য ঘাটতি বাড়ল [৩১%]",
+   "sub": "জ্বালানি আমদানি দ্বিগুণ — ছোট ইমপোর্টারের করণীয়",
+   "style": "shape",
+   "ai_prompt": "Realistic studio photograph using a shape device: dozens of small brown shipping cartons and stacks of coins arranged on a clean light-grey floor to form one giant upward-pointing arrow, the arrow tip made of a few red cartons, deep Congress-blue backdrop, a miniature navy container ship model beside the arrow, soft overhead studio light with gentle shadows, 35mm lens, slightly elevated angle, wide 2:1 composition with the arrow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "দেশের বাণিজ্য ঘাটতি বাড়ল ৩১% 📊\n\n📰 খবরটা কী?\nডেইলি স্টারের (৫ নভেম্বর ২০২৬) খবর, বাংলাদেশ ব্যাংকের তথ্য অনুযায়ী চলতি অর্থবছরের প্রথম প্রান্তিকে (জুলাই–সেপ্টেম্বর) বাণিজ্য ঘাটতি আগের বছরের চেয়ে ৩১% বেড়ে ৭৪৮ কোটি ডলার হয়েছে।\n\n• মোট আমদানি ১৫% বেড়ে ১,৯৩৩ কোটি ডলার, রপ্তানি বেড়েছে ৭%\n• জ্বালানি তেল আমদানির খরচ ১০৫% বেড়ে প্রায় ৪২০ কোটি ডলার — বাড়তি আমদানির বড় অংশই এটা\n• চলতি হিসাবের ঘাটতিও বেড়েছে, ঘাটতি মেটাতে রিজার্ভ থেকে ডলার দিতে হয়েছে\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nডলারের ওপর চাপ থাকলে রেট হঠাৎ ওঠানামা করতে পারে। আজকের রেট ধরে হিসাব করলে মাল আসার সময় খরচ বেড়ে যেতে পারে।\n\n✅ এখন কী করবেন?\n১. ল্যান্ডেড কস্টে ডলার/ইউয়ান রেটের জন্য একটু বাড়তি জায়গা রাখুন।\n২. এজেন্টকে পেমেন্টের দিনের রেট লিখিতভাবে কনফার্ম করতে বলুন।\n৩. একবারে পুরো বাজেট না ঢেলে ছোট ছোট চালানে অর্ডার দিন।\n৪. বিক্রয়মূল্য ঠিক করার আগে নতুন রেটে খরচ আবার হিসাব করুন।\n\nসূত্র: দ্য ডেইলি স্টার (বাংলাদেশ ব্যাংকের তথ্য)\n\nআপনার ব্যবসায় ডলার রেটের প্রভাব কেমন পড়ছে? কমেন্টে জানান 👇 আর আপডেট পেতে পেজটি ফলো করুন।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_নিউজ #বাণিজ্য_ঘাটতি #TradeDeficit #DollarRate #BangladeshBank #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "ছোট কার্টন ও কয়েন দিয়ে সাজানো বিশাল ঊর্ধ্বমুখী তীর, পাশে কনটেইনার জাহাজের মডেল — বাংলাদেশের বাণিজ্য ঘাটতি ৩১% বৃদ্ধির খবর",
+   "sources": [
+    "https://www.thedailystar.net/business/news/bangladeshs-trade-deficit-widens-31-fuel-import-bill-doubles-4316541"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "learn",
+   "layout": "list",
+   "hook": "চীনের কারখানা অর্ডার খুঁজছে — [দাম কমান]",
+   "sub": "ইমপোর্ট শিখুন: 1688-এ দরদাম করার নিয়ম",
+   "points": [
+    "৫–১০ জন সেলারের দাম নিন",
+    "সবসময় A গ্রেডের দাম চান",
+    "বাজেট কখনো বলবেন না",
+    "ফাইনাল দাম চ্যাটে লিখিত নিন"
+   ],
+   "style": "shadow",
+   "ai_prompt": "Realistic studio photograph using a shadow device: a small neat stack of a few gold coins on a clean light-grey table casts a long dramatic shadow on the wall behind it shaped like a tall stack of many shipping cartons, showing that a small saving per piece grows big, deep Congress-blue wall, single hard side light creating the crisp shadow, one small red carton beside the coins, 50mm lens, vertical 4:5 composition with the coins centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "cartons",
+   "caption": "চীনের কারখানা অর্ডার খুঁজছে — এখনই দরদাম শিখে নিন 💬\n\n📰 প্রেক্ষাপট\nএপি-র খবর (৩১ অক্টোবর ২০২৬): অক্টোবরে চীনের সরকারি ম্যানুফ্যাকচারিং পিএমআই নেমে ৪৯.৩ হয়েছে, নতুন রপ্তানি অর্ডারের সূচক ৫০ থেকে নেমে ৪৮.৭। মানে কারখানাগুলোর হাতে বিদেশি অর্ডার কমেছে — ক্রেতার কথা বলার সুযোগ বাড়ে।\n\n📘 ইমপোর্ট শিখুন: 1688-এ দরদাম\n১. একই পণ্যে ৫–১০ জন সেলারের দাম নিন, সেই দাম দিয়েই কথা বলুন।\n২. গ্রেড না বললে অনেক সেলার B/C গ্রেডের দাম বলে — সবসময় A গ্রেডের দাম চান।\n৩. নিজের বাজেট কখনো বলবেন না, তাড়াহুড়োও দেখাবেন না।\n৪. প্রথম অর্ডার ছোট, পরে নিয়মিত বড় অর্ডার — এভাবে ভবিষ্যতের কথা বলুন।\n৫. একসাথে কয়েকটা জিনিস চান: দাম, গুয়াংজু ওয়্যারহাউস পর্যন্ত ফ্রি ডেলিভারি, ইংরেজি প্যাকেজিং।\n৬. টায়ার প্রাইস দেখুন — ১০০ পিসের দাম কম হলে ৯০ পিসেও সেই দাম চাইতে পারেন।\n৭. ফাইনাল দাম 1688 চ্যাটে লিখিত নিন — এটাই আপনার প্রমাণ।\n\n💡 প্রতি পিসে ১–২ ইউয়ান কম মানে বড় চালানে অনেক টাকা বাঁচা।\n\nসূত্র: AP (News4JAX)\n\nদরদাম নিয়ে প্রশ্ন থাকলে কমেন্টে লিখুন 👇 ইমপোর্টের পরের ধাপ জানতে ফলো করুন।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_শিখুন #1688 #Negotiation #দরদাম #ChinaFactory #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "টেবিলে কয়েকটি সোনালি কয়েন, দেয়ালে তার ছায়া কার্টনের উঁচু স্তূপের মতো — 1688-এ দরদাম করে প্রতি পিসে সাশ্রয়",
+   "sources": [
+    "https://www.news4jax.com/business/2026/10/31/chinas-factory-activity-slips-as-new-export-orders-weaken/"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "idea",
+   "layout": "hero",
+   "hook": "জানুয়ারির মেলায় আপনার [স্টক রেডি?]",
+   "sub": "বাণিজ্য মেলা ১–৩১ জানুয়ারি, অর্ডার দিন এখনই",
+   "style": "material",
+   "ai_prompt": "Realistic cinematic photograph using a material device: a single shipping carton made entirely of polished gold sits on a clean light-grey pedestal, glowing as a valuable season opportunity, behind it a softly blurred navy-blue container yard with one red container, warm rim light on the gold edges against deep Congress-blue tones, 35mm lens, eye-level, wide 2:1 composition with the gold carton centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "ship",
+   "caption": "জানুয়ারির মেলা সিজন — আপনার স্টক রেডি তো? 🎪\n\n📰 খবর\nরপ্তানি উন্নয়ন ব্যুরোর (EPB) ঘোষণা অনুযায়ী ৩১তম ঢাকা আন্তর্জাতিক বাণিজ্য মেলা (DITF) হবে ১ থেকে ৩১ জানুয়ারি ২০২৭। জানুয়ারিতে শীত, মেলা আর নতুন বছর — ঘর সাজানো, হোম হ্যাকস আর বাচ্চাদের খেলনার চাহিদা এই সময় বাড়ে।\n\n💡 আইডিয়া\nমেলায় স্টল না থাকলেও এই মাসে অনলাইনে কেনাকাটার মুড থাকে। তাই এখনই প্ল্যান করুন:\n১. সী শিপমেন্টে গুয়াংজু থেকে প্রায় ৪০–৫০ দিন লাগে — সী-তে আনতে চাইলে এখনই অর্ডার দিন।\n২. দেরি হলে ছোট টেস্ট চালান এয়ারে আনুন (প্রায় ৭–১২ দিন)।\n৩. হালকা, ভাঙে না এমন জিনিস বাছুন — রিটার্ন ও ড্যামেজ কম।\n৪. নিজের ব্র্যান্ডের বক্সে প্যাক করলে দাম নিয়ে যুদ্ধ কম।\n\n🤝 China Bond BD আপনার পাশে\n✔ Factory Direct Import\n✔ Winning Product Research\n✔ Brand Name Custom Design\n✔ Shipping & Delivery Full Service\n\n📞 Mesbah Uddin — WhatsApp: 01606481782\n\nসূত্র: ঢাকা আন্তর্জাতিক বাণিজ্য মেলা (EPB) ওয়েবসাইট",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #বাণিজ্য_মেলা #DITF2027 #BusinessIdea #ব্যবসার_আইডিয়া #WinterSeason #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "ধূসর পেডেস্টালে সোনার তৈরি একটি শিপিং কার্টন, পেছনে কনটেইনার ইয়ার্ড — জানুয়ারির বাণিজ্য মেলা সিজনের জন্য আগাম স্টক",
+   "sources": [
+    "https://ditf.epb.gov.bd"
+   ]
+  }
+ ]
+}

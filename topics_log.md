@@ -37,3 +37,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-05 | news | US midterms: Democrats win Congress, no immediate tariff relief (BD 25.6%), war-risk $2–4k/container — written all-in freight quote + buffer
 - 2026-11-05 | problem | Ctg port gate-out: e-challan R number (duty) + CP number (port charges) verification — keep payment proofs matching
 - 2026-11-05 | alert | Myth vs fact: misdeclaration saves duty? (toothpick case 22.5t vs 1,620kg; fake seal on customs-locked container)
+- 2026-11-06 | news | Q1 FY27 trade deficit +31% ($7.48bn), fuel import bill doubled — dollar-rate buffer, smaller shipments
+- 2026-11-06 | learn | 1688 negotiation tactics (China Oct PMI 49.3, export orders 48.7 — factories want orders)
+- 2026-11-06 | idea | January season stock: 31st DITF 1–31 Jan 2027, sea order now / air test later
