@@ -40,3 +40,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-06 | news | Q1 FY27 trade deficit +31% ($7.48bn), fuel import bill doubled — dollar-rate buffer, smaller shipments
 - 2026-11-06 | learn | 1688 negotiation tactics (China Oct PMI 49.3, export orders 48.7 — factories want orders)
 - 2026-11-06 | idea | January season stock: 31st DITF 1–31 Jan 2027, sea order now / air test later
+- 2026-11-07 | news | 9th CIIE Shanghai (Nov 5–10): China imports +22.3% in 9 months, exports Sept +36.3% — busy suppliers, confirm stock/lead time in writing
+- 2026-11-07 | cost | Freight down (WCI $4,389, -1%) but dollar up to Tk124.35 (from Tk123): landed cost at payment-day rate
+- 2026-11-07 | alert | Common mistake: all money in one product (Mideast extra import burden $4.12bn, dollar >Tk124) — split budget, test small
