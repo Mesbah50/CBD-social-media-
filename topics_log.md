@@ -43,3 +43,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-07 | news | 9th CIIE Shanghai (Nov 5–10): China imports +22.3% in 9 months, exports Sept +36.3% — busy suppliers, confirm stock/lead time in writing
 - 2026-11-07 | cost | Freight down (WCI $4,389, -1%) but dollar up to Tk124.35 (from Tk123): landed cost at payment-day rate
 - 2026-11-07 | alert | Common mistake: all money in one product (Mideast extra import burden $4.12bn, dollar >Tk124) — split budget, test small
+- 2026-11-08 | news | BD October exports +4.4% ($3.99bn), slowest since Aug; costs up, banks strict on LCs — recheck landed cost, 8-digit HS code in PI
+- 2026-11-08 | problem | Cargo agent bill shows more weight (freight up: LPG ship freight $82→$250/t) — weight photos, volumetric formula, match packing list
+- 2026-11-08 | idea | School winter vacation Dec 20–29 (exams end Dec 6): kids' gift/toy season — samples now, small air shipment
