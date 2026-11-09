@@ -46,3 +46,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-08 | news | BD October exports +4.4% ($3.99bn), slowest since Aug; costs up, banks strict on LCs — recheck landed cost, 8-digit HS code in PI
 - 2026-11-08 | problem | Cargo agent bill shows more weight (freight up: LPG ship freight $82→$250/t) — weight photos, volumetric formula, match packing list
 - 2026-11-08 | idea | School winter vacation Dec 20–29 (exams end Dec 6): kids' gift/toy season — samples now, small air shipment
+- 2026-11-09 | news | LDC graduation deferred to Nov 2029: no import duty cut announced — check HS code duty, today's dollar rate
+- 2026-11-09 | learn | 1688 listed price vs real price: MOQ, tiers, version, A grade (Double 11 hook, 777m parcels in 2025)
+- 2026-11-09 | alert | Old BIN deactivated in ASYCUDA after Nov 30: finish pending work, tell bank/C&F new BIN
