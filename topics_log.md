@@ -49,3 +49,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-09 | news | LDC graduation deferred to Nov 2029: no import duty cut announced — check HS code duty, today's dollar rate
 - 2026-11-09 | learn | 1688 listed price vs real price: MOQ, tiers, version, A grade (Double 11 hook, 777m parcels in 2025)
 - 2026-11-09 | alert | Old BIN deactivated in ASYCUDA after Nov 30: finish pending work, tell bank/C&F new BIN
+- 2026-11-10 | news | October PMI back to expansion (51.8) but demand weak, input costs high — test small, low stock, recheck landed cost
+- 2026-11-10 | cost | Non-food inflation 9.89% (41-month high) vs wages +7.63%: margin squeeze, recheck every cost line, 3× rule
+- 2026-11-10 | idea | District wholesale: small packs to district shops (agriculture PMI 61.2, 14 months expansion)
