@@ -52,3 +52,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-10 | news | October PMI back to expansion (51.8) but demand weak, input costs high — test small, low stock, recheck landed cost
 - 2026-11-10 | cost | Non-food inflation 9.89% (41-month high) vs wages +7.63%: margin squeeze, recheck every cost line, 3× rule
 - 2026-11-10 | idea | District wholesale: small packs to district shops (agriculture PMI 61.2, 14 months expansion)
+- 2026-11-11 | news | China Oct exports +35.2%, imports +41.6%, Jan–Oct surplus $1.04tn: busy factories — stock check, written ship date, backup sellers
+- 2026-11-11 | problem | Ctg Customs 14-point exam order (2 Nov), C&F agents seek withdrawal: match invoice/packing list/B/L, true description, shipping mark
+- 2026-11-11 | alert | Common mistake: cosmetics in luggage to resell (1,300 cream jars seized at Ctg airport; undeclared cosmetics in "printing machine" container)
