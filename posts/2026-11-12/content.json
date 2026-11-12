@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-12",
+ "posts": [
+  {
+   "slot": 1,
+   "category": "news",
+   "layout": "hero",
+   "hook": "কাস্টমসে [গ্রিন লেন] — আপনার মাল পাবে?",
+   "sub": "কম ঝুঁকির মাল ছাড় হবে দ্রুত, শর্ত সঠিক কাগজ",
+   "style": "material",
+   "ai_prompt": "Realistic cinematic photograph using a material device: a single shipping container made entirely of clear transparent glass, its neatly stacked brown cartons fully visible inside, rolling smoothly along an open port lane lit by a soft green glow, while dim grey steel containers wait stacked to the sides, Chattogram-style container port at blue hour, deep Congress-blue sky, one small red light on a gantry crane, 35mm lens, low angle, wide 2:1 composition with the glass container centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "containers",
+   "caption": "কাস্টমসে গ্রিন লেন — আপনার মাল কি দ্রুত ছাড় পাবে? 🚦\n\n📰 খবরটা কী?\nচট্টগ্রাম কাস্টমসে ঝুঁকিভিত্তিক পরীক্ষা চালু করতে একটি নতুন প্রকল্প শুরু হয়েছে। Global Alliance for Trade Facilitation জানিয়েছে, ইউরোপীয় ইউনিয়ন ও জার্মানির অর্থায়নে, GIZ-এর মাধ্যমে এনবিআর আর চট্টগ্রাম বন্দর কর্তৃপক্ষকে সাথে নিয়ে কাজটি হবে।\n\nপরিকল্পনায় আছে:\n• কম ঝুঁকির চালানের জন্য গ্রিন লেন — দ্রুত ছাড়\n• উন্নত রিস্ক ম্যানেজমেন্ট মডেল\n• ASYCUDA-তে পোস্ট-ক্লিয়ারেন্স অডিট মডিউল (ছাড়ের পরেও কাগজ যাচাই)\n• AEO (বিশ্বস্ত ব্যবসায়ী) প্রোগ্রামের বিস্তার\n\nমূল্যায়নে দেখা গেছে, এখনো অনেক কাজ হাতে হয় আর বেশিরভাগ চালানের কাগজ খুঁটিয়ে দেখা হয়। প্রকল্পের সময়সীমা এখনো ঘোষণা হয়নি।\n\n🔍 ছোট ইমপোর্টারের জন্য মানে কী?\nযার রেকর্ড পরিষ্কার, কাগজ মেলে — সে-ই ধীরে ধীরে “কম ঝুঁকির” তালিকায় যাবে। আর ছাড়ের পরেও অডিট হবে, তাই ভুল ঘোষণা পরে ধরা পড়তে পারে।\n\n✅ এখন থেকেই যা করবেন\n১. ইনভয়েস, প্যাকিং লিস্ট আর পণ্যের বর্ণনা যেন হুবহু মেলে।\n২. সঠিক HS কোড এজেন্ট বা সি অ্যান্ড এফ-এর সাথে মিলিয়ে নিন।\n৩. প্রতিটি চালানের কাগজ ও পেমেন্ট প্রমাণ সংরক্ষণ করুন।\n৪. ঘোষণায় কখনো কম দেখাবেন না — একবারের ভুল পুরো রেকর্ড নষ্ট করে।\n\nসূত্র: Maritime Gateway, ১১ নভেম্বর ২০২৬\n\nআপনার চালানে কাস্টমসে কী সমস্যা হয়েছে? কমেন্টে লিখুন 👇",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #চট্টগ্রাম_কাস্টমস #GreenLane #ইমপোর্ট_নিউজ #CustomsClearance #ASYCUDA #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "বন্দরের খোলা লেন দিয়ে কাচের তৈরি একটা স্বচ্ছ কনটেইনার এগিয়ে যাচ্ছে, ভেতরের কার্টন দেখা যাচ্ছে — চট্টগ্রাম কাস্টমসে গ্রিন লেন ও ঝুঁকিভিত্তিক পরীক্ষার খবর",
+   "sources": [
+    "https://www.maritimegateway.com/chattogram-customs-project-targets-faster-cargo-clearance-through-risk-based-checks/"
+   ]
+  },
+  {
+   "slot": 2,
+   "category": "learn",
+   "layout": "list",
+   "hook": "বাল্ক অর্ডারের আগে [স্যাম্পল] কেন?",
+   "sub": "ইমপোর্ট শিখুন: স্যাম্পল আনার সঠিক নিয়ম",
+   "points": [
+    "সেরা ২–৩ সেলার থেকে স্যাম্পল",
+    "SF Express, ওয়েবিল নম্বর এজেন্টকে",
+    "আনবক্সিং ভিডিও আর ওজন মাপুন",
+    "কয়েকদিন ব্যবহার করে তুলনা"
+   ],
+   "style": "animal",
+   "ai_prompt": "Realistic studio photograph using an animal device: a curious owl standing on a wooden table, closely inspecting one small open sample carton with a single wrapped item inside, beside it three tall sealed bulk cartons wait unopened, a small kitchen weighing scale and a magnifying glass nearby, clean light-grey backdrop with deep Congress-blue side light and one red tape accent on a carton, 85mm lens, eye level, vertical 4:5 composition with the owl centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "cartons",
+   "caption": "বাল্ক অর্ডারের আগে স্যাম্পল কেন? 📦\n\n📰 আজকের প্রেক্ষাপট\nDrewry-র হিসাবে ৫ নভেম্বর বিশ্বে কনটেইনার ভাড়া ১% কমে প্রতি ৪০ ফুট কনটেইনারে ৪,৩৮৯ ডলার, এশিয়ার ভেতরের রুটে ২৬ ডলার কমে ১,৪৭৮ ডলার। ভাড়া একটু নরম হলেও ক্ষতির বড় কারণ সাধারণত ভাড়া নয় — ভুল মাল। আর বাংলাদেশ থেকে চীনে মাল ফেরত পাঠানো প্রায় অসম্ভব।\n\n✅ স্যাম্পল আনার সঠিক নিয়ম\n১. সব সেলার নয় — যাচাই করা সেরা ২–৩ জন সেলার থেকে স্যাম্পল নিন।\n২. চীনের ভেতরে দ্রুত আসতে SF Express (顺丰) চান, ১–২ দিনে এজেন্টের গুদামে পৌঁছায়।\n৩. ওয়েবিল নম্বর (运单号) নিয়ে এজেন্টকে দিন, নইলে পার্সেল খুঁজে পাওয়া কঠিন।\n৪. তাড়া থাকলে ছোট পার্সেল হ্যান্ড ক্যারিতে আনা যায় — কেজিপ্রতি খরচ বেশি, ব্যাটারি/লিকুইড চলবে না।\n৫. হাতে পেয়ে আনবক্সিং ভিডিও করুন, ওজন মাপুন।\n৬. কয়েকদিন নিজে ব্যবহার করুন, সেলারদের স্যাম্পল পাশাপাশি তুলনা করুন, সম্ভাব্য ক্রেতাদের দেখান।\n\n💡 কয়েক হাজার টাকার স্যাম্পল লাখ টাকার ভুল বাল্ক অর্ডার থেকে বাঁচায়। সেরা স্যাম্পলের ভিডিও সেলারকে পাঠিয়ে বলুন — বাল্ক ঠিক এমনই হতে হবে।\n\nসূত্র: Drewry World Container Index, ৫ নভেম্বর ২০২৬\n\nআপনি কি স্যাম্পল ছাড়া অর্ডার করেছেন কখনো? কমেন্টে জানান 👇 ফলো করুন, প্রতিদিন একটা করে ধাপ শিখুন।",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #ইমপোর্ট_শিখুন #স্যাম্পল #1688 #SampleOrder #SFExpress #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "একটা পেঁচা টেবিলে খোলা ছোট স্যাম্পল কার্টন মন দিয়ে দেখছে, পাশে বড় বাল্ক কার্টনগুলো এখনো বন্ধ — বাল্ক অর্ডারের আগে স্যাম্পল যাচাইয়ের শিক্ষা",
+   "sources": [
+    "https://www.drewry.co.uk/trackers-and-indices/latest-trackers-and-indices/world-container-index-assessed-by-drewry"
+   ]
+  },
+  {
+   "slot": 3,
+   "category": "idea",
+   "layout": "hero",
+   "hook": "[প্রি-অর্ডারে] ঝুঁকি কম — ডলার ১২৫ পার",
+   "sub": "আগে চাহিদা যাচাই, তারপর ইমপোর্ট",
+   "style": "shape",
+   "ai_prompt": "Realistic studio photograph using a shape device: many small brown shipping cartons and a few navy-blue mini containers arranged on a clean light-grey floor to form a large upward rising arrow, the arrow tip finished with one red carton, soft shadows, deep Congress-blue gradient backdrop, overhead three-quarter view, crisp studio light, 35mm lens, wide 2:1 composition with the arrow centred. No text, no letters, no logos, no people, no faces.",
+   "fallback": "route",
+   "caption": "প্রি-অর্ডারে ঝুঁকি কম — ডলার ১২৫ পার 💡\n\n📰 খবরটা কী?\nThe Business Standard জানিয়েছে, ১০ নভেম্বর কয়েকটি ব্যাংক এক্সচেঞ্জ হাউস থেকে ১২৫.১০–১২৫.১৫ টাকায় ডলার কিনেছে, এলসি নিষ্পত্তি হয়েছে ১২৪.৯০–১২৪.৯৭ টাকায়। তিন মাসে ডলার বেড়েছে ২.৩০ টাকার বেশি, জ্বালানি আমদানির বিল বাড়ায় চাপ আরও আছে।\n\n🔍 সমস্যা কোথায়?\nআগে টাকা দিয়ে অনেক মাল আনলে টাকা আটকে থাকে, আর বিক্রি না হলে লোকসান। ডলার বাড়লে প্রতিটা ভুল স্টকের দাম আরও বেশি।\n\n✅ বিজনেস আইডিয়া: প্রি-অর্ডার মডেল\n১. স্যাম্পল এনে নিজের ভিডিও বানান, পোস্টে “প্রি-অর্ডার” লিখে ডেলিভারির সময় পরিষ্কার বলুন।\n২. অল্প অগ্রিম নিন, অর্ডার গুনে দেখুন চাহিদা আসলেই আছে কি না।\n৩. যত অর্ডার, তার চেয়ে সামান্য বেশি আনুন — বাড়তি স্টক নয়।\n৪. দাম ঠিক করুন পেমেন্টের দিনের ডলার রেট ধরে, একটু বাফার রেখে।\n৫. কথামতো সময়ে ডেলিভারি দিন — বিশ্বাসই পরের প্রি-অর্ডার আনে।\n\nChina Bond BD যা করে:\n✅ ফ্যাক্টরি থেকে সরাসরি ইমপোর্ট\n✅ উইনিং প্রোডাক্ট রিসার্চ\n✅ নিজের ব্র্যান্ড নামে কাস্টম ডিজাইন\n✅ শিপিং ও ডেলিভারি ফুল সার্ভিস\n\nপণ্যের ছবি বা 1688 লিংক পাঠান, খরচের হিসাব জেনে নিন।\nMesbah Uddin — WhatsApp: 01606481782\n\nসূত্র: The Business Standard, ১১ নভেম্বর ২০২৬",
+   "hashtags": "#ChinaBondBD #CBD #ImportFromChina #প্রি_অর্ডার #PreOrder #ডলার_রেট #বিজনেস_আইডিয়া #SmallBusinessBD #ImportBangladesh #চায়না_ইমপোর্ট",
+   "alt": "অনেক ছোট কার্টন আর নীল মিনি কনটেইনার মিলে ওপরের দিকে ওঠা একটা বড় তীর, মাথায় লাল কার্টন — ডলার ১২৫ টাকা পার হওয়ার সময় প্রি-অর্ডার মডেলের বিজনেস আইডিয়া",
+   "sources": [
+    "https://www.tbsnews.net/economy/dollar-rate-crosses-tk125-fuel-import-payments-rise-1598881"
+   ]
+  }
+ ]
+}

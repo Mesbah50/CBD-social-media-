@@ -55,3 +55,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-11 | news | China Oct exports +35.2%, imports +41.6%, Jan–Oct surplus $1.04tn: busy factories — stock check, written ship date, backup sellers
 - 2026-11-11 | problem | Ctg Customs 14-point exam order (2 Nov), C&F agents seek withdrawal: match invoice/packing list/B/L, true description, shipping mark
 - 2026-11-11 | alert | Common mistake: cosmetics in luggage to resell (1,300 cream jars seized at Ctg airport; undeclared cosmetics in "printing machine" container)
+- 2026-11-12 | news | Ctg Customs risk-based checks project (GATF/GIZ, EU+BMZ): green lane for low-risk cargo, ASYCUDA post-clearance audit, AEO — clean documents, correct HS code
+- 2026-11-12 | learn | Samples before bulk: 2–3 best sellers, SF Express + waybill to agent, unboxing video, weigh, use & compare (Drewry WCI $4,389 -1%, intra-Asia $1,478)
+- 2026-11-12 | idea | Pre-order model: test demand first, small advance, import only what's ordered (dollar crossed Tk125, LC Tk124.90–124.97)
