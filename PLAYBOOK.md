@@ -1,16 +1,17 @@
 # CBD daily posts — playbook
 
-Every day: research trending import/export and business topics, make **3 image posts** (owner's instruction from 30 Oct 2026; was 6), write the caption with all the information, and schedule each post on **all 3 Buffer channels**. Images only — never reels or video.
+Every day: research trending import/export and business topics, make **3 image posts** (owner's instruction from 30 Oct 2026; was 6), write the caption with all the information, and schedule each post on **LinkedIn only** (owner's instruction, 12 Nov 2026: no more Facebook posts). Images only — never reels or video.
 
 Owner: Mesbah uddin, China Bond BD (CBD). Language of all post text: Bengali.
 
 ## Fixed facts
 
 - Buffer organization: `My organization` — id `6ac0cc64d40717621231ce56`, timezone Asia/Dhaka (+06:00)
-- Channels (post every item to all three):
+- Channel (from 12 Nov 2026, post ONLY here):
+  - MESBAH UDDIN (LinkedIn profile) — `6ac5e1486a5c39ccb63c77a6`
+- Facebook pages — DO NOT POST (owner's instruction, 12 Nov 2026; IDs kept only for reference):
   - China Bond BD (Facebook page) — `6ad9fda3778b240e2f8b559e`
   - Mesbah China Imports guide (Facebook page) — `6ad9fda3778b240e2f8b559f`
-  - MESBAH UDDIN (LinkedIn profile) — `6ac5e1486a5c39ccb63c77a6`
 - Image hosting: this repo. Public image URL = `https://raw.githubusercontent.com/Mesbah50/CBD-social-media-/main/posts/<date>/post-<slot>.png`
 - Contact: `Mesbah Uddin — WhatsApp: 01606481782` in captions that need it (the `idea` post); every image footer shows `WhatsApp: 01606481782` + `China Bond BD` (brand guide). No other name or phone number ever appears in images or captions.
 - Services: Factory Direct Import · Winning Product Research · Brand Name Custom Design · Shipping & Delivery Full Service
@@ -86,11 +87,10 @@ To pick today's rotation, look at the categories of the last days in `topics_log
    6. `python3 scripts/store_image.py "<export URL>" posts/<date>/post-N-ai.png` — runs the fetch-image GitHub workflow, waits, and prints the permanent raw URL and size (must be 1080×1080). Run `git pull --rebase` before your next push (the workflow commits to main).
    7. Use `post-N-ai.png` as the Buffer image. If any step fails (e.g. Canva AI allowance used up), use `post-N.png` and say so in the report.
 6. **Commit and push** the date folder and the updated `topics_log.md` (one line per post: `- <date> | <category> | <topic>`).
-7. **Schedule in Buffer** — 9 posts (3 posts × 3 channels) with `create_post`:
+7. **Schedule in Buffer** — 3 posts, LinkedIn channel only, with `create_post`:
    - `mode: "customScheduled"`, `dueAt: "<date>T<time>:00+06:00"`, `schedulingType: "automatic"`
    - `text`: caption + blank line + hashtags
    - `assets: [{"image": {"url": <raw URL>, "metadata": {"altText": <alt>}}}]`
-   - Facebook channels also need `metadata: {"facebook": {"type": "post"}}`
    - If a slot time has already passed, schedule it 30 minutes from now instead. If Buffer cannot fetch the image right after the push, wait a minute and retry once.
 8. **Report** to the owner with SendUserMessage, in Bengali: the 3 topics, the times, and anything that failed.
 
