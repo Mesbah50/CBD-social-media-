@@ -58,3 +58,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-12 | news | Ctg Customs risk-based checks project (GATF/GIZ, EU+BMZ): green lane for low-risk cargo, ASYCUDA post-clearance audit, AEO — clean documents, correct HS code
 - 2026-11-12 | learn | Samples before bulk: 2–3 best sellers, SF Express + waybill to agent, unboxing video, weigh, use & compare (Drewry WCI $4,389 -1%, intra-Asia $1,478)
 - 2026-11-12 | idea | Pre-order model: test demand first, small advance, import only what's ordered (dollar crossed Tk125, LC Tk124.90–124.97)
+- 2026-11-13 | news | BB sold $205m at Tk124.74 (12 Nov), dollar below Tk125, reserves $29.82bn — pay when order ready, written rate, buffer, split payments
+- 2026-11-13 | cost | Invoice price ≠ customs assessable value: minimum value on 210 goods (FY27), Ctg "packing machine" $17,600 declared vs ~$443k (25×) — landed cost on assessed value
+- 2026-11-13 | alert | Myth vs fact: Suez reopened (Evergreen Ever Eon, 8 Nov) so China–BD freight will fall? — China–Ctg doesn't use Suez; don't delay seasonal orders, get all-in written quote
