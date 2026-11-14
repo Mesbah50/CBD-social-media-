@@ -61,3 +61,6 @@ One line per post: `- <date> | <category> | <topic>`. Check the last 30 days bef
 - 2026-11-13 | news | BB sold $205m at Tk124.74 (12 Nov), dollar below Tk125, reserves $29.82bn — pay when order ready, written rate, buffer, split payments
 - 2026-11-13 | cost | Invoice price ≠ customs assessable value: minimum value on 210 goods (FY27), Ctg "packing machine" $17,600 declared vs ~$443k (25×) — landed cost on assessed value
 - 2026-11-13 | alert | Myth vs fact: Suez reopened (Evergreen Ever Eon, 8 Nov) so China–BD freight will fall? — China–Ctg doesn't use Suez; don't delay seasonal orders, get all-in written quote
+- 2026-11-14 | news | BB: 10 Ramadan essentials on 90-day supplier's/buyer's credit (11 Nov circular, till 15 Mar), min LC margin (8 Nov) — not for general goods, plan cash flow
+- 2026-11-14 | problem | Goods arrived but not selling: Ctg customs assessed volume Oct -17.6%, consumption down 20–30% — count dead stock, small packs/bundles, halve next order
+- 2026-11-14 | idea | Ramadan/Eid 2027 stock timeline (Ramadan ~9 Feb, Eid ~10 Mar): samples Nov, sea order Dec, pre-order Jan
